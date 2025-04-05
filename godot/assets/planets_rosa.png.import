@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtb1w7s7dydaw"
-path="res://.godot/imported/DemoTileset-Farben.png-b4dbfe3078f420961b687bebae37a0eb.ctex"
+uid="uid://3y6rsndm00hd"
+path="res://.godot/imported/planets_rosa.png-94dd46e9c9eca5123b36bf725667c7f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DemoTileset-Farben.png"
-dest_files=["res://.godot/imported/DemoTileset-Farben.png-b4dbfe3078f420961b687bebae37a0eb.ctex"]
+source_file="res://assets/planets_rosa.png"
+dest_files=["res://.godot/imported/planets_rosa.png-94dd46e9c9eca5123b36bf725667c7f1.ctex"]
 
 [params]
 
