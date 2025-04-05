@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn7bmyikip4jt"
-path="res://.godot/imported/planets_emerald.png-bf3aacbaa6b90798104009b60c270a06.ctex"
+uid="uid://d3ls2imls6ifr"
+path="res://.godot/imported/planets_violet.png-45cf7dd9bff8994be1042d9b67a067f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_emerald.png"
-dest_files=["res://.godot/imported/planets_emerald.png-bf3aacbaa6b90798104009b60c270a06.ctex"]
+source_file="res://Planets/PlanetSprites/planets_violet.png"
+dest_files=["res://.godot/imported/planets_violet.png-45cf7dd9bff8994be1042d9b67a067f2.ctex"]
 
 [params]
 

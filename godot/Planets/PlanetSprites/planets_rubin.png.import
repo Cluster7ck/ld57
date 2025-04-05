@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3y6rsndm00hd"
-path="res://.godot/imported/planets_rosa.png-94dd46e9c9eca5123b36bf725667c7f1.ctex"
+uid="uid://8dp68de3ipfo"
+path="res://.godot/imported/planets_rubin.png-ec3b11bc48407da85190265cf900904b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_rosa.png"
-dest_files=["res://.godot/imported/planets_rosa.png-94dd46e9c9eca5123b36bf725667c7f1.ctex"]
+source_file="res://Planets/PlanetSprites/planets_rubin.png"
+dest_files=["res://.godot/imported/planets_rubin.png-ec3b11bc48407da85190265cf900904b.ctex"]
 
 [params]
 

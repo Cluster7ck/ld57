@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dryykih4mmgt2"
-path="res://.godot/imported/wigglemedium.svg-e1458e291861fcc568c6d9de3a01dd80.ctex"
+uid="uid://ccylqgb2cl0pf"
+path="res://.godot/imported/WiggleLong.svg-ebc78cad0eeb3199d3c747956ace99f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Planets/Sprites/wigglemedium.svg"
-dest_files=["res://.godot/imported/wigglemedium.svg-e1458e291861fcc568c6d9de3a01dd80.ctex"]
+source_file="res://Planets/Overlays/WiggleLong.svg"
+dest_files=["res://.godot/imported/WiggleLong.svg-ebc78cad0eeb3199d3c747956ace99f1.ctex"]
 
 [params]
 

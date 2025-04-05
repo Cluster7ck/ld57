@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lx4fwxe1oo5e"
-path="res://.godot/imported/planets_lilac.png-fff868852843bf787ae332020b254b8e.ctex"
+uid="uid://dydxwapqw0mys"
+path="res://.godot/imported/WiggleSmoll.svg-2411d62c53c6f40a143f7b5bb95a8721.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_lilac.png"
-dest_files=["res://.godot/imported/planets_lilac.png-fff868852843bf787ae332020b254b8e.ctex"]
+source_file="res://Planets/Overlays/WiggleSmoll.svg"
+dest_files=["res://.godot/imported/WiggleSmoll.svg-2411d62c53c6f40a143f7b5bb95a8721.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsbwcmpm8twex"
-path="res://.godot/imported/planets_pink.png-d851dbba13bee6ebb448695d7ddbbfa4.ctex"
+uid="uid://byw1vy1y2p3li"
+path="res://.godot/imported/planets_ocean.png-2777b998ca0bb8e2639bad9c8a6faa18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_pink.png"
-dest_files=["res://.godot/imported/planets_pink.png-d851dbba13bee6ebb448695d7ddbbfa4.ctex"]
+source_file="res://Planets/PlanetSprites/planets_ocean.png"
+dest_files=["res://.godot/imported/planets_ocean.png-2777b998ca0bb8e2639bad9c8a6faa18.ctex"]
 
 [params]
 

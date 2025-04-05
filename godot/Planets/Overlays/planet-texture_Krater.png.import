@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8dp68de3ipfo"
-path="res://.godot/imported/planets_rubin.png-ee7b55a9312b59af2dbddff42150f722.ctex"
+uid="uid://cgf60soyslq3x"
+path="res://.godot/imported/planet-texture_Krater.png-102d1989df4a60273da240a07c1f5f57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_rubin.png"
-dest_files=["res://.godot/imported/planets_rubin.png-ee7b55a9312b59af2dbddff42150f722.ctex"]
+source_file="res://Planets/Overlays/planet-texture_Krater.png"
+dest_files=["res://.godot/imported/planet-texture_Krater.png-102d1989df4a60273da240a07c1f5f57.ctex"]
 
 [params]
 

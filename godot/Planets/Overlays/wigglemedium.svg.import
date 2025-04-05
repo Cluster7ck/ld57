@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4jy1olsydt3d"
-path="res://.godot/imported/SmollCloud.svg-ad18ee809aee17a49e8da6745fd82041.ctex"
+uid="uid://dryykih4mmgt2"
+path="res://.godot/imported/wigglemedium.svg-013002bf85d1c3f50f3bd577fad7e85c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Planets/Sprites/SmollCloud.svg"
-dest_files=["res://.godot/imported/SmollCloud.svg-ad18ee809aee17a49e8da6745fd82041.ctex"]
+source_file="res://Planets/Overlays/wigglemedium.svg"
+dest_files=["res://.godot/imported/wigglemedium.svg-013002bf85d1c3f50f3bd577fad7e85c.ctex"]
 
 [params]
 
