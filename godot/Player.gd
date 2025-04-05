@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var line: Line2D = $Line2D
+@onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
 @export var DEFAULT_GRAVITY = 600.0
@@ -47,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		move_and_collide(motion)
 
 func _process(_delta) -> void:
+	sprite.look_at(position + velocity)
 	if hasGravityCenter:
 		line.clear_points()
 		line.add_point(gravityCenterPos - position)
