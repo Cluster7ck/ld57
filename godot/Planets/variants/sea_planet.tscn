@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b540xo5xmr2sk"]
+
+[ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_x0bft"]
+[ext_resource type="Texture2D" uid="uid://byw1vy1y2p3li" path="res://Planets/PlanetSprites/planets_ocean.png" id="2_nrvmc"]
+
+[node name="Planet" instance=ExtResource("1_x0bft")]
+rotation = -0.755728
+
+[node name="Kreis" parent="." index="1"]
+texture = ExtResource("2_nrvmc")
+
+[node name="Planet-textureKrater" parent="Kreis" index="2"]
+visible = false

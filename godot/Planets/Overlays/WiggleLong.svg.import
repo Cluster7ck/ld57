@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2gxhwtyuh3gv"
-path="res://.godot/imported/Kreis.svg-ca6e8f994d9287c844e497e7bc62fec5.ctex"
+uid="uid://ccylqgb2cl0pf"
+path="res://.godot/imported/WiggleLong.svg-ebc78cad0eeb3199d3c747956ace99f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Planets/Sprites/Kreis.svg"
-dest_files=["res://.godot/imported/Kreis.svg-ca6e8f994d9287c844e497e7bc62fec5.ctex"]
+source_file="res://Planets/Overlays/WiggleLong.svg"
+dest_files=["res://.godot/imported/WiggleLong.svg-ebc78cad0eeb3199d3c747956ace99f1.ctex"]
 
 [params]
 

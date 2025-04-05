@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blr1njbsd3214"
-path="res://.godot/imported/planets_blue.png-7185863dd82178f2d29b3ffe4daf49f9.ctex"
+uid="uid://bsbwcmpm8twex"
+path="res://.godot/imported/planets_pink.png-d589dfb7917c0cade4de42404113f902.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_blue.png"
-dest_files=["res://.godot/imported/planets_blue.png-7185863dd82178f2d29b3ffe4daf49f9.ctex"]
+source_file="res://Planets/PlanetSprites/planets_pink.png"
+dest_files=["res://.godot/imported/planets_pink.png-d589dfb7917c0cade4de42404113f902.ctex"]
 
 [params]
 

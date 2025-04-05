@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lx4fwxe1oo5e"
-path="res://.godot/imported/planets_lilac.png-fff868852843bf787ae332020b254b8e.ctex"
+uid="uid://pvcygqlrdjh0"
+path="res://.godot/imported/tractor_beam.png-aa572f49cfb2cd1561be777a180ba2cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_lilac.png"
-dest_files=["res://.godot/imported/planets_lilac.png-fff868852843bf787ae332020b254b8e.ctex"]
+source_file="res://assets/tractor_beam.png"
+dest_files=["res://.godot/imported/tractor_beam.png-aa572f49cfb2cd1561be777a180ba2cb.ctex"]
 
 [params]
 

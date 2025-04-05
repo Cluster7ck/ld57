@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btg1cs62ad1rv"
-path="res://.godot/imported/planets_Yellow.png-b361321860634ee431eb0c82b32f9645.ctex"
+uid="uid://cgf60soyslq3x"
+path="res://.godot/imported/planet-texture_Krater.png-102d1989df4a60273da240a07c1f5f57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_Yellow.png"
-dest_files=["res://.godot/imported/planets_Yellow.png-b361321860634ee431eb0c82b32f9645.ctex"]
+source_file="res://Planets/Overlays/planet-texture_Krater.png"
+dest_files=["res://.godot/imported/planet-texture_Krater.png-102d1989df4a60273da240a07c1f5f57.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dryykih4mmgt2"
-path="res://.godot/imported/wigglemedium.svg-e1458e291861fcc568c6d9de3a01dd80.ctex"
+uid="uid://byw1vy1y2p3li"
+path="res://.godot/imported/planets_ocean.png-2777b998ca0bb8e2639bad9c8a6faa18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Planets/Sprites/wigglemedium.svg"
-dest_files=["res://.godot/imported/wigglemedium.svg-e1458e291861fcc568c6d9de3a01dd80.ctex"]
+source_file="res://Planets/PlanetSprites/planets_ocean.png"
+dest_files=["res://.godot/imported/planets_ocean.png-2777b998ca0bb8e2639bad9c8a6faa18.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

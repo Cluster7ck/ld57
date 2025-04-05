@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv87t0m4c1yxc"
-path="res://.godot/imported/planets_red.png-33029a0fa6fdad82e035a0e913424fdd.ctex"
+uid="uid://dydxwapqw0mys"
+path="res://.godot/imported/WiggleSmoll.svg-2411d62c53c6f40a143f7b5bb95a8721.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets_red.png"
-dest_files=["res://.godot/imported/planets_red.png-33029a0fa6fdad82e035a0e913424fdd.ctex"]
+source_file="res://Planets/Overlays/WiggleSmoll.svg"
+dest_files=["res://.godot/imported/WiggleSmoll.svg-2411d62c53c6f40a143f7b5bb95a8721.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

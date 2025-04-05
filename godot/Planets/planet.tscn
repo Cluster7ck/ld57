@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=3 uid="uid://byb844gh4nnl7"]
+
+[ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
+[ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
+[ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
+[ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
+radius = 425.001
+
+[sub_resource type="Animation" id="Animation_ua4di"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/WiggleBig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-137, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kreis/WiggleBig2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-136, 39)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kreis/Planet-textureKrater:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-189.37, -8.18265)]
+}
+
+[sub_resource type="Animation" id="Animation_icnbx"]
+resource_name = "Wiggle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/WiggleBig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-222, -29), Vector2(335.489, -29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kreis/WiggleBig2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-467, 39), Vector2(506.155, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_6ynlh"]
+resource_name = "krater"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/Planet-textureKrater:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-189.37, -8.18265), Vector2(147.288, -8.18265)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_os8dk"]
+_data = {
+&"RESET": SubResource("Animation_ua4di"),
+&"Wiggle": SubResource("Animation_icnbx"),
+&"krater": SubResource("Animation_6ynlh")
+}
+
+[node name="Planet" type="Area2D"]
+script = ExtResource("1_imu5u")
+metadata/_edit_vertical_guides_ = [204.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mtr83")
+
+[node name="Kreis" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(1, 1)
+scale = Vector2(0.855469, 0.855469)
+texture = ExtResource("2_d5osa")
+
+[node name="WiggleBig2" type="Sprite2D" parent="Kreis"]
+visible = false
+modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(-136, 39)
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("3_6ynlh")
+
+[node name="WiggleBig" type="Sprite2D" parent="Kreis"]
+visible = false
+modulate = Color(1, 1, 1, 0.321569)
+position = Vector2(-137, 7)
+scale = Vector2(1.32576, 1.32576)
+texture = ExtResource("3_6ynlh")
+
+[node name="Planet-textureKrater" type="Sprite2D" parent="Kreis"]
+position = Vector2(-189.37, -8.18265)
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("4_d5osa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_os8dk")
+}
+autoplay = "Wiggle"
