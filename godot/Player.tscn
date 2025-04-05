@@ -13,7 +13,7 @@ dampingFactor = 80
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kpjcp")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xhfnw")
+
+[node name="Line2D" type="Line2D" parent="."]

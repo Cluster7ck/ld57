@@ -1,9 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://byqqkyl4i26e7"]
+[gd_scene load_steps=4 format=3 uid="uid://byqqkyl4i26e7"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
-[ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://planet.tscn" id="2_7cbxl"]
-[ext_resource type="Texture2D" uid="uid://c07xavjwq2oei" path="res://icon.svg" id="2_sasra"]
-[ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="3_coq8p"]
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets.gd" id="5_2nij2"]
 
@@ -12,30 +9,13 @@
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(1, -1)
 
-[node name="Planet" parent="." instance=ExtResource("2_7cbxl")]
-position = Vector2(284, 252)
-
-[node name="Planet2" type="Sprite2D" parent="."]
-position = Vector2(495, 665)
-texture = ExtResource("2_sasra")
-script = ExtResource("3_coq8p")
-
-[node name="Planet3" type="Sprite2D" parent="."]
-position = Vector2(577, -135)
-texture = ExtResource("2_sasra")
-script = ExtResource("3_coq8p")
-
-[node name="Planet4" type="Sprite2D" parent="."]
-position = Vector2(701, 252)
-texture = ExtResource("2_sasra")
-script = ExtResource("3_coq8p")
-
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("4_coq8p")
 target = NodePath("../Player")
+lookAheadMul = 500
 
 [node name="PlanetSpawner" type="Node" parent="."]
 script = ExtResource("5_2nij2")
