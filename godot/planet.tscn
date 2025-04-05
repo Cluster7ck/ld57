@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://byb844gh4nnl7"]
+
+[ext_resource type="Texture2D" uid="uid://c07xavjwq2oei" path="res://icon.svg" id="1_mtr83"]
+[ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="2_a75xc"]
+
+[node name="Planet" type="Sprite2D"]
+texture = ExtResource("1_mtr83")
+script = ExtResource("2_a75xc")

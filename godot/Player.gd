@@ -4,12 +4,14 @@ extends CharacterBody2D
 
 @export var DEFAULT_GRAVITY = 600.0
 @export var PLANET_GRAVITY = 800.0
+@export var dampingFactor = 20
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var hasGravityCenter = false
 var gravityCenterPos = Vector2(0, 0)
 
 func _ready() -> void:
+	print(dampingFactor)
 	GravityEventManager.gravity_target.connect(on_new_gravity_center)
 	pass
 
@@ -32,11 +34,12 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	if !hasGravityCenter:
 		
-		velocity += Vector2(0, 1) * delta * gravity_c;
+		velocity = velocity.limit_length(velocity.length() * 0.999)
 		var motion = velocity * delta
 		move_and_collide(motion)
 	else:
-		gravityDirection = (gravityCenterPos - position).normalized()
+		var dirToPlanet = gravityCenterPos - position
+		gravityDirection = (dirToPlanet).normalized()
 		velocity += gravityDirection * delta * gravity_c * 2;
 		var motion = velocity * delta
 		move_and_collide(motion)
