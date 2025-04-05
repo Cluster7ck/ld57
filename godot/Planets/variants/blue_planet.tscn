@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blr1njbsd3214" path="res://Planets/PlanetSprites/planets_blue.png" id="2_x0sc4"]
 [ext_resource type="Texture2D" uid="uid://c4jy1olsydt3d" path="res://Planets/Overlays/SmollCloud.svg" id="3_x0sc4"]
 
-[node name="Planet" instance=ExtResource("1_181at")]
+[node name="Planet2" instance=ExtResource("1_181at")]
 
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_x0sc4")
@@ -12,5 +12,15 @@ texture = ExtResource("2_x0sc4")
 [node name="WiggleBig2" parent="Kreis" index="0"]
 texture = ExtResource("3_x0sc4")
 
-[node name="Planet-textureKrater" parent="Kreis" index="2"]
-visible = false
+[node name="lines" parent="Kreis" index="2"]
+scale = Vector2(1.36644, 1.36644)
+
+[node name="hills" parent="Kreis" index="3"]
+visible = true
+scale = Vector2(1.36644, 1.36644)
+
+[node name="rounds" parent="Kreis" index="4"]
+scale = Vector2(1.36644, 1.36644)
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "hills"

@@ -4,14 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://bv87t0m4c1yxc" path="res://Planets/PlanetSprites/planets_red.png" id="2_ghgyj"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="3_kddeo"]
 
-[node name="Planet" instance=ExtResource("1_reje7")]
+[node name="Planet2" instance=ExtResource("1_reje7")]
 
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_ghgyj")
 
 [node name="WiggleBig2" parent="Kreis" index="0"]
-visible = false
 texture = ExtResource("3_kddeo")
 
-[node name="WiggleBig" parent="Kreis" index="1"]
-visible = false
+[node name="lines" parent="Kreis" index="2"]
+scale = Vector2(1.36644, 1.36644)
+
+[node name="hills" parent="Kreis" index="3"]
+scale = Vector2(1.36644, 1.36644)
+
+[node name="rounds" parent="Kreis" index="4"]
+visible = true
+scale = Vector2(1.36644, 1.36644)
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "round-crater"
