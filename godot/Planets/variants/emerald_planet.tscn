@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkiiekkodufs"]
+
+[ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_pkf8u"]
+[ext_resource type="Texture2D" uid="uid://cn7bmyikip4jt" path="res://Planets/PlanetSprites/planets_emerald.png" id="2_gpryi"]
+
+[node name="Planet" instance=ExtResource("1_pkf8u")]
+
+[node name="Kreis" parent="." index="1"]
+texture = ExtResource("2_gpryi")
+
+[node name="WiggleBig2" parent="Kreis" index="0"]
+visible = true
+
+[node name="WiggleBig" parent="Kreis" index="1"]
+visible = true
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "Wiggle"
