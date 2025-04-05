@@ -9,7 +9,7 @@ var hasGravityCenter = false
 var gravityCenterPos: Vector2 = Vector2(0, 0)
 
 func _ready() -> void:
-	GravityEventManager.gravity_target.connect(on_new_gravity_center)
+	GameManager.gravity_target.connect(on_new_gravity_center)
 	pass
 	
 func on_new_gravity_center(gravity_center_pos):
