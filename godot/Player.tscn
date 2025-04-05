@@ -1,9 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=9 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+
+[sub_resource type="Shader" id="Shader_kne1u"]
+code = "shader_type canvas_item;
+
+uniform float speed = 0.08;
+uniform sampler2D texture_to_scroll;
+
+void fragment() {
+ float angle_rad = radians(0);
+ vec2 direction = vec2(cos(angle_rad), sin(angle_rad));
+ vec2 offset_uv = UV - (TIME * speed * direction);
+ float offset = fract(floor(offset_uv.y) * 0.5) > 0.0 ? 0.324 : 0.0;
+
+ offset_uv.x += offset;
+
+ vec2 scaled_uv = vec2(fract(offset_uv.x), fract(offset_uv.y));
+
+ vec2 texelSize = vec2(1.0) / vec2(textureSize(texture_to_scroll, 0));
+ vec2 snappedUV = round(scaled_uv / texelSize) * texelSize;
+
+ COLOR = texture(texture_to_scroll, snappedUV);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e80uo"]
+shader = SubResource("Shader_kne1u")
+shader_parameter/speed = -3.0
+shader_parameter/texture_to_scroll = ExtResource("2_kne1u")
+
+[sub_resource type="Curve" id="Curve_kne1u"]
+_data = [Vector2(0, 0.494382), 0.0, 0.505618, 0, 1, Vector2(1, 1), 0.505618, 0.0, 1, 0]
+point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
@@ -14,6 +47,18 @@ dampingFactor = 80
 shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_e80uo")
+width = 46.0
+width_curve = SubResource("Curve_kne1u")
+texture = ExtResource("2_kne1u")
+texture_mode = 1
+
+[node name="HoloLine2D" type="Line2D" parent="."]
+modulate = Color(1, 1, 1, 0.309804)
+width = 45.61
+texture = ExtResource("3_e80uo")
+texture_mode = 2
 
 [node name="Node2D" type="Node2D" parent="."]
 

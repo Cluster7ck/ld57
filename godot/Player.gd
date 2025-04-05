@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var line: Line2D = $Line2D
+@onready var hololine: Line2D = $HoloLine2D
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
@@ -27,6 +28,7 @@ func on_new_gravity_center(gravity_center_pos):
 	else:
 		hasGravityCenter = false
 		line.clear_points()
+		hololine.clear_points()
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -53,3 +55,6 @@ func _process(_delta) -> void:
 		line.clear_points()
 		line.add_point(gravityCenterPos - position)
 		line.add_point(Vector2(0, 0))
+		hololine.clear_points()
+		hololine.add_point(gravityCenterPos - position)
+		hololine.add_point(Vector2(0, 0))
