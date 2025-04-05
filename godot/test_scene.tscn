@@ -19,6 +19,6 @@ lookAheadMul = 500
 
 [node name="PlanetSpawner" type="Node" parent="."]
 script = ExtResource("5_2nij2")
-extents = 10000.0
-numPlanets = 1000
-minDist = 500.0
+extents = 20000.0
+numPlanets = 4000
+minDist = 2000.0
