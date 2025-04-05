@@ -3,7 +3,7 @@ extends Node
 @export var extents: float
 @export var numPlanets: int
 @export var minDist: float
-var planet =  preload("res://planet.tscn")
+var planet =  preload("res://Planets/planet.tscn")
 
 var points = []
 var rng = RandomNumberGenerator.new()

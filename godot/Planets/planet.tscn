@@ -114,12 +114,14 @@ scale = Vector2(0.855469, 0.855469)
 texture = ExtResource("2_d5osa")
 
 [node name="WiggleBig2" type="Sprite2D" parent="Kreis"]
+visible = false
 modulate = Color(1, 1, 1, 0.435294)
 position = Vector2(-136, 39)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("3_6ynlh")
 
 [node name="WiggleBig" type="Sprite2D" parent="Kreis"]
+visible = false
 modulate = Color(1, 1, 1, 0.321569)
 position = Vector2(-137, 7)
 scale = Vector2(1.32576, 1.32576)
