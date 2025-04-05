@@ -5,13 +5,21 @@ extends Node
 @export var minDistPlanets: float
 @export var minDistCollectibles: float
 @export var collectibleChance: float
-var planet =  preload("res://Planets/planet.tscn")
+
+var blue_planet = preload("res://Planets/variants/blue_planet.tscn")
+var red_planet = preload("res://Planets/variants/red_planet.tscn")
+var sea_planet = preload("res://Planets/variants/sea_planet.tscn")
 var collectible =  preload("res://Collectible.tscn")
 
+var planets = []
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	planets.append(blue_planet)
+	planets.append(red_planet)
+	planets.append(sea_planet)
+	
 	var planetPoints = []
 	var collectiblePoints = []
 	for i in range(numPlanets):
@@ -48,6 +56,7 @@ func _ready() -> void:
 		i += 1
 		
 	for p in planetPoints:
+		var planet = planets[floor(rng.randf_range(0, planets.size()))]
 		var instance = planet.instantiate()
 		instance.position = p
 		add_child(instance)
