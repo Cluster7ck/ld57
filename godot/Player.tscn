@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=5 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="3_kne1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 
@@ -22,3 +23,9 @@ z_index = 1
 rotation = 1.5708
 scale = Vector2(0.257813, 0.257813)
 texture = ExtResource("2_kpjcp")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+width = 48.0
+texture = ExtResource("3_kne1u")
+texture_mode = 1
