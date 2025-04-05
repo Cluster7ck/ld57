@@ -3,4 +3,4 @@ extends Area2D
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-				GravityEventManager.gravity_target.emit(position)
+				GameManager.gravity_target.emit(position)
