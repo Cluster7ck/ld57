@@ -49,5 +49,5 @@ func _physics_process(delta: float) -> void:
 func _process(_delta) -> void:
 	if hasGravityCenter:
 		line.clear_points()
-		line.add_point(gravityCenterPos - position)
 		line.add_point(Vector2(0, 0))
+		line.add_point(gravityCenterPos - position)
