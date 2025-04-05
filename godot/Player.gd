@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var line: Line2D = $Line2D
 @export var initialBoost = 600
 
 @export var DEFAULT_GRAVITY = 600.0
@@ -11,12 +12,10 @@ var hasGravityCenter = false
 var gravityCenterPos = Vector2(0, 0)
 
 func _ready() -> void:
-	print(dampingFactor)
 	GravityEventManager.gravity_target.connect(on_new_gravity_center)
 	pass
 
 func on_new_gravity_center(gravity_center_pos):
-	print(gravity_center_pos)
 	if gravity_center_pos:
 		gravityCenterPos = gravity_center_pos
 		hasGravityCenter = true
@@ -26,6 +25,7 @@ func on_new_gravity_center(gravity_center_pos):
 		#tween.tween_callback(self.queue_free)
 	else:
 		hasGravityCenter = false
+		line.clear_points()
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -36,7 +36,6 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if !hasGravityCenter:
-		
 		velocity = velocity.limit_length(velocity.length() * 0.999)
 		var motion = velocity * delta
 		move_and_collide(motion)
@@ -46,3 +45,9 @@ func _physics_process(delta: float) -> void:
 		velocity += gravityDirection * delta * gravity_c * 2;
 		var motion = velocity * delta
 		move_and_collide(motion)
+
+func _process(_delta) -> void:
+	if hasGravityCenter:
+		line.clear_points()
+		line.add_point(gravityCenterPos - position)
+		line.add_point(Vector2(0, 0))
