@@ -12,18 +12,19 @@ config_version=5
 
 config/name="ld57"
 run/main_scene="res://test_scene.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://GameManager.gd"
 Planets="*res://Planets/Planets.gd"
+GameManager="*res://GameManager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -58,4 +59,4 @@ right={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.00784314, 0.027451, 0.203922, 1)
+environment/defaults/default_clear_color=Color(0.0117647, 0.0235294, 0.0941176, 1)

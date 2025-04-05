@@ -1,12 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=23 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
-[ext_resource type="Texture2D" uid="uid://cdmn0tny4ixpm" path="res://Planets/Overlays/planets_Linien.png" id="4_6ynlh"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
+[ext_resource type="Texture2D" uid="uid://dpw77cs5aqls3" path="res://Planets/Overlays/SVGs/Planeten_Linien.svg" id="4_qj7hq"]
 [ext_resource type="Texture2D" uid="uid://dibnh5p7fsv3a" path="res://Planets/Overlays/planets_Huegel-rund.png" id="5_a2p7a"]
 [ext_resource type="Texture2D" uid="uid://cxv12qcga8432" path="res://Planets/Overlays/planets_Karter-rund.png" id="6_4ili8"]
+[ext_resource type="Texture2D" uid="uid://dlnttw4y6k5ra" path="res://Planets/Overlays/planets_dots.png" id="8_qj7hq"]
+[ext_resource type="Texture2D" uid="uid://cb2intoaetyom" path="res://Planets/Overlays/planets_curves.png" id="9_t65lr"]
+[ext_resource type="Texture2D" uid="uid://e1oc3uw4n7i4" path="res://Planets/Overlays/planets_triangel-2.png" id="10_5jmsf"]
+[ext_resource type="Texture2D" uid="uid://cc6udn47mkjhc" path="res://Planets/Overlays/planets_triangle-1.png" id="11_op64h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
 radius = 425.001
@@ -16,7 +20,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kreis/WiggleBig:position")
+tracks/0/path = NodePath("Kreis/WiggleBig2/WiggleBig:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,6 +89,54 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(-350, -17.748)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Kreis/dots:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-350, -8.183)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Kreis/curves:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-197.552, -8.183)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Kreis/triangle2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-350, -8.183)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Kreis/triangle1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_icnbx"]
 resource_name = "Wiggle"
@@ -93,7 +145,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kreis/WiggleBig:position")
+tracks/0/path = NodePath("Kreis/WiggleBig2/WiggleBig:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -183,19 +235,84 @@ tracks/0/keys = {
 "values": [Vector2(-350, -17.748), Vector2(606.685, -17.748)]
 }
 
+[sub_resource type="Animation" id="Animation_vldem"]
+resource_name = "dots"
+length = 11.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/dots:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-350, -8.183), Vector2(466.411, -8.183)]
+}
+
+[sub_resource type="Animation" id="Animation_qj7hq"]
+resource_name = "curves"
+length = 11.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/curves:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-259.507, -8.183), Vector2(557.589, -8.183)]
+}
+
+[sub_resource type="Animation" id="Animation_t65lr"]
+resource_name = "triangle"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/triangle2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-350, -8.183), Vector2(467.58, -8.183)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kreis/triangle1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.4, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-533.041, 0), Vector2(322.63, 0), Vector2(-533.041, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os8dk"]
 _data = {
 &"RESET": SubResource("Animation_ua4di"),
 &"Wiggle": SubResource("Animation_icnbx"),
+&"curves": SubResource("Animation_qj7hq"),
+&"dots": SubResource("Animation_vldem"),
 &"hills": SubResource("Animation_fk8v2"),
 &"krater": SubResource("Animation_6ynlh"),
 &"linien": SubResource("Animation_mfru2"),
-&"round-crater": SubResource("Animation_bvywh")
+&"round-crater": SubResource("Animation_bvywh"),
+&"triangle": SubResource("Animation_t65lr")
 }
 
 [node name="Planet" type="Area2D"]
 script = ExtResource("1_imu5u")
-metadata/_edit_vertical_guides_ = [204.0, -14.0, 177.0]
+metadata/_edit_vertical_guides_ = [204.0, -14.0, 177.0, 12.0, 130.0, -87.0, 101.0, 80.0]
 metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -214,18 +331,17 @@ position = Vector2(-136, 39)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("3_6ynlh")
 
-[node name="WiggleBig" type="Sprite2D" parent="Kreis"]
+[node name="WiggleBig" type="Sprite2D" parent="Kreis/WiggleBig2"]
 visible = false
 modulate = Color(1, 1, 1, 0.321569)
 position = Vector2(-137, 7)
-scale = Vector2(1.32576, 1.32576)
+scale = Vector2(1.13415, 1.13415)
 texture = ExtResource("3_6ynlh")
 
 [node name="lines" type="Sprite2D" parent="Kreis"]
-visible = false
 position = Vector2(-350, -17.748)
 scale = Vector2(1.36644, 1.36644)
-texture = ExtResource("4_6ynlh")
+texture = ExtResource("4_qj7hq")
 
 [node name="hills" type="Sprite2D" parent="Kreis"]
 visible = false
@@ -244,6 +360,29 @@ visible = false
 position = Vector2(-189.37, -8.18265)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("4_d5osa")
+
+[node name="dots" type="Sprite2D" parent="Kreis"]
+visible = false
+position = Vector2(-350, -8.183)
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("8_qj7hq")
+
+[node name="curves" type="Sprite2D" parent="Kreis"]
+visible = false
+position = Vector2(-197.552, -8.183)
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("9_t65lr")
+
+[node name="triangle1" type="Sprite2D" parent="Kreis"]
+visible = false
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("11_op64h")
+
+[node name="triangle2" type="Sprite2D" parent="Kreis"]
+visible = false
+position = Vector2(-350, -8.183)
+scale = Vector2(1.16895, 1.16895)
+texture = ExtResource("10_5jmsf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
