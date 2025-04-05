@@ -1,8 +1,9 @@
 extends Camera2D
 
-@export var target: Node = null
+@export var target: CharacterBody2D = null
 @export var speed = 600
 @export var focusPlanet = false
+@export var lookAheadMul = 10
 
 var hasGravityCenter = false
 var gravityCenterPos: Vector2 = Vector2(0, 0)
@@ -23,12 +24,12 @@ func on_new_gravity_center(gravity_center_pos):
 func _process(delta):
 	if focusPlanet:
 		if !hasGravityCenter and target:
-			position = target.position
+			position = target.position + target.velocity.normalized() * lookAheadMul
 	else:
 		if hasGravityCenter:
 			var dir = gravityCenterPos - target.position
 			dir = dir.limit_length(dir.length() * 0.5)
 			position = target.position + dir
 		else:
-			position = target.position
+			position = target.position + target.velocity.normalized() * lookAheadMul
 	

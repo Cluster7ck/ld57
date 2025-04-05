@@ -15,6 +15,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("4_coq8p")
 target = NodePath("../Player")
+lookAheadMul = 500
 
 [node name="PlanetSpawner" type="Node" parent="."]
 script = ExtResource("5_2nij2")
