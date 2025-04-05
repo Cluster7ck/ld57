@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg888pimsgwbr"]
+
+[ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="1_ovkeo"]
+
+[node name="Nebel" type="Node2D"]
+
+[node name="Blur" type="Sprite2D" parent="."]
+modulate = Color(0.024612, 0.207753, 0.440193, 1)
+position = Vector2(533, 521)
+scale = Vector2(1.23438, 0.574219)
+texture = ExtResource("1_ovkeo")
+
+[node name="Blur2" type="Sprite2D" parent="."]
+modulate = Color(0.089451, 0.390031, 0.774366, 1)
+position = Vector2(725, 585)
+scale = Vector2(1.52368, 0.329727)
+texture = ExtResource("1_ovkeo")
+
+[node name="Blur3" type="Sprite2D" parent="."]
+modulate = Color(0.0114014, 0.13605, 0.305134, 1)
+position = Vector2(798, 620)
+scale = Vector2(1.45832, 0.687387)
+texture = ExtResource("1_ovkeo")
