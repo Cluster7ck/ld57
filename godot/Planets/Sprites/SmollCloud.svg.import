@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtb1w7s7dydaw"
-path="res://.godot/imported/DemoTileset-Farben.png-b4dbfe3078f420961b687bebae37a0eb.ctex"
+uid="uid://c4jy1olsydt3d"
+path="res://.godot/imported/SmollCloud.svg-ad18ee809aee17a49e8da6745fd82041.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DemoTileset-Farben.png"
-dest_files=["res://.godot/imported/DemoTileset-Farben.png-b4dbfe3078f420961b687bebae37a0eb.ctex"]
+source_file="res://Planets/Sprites/SmollCloud.svg"
+dest_files=["res://.godot/imported/SmollCloud.svg-ad18ee809aee17a49e8da6745fd82041.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

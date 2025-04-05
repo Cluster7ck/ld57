@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c07xavjwq2oei" path="res://icon.svg" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="3_kne1u"]
 
@@ -15,7 +16,8 @@ dampingFactor = 80
 shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xhfnw")
+scale = Vector2(0.257813, 0.257813)
+texture = ExtResource("2_kpjcp")
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2

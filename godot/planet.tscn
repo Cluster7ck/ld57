@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byb844gh4nnl7"]
 
-[ext_resource type="Texture2D" uid="uid://c07xavjwq2oei" path="res://icon.svg" id="1_mtr83"]
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="2_a75xc"]
+[ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://assets/planets_orange.png" id="2_mtr83"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
 radius = 162.25
@@ -13,4 +13,4 @@ script = ExtResource("2_a75xc")
 shape = SubResource("CircleShape2D_mtr83")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mtr83")
+texture = ExtResource("2_mtr83")
