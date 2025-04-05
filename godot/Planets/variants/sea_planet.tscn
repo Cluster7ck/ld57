@@ -3,11 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_x0bft"]
 [ext_resource type="Texture2D" uid="uid://byw1vy1y2p3li" path="res://Planets/PlanetSprites/planets_ocean.png" id="2_nrvmc"]
 
-[node name="Planet" instance=ExtResource("1_x0bft")]
+[node name="Planet2" instance=ExtResource("1_x0bft")]
 rotation = -0.755728
 
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_nrvmc")
 
-[node name="Planet-textureKrater" parent="Kreis" index="2"]
-visible = false
+[node name="lines" parent="Kreis" index="2"]
+visible = true
+scale = Vector2(1.36644, 1.36644)
+
+[node name="hills" parent="Kreis" index="3"]
+scale = Vector2(1.36644, 1.36644)
+
+[node name="rounds" parent="Kreis" index="4"]
+scale = Vector2(1.36644, 1.36644)
