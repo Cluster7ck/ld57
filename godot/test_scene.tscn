@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgligukrdbouf"]
+[gd_scene load_steps=6 format=3 uid="uid://bgligukrdbouf"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://dqfahshlfndrr" path="res://Scenes/game_ui.tscn" id="4_2nij2"]
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
+[ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -35,3 +36,9 @@ numPlanets = 4000
 minDistPlanets = 2000.0
 minDistCollectibles = 800.0
 collectibleChance = 0.8
+
+[node name="NebelSpawner" type="Node" parent="."]
+script = ExtResource("5_7cbxl")
+extents = 10000.0
+minDistFog = 2000.0
+numFogs = 1000.0
