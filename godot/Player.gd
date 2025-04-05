@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var line: Line2D = $Line2D
+@onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
 @export var DEFAULT_GRAVITY = 600.0
