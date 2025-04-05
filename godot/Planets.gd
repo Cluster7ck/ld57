@@ -5,7 +5,7 @@ extends Node
 @export var minDist: float
 var planet =  preload("res://planet.tscn")
 
-var points: = [Vector2(1, 1)]
+var points = []
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.

@@ -1,7 +1,7 @@
-extends Sprite2D
+extends Area2D
 
-func _input(event):
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if is_pixel_opaque(get_local_mouse_position()):
+				print(position)
 				GravityEventManager.gravity_target.emit(position)
