@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=12 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
+[ext_resource type="Texture2D" uid="uid://cdmn0tny4ixpm" path="res://Planets/Overlays/planets_Linien.png" id="4_6ynlh"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
@@ -37,7 +38,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Kreis/Planet-textureKrater:position")
+tracks/2/path = NodePath("Kreis/Krater:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -45,6 +46,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-189.37, -8.18265)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Kreis/Linien:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-350, -17.748)]
 }
 
 [sub_resource type="Animation" id="Animation_icnbx"]
@@ -83,26 +96,45 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kreis/Planet-textureKrater:position")
+tracks/0/path = NodePath("Kreis/Krater:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-189.37, -8.18265), Vector2(147.288, -8.18265)]
+"values": [Vector2(-350, -8.183), Vector2(468.749, -8.18265)]
+}
+
+[sub_resource type="Animation" id="Animation_mfru2"]
+resource_name = "linien"
+length = 11.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kreis/Linien:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-350, -17.748), Vector2(607.854, -17.748)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os8dk"]
 _data = {
 &"RESET": SubResource("Animation_ua4di"),
 &"Wiggle": SubResource("Animation_icnbx"),
-&"krater": SubResource("Animation_6ynlh")
+&"krater": SubResource("Animation_6ynlh"),
+&"linien": SubResource("Animation_mfru2")
 }
 
 [node name="Planet" type="Area2D"]
 script = ExtResource("1_imu5u")
-metadata/_edit_vertical_guides_ = [204.0]
+metadata/_edit_vertical_guides_ = [204.0, -14.0]
+metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mtr83")
@@ -127,7 +159,13 @@ position = Vector2(-137, 7)
 scale = Vector2(1.32576, 1.32576)
 texture = ExtResource("3_6ynlh")
 
-[node name="Planet-textureKrater" type="Sprite2D" parent="Kreis"]
+[node name="Linien" type="Sprite2D" parent="Kreis"]
+position = Vector2(-350, -17.748)
+scale = Vector2(1.36644, 1.36644)
+texture = ExtResource("4_6ynlh")
+
+[node name="Krater" type="Sprite2D" parent="Kreis"]
+visible = false
 position = Vector2(-189.37, -8.18265)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("4_d5osa")
