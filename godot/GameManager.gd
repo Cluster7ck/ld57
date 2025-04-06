@@ -120,7 +120,7 @@ func _process(delta: float) -> void:
 			ship.energy = min(100, drain_rate * delta + ship.energy)
 			if didStuff:
 				var new_stage = goal_reached()
-				if new_stage > 0:
+				if new_stage > 0 and new_stage < goals.size():
 					for chem in Chem.values():
 						collectibles_on_earth[chem] = 0
 					gravity_center.do_earth_transform(new_stage)
