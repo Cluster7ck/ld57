@@ -42,3 +42,9 @@ script = ExtResource("5_7cbxl")
 extents = 10000.0
 minDistFog = 2000.0
 numFogs = 1000.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer"]
