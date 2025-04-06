@@ -1044,7 +1044,7 @@ scale = Vector2(1.33594, 1.33594)
 texture = ExtResource("2_40dsp")
 
 [node name="Amtosphere" type="Sprite2D" parent="."]
-modulate = Color(0.309804, 0.737255, 1, 0.392157)
+modulate = Color(0.309804, 0.737255, 1, 0)
 scale = Vector2(1.05449, 1.05449)
 texture = ExtResource("3_hajuy")
 

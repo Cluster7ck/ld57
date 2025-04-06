@@ -17,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_vldem"]
 script = ExtResource("2_op64h")
-h_amount = 100
+h_amount = 0
 o_amount = 0
 c_amount = 0
 n_amount = 0
