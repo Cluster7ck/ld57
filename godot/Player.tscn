@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=14 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
@@ -49,6 +49,18 @@ shader_parameter/alpha = 1.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
 
+[sub_resource type="Curve" id="Curve_tdg3f"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_dtqjt"]
+_data = [Vector2(0, 0.613348), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5ncpa"]
+colors = PackedColorArray(1, 0.945098, 0.898039, 1, 0, 1, 1, 1)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
 initialBoost = 200
@@ -96,3 +108,27 @@ preprocess = 1.0
 gravity = Vector2(0, 0)
 scale_amount_min = 0.1
 scale_amount_max = 0.1
+
+[node name="EarthDepositParticles2D" type="CPUParticles2D" parent="."]
+z_index = 4
+emitting = false
+amount = 340
+texture = ExtResource("5_cxr5p")
+preprocess = 1.0
+emission_shape = 1
+emission_sphere_radius = 102.21
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 202.1
+initial_velocity_max = 208.8
+linear_accel_min = 2.7
+linear_accel_max = 45.67
+damping_max = 17.22
+damping_curve = SubResource("Curve_tdg3f")
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_dtqjt")
+color_ramp = SubResource("Gradient_5ncpa")
+hue_variation_min = 0.36
+hue_variation_max = 1.0
