@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dus7cfiv5670n"]
+
+[ext_resource type="FontFile" uid="uid://td1g0q2p0jwa" path="res://assets/ui/ShareTechMono-Regular.ttf" id="1_1y6vj"]
+[ext_resource type="Texture2D" uid="uid://cld884nwyxnmq" path="res://assets/ui/panel.png" id="2_7j6vf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y6vj"]
+bg_color = Color(0.0176881, 0.665722, 0.812673, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw2rt"]
+texture = ExtResource("2_7j6vf")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+expand_margin_left = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 10.0
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_1y6vj")
+Label/colors/font_color = Color(0.827451, 0.839216, 0.960784, 1)
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_1y6vj")
+Panel/styles/panel = SubResource("StyleBoxTexture_bw2rt")

@@ -1,24 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqfahshlfndrr"]
+[gd_scene load_steps=3 format=3 uid="uid://dqfahshlfndrr"]
 
-[ext_resource type="FontFile" uid="uid://td1g0q2p0jwa" path="res://assets/ui/ShareTechMono-Regular.ttf" id="1_bw2rt"]
-[ext_resource type="Texture2D" uid="uid://cld884nwyxnmq" path="res://assets/ui/panel.png" id="1_gek4i"]
+[ext_resource type="Theme" uid="uid://dus7cfiv5670n" path="res://assets/ui/game_ui.tres" id="1_bw2rt"]
 [ext_resource type="Texture2D" uid="uid://cvkklsea5ah4j" path="res://assets/ui/battery Icon.png" id="3_xjnnq"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw2rt"]
-texture = ExtResource("1_gek4i")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 40.0
-texture_margin_bottom = 40.0
-expand_margin_left = 2.0
-expand_margin_right = 4.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="Theme" id="Theme_xjnnq"]
-Label/colors/font_color = Color(0.827451, 0.839216, 0.960784, 1)
-Label/font_sizes/font_size = 18
-Label/fonts/font = ExtResource("1_bw2rt")
-Panel/styles/panel = SubResource("StyleBoxTexture_bw2rt")
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -28,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = SubResource("Theme_xjnnq")
+theme = ExtResource("1_bw2rt")
 metadata/_edit_horizontal_guides_ = [56.0]
 
 [node name="UIObenRechts" type="Control" parent="."]
