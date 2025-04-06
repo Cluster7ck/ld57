@@ -8,26 +8,26 @@ extends CharacterBody2D
 @export var DEFAULT_GRAVITY = 600.0
 @export var PLANET_GRAVITY = 800.0
 @export var dampingFactor = 20
+@export var orbitPullSpeed = 100
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
-var hasGravityCenter = false
-var gravityCenterPos = Vector2(0, 0)
+var gravityCenter: GravityCenter = null
 
 func _ready() -> void:
 	GameManager.gravity_target.connect(on_new_gravity_center)
 	velocity = Vector2(100, 0)
+	GameManager.set_ship(self)
 	pass
 
 func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
-		gravityCenterPos = gravity_center.position
-		hasGravityCenter = true
-		velocity += (gravityCenterPos - position).normalized() * initialBoost
+		gravityCenter = gravity_center
+		velocity += (gravityCenter.position - position).normalized() * initialBoost
 		#var tween = get_tree().create_tween()
 		#tween.tween_property(self, gravity_c, PLANET_GRAVITY, 0.2)
 		#tween.tween_callback(self.queue_free)
 	else:
-		hasGravityCenter = false
+		gravityCenter = null
 		line.clear_points()
 		hololine.clear_points()
 	
@@ -39,23 +39,37 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if !hasGravityCenter:
-		velocity = velocity.limit_length(velocity.length() * 0.999)
+	if gravityCenter:
+		var dirToPlanet = gravityCenter.position - position
+		#if gravityCenter.name == "Erde":
+		#	var orbit = gravityCenter.get_real_size() + 300
+		#	var targetSpeed = sqrt(gravity_c * 2 * orbit)
+		#	var perp = Vector2(dirToPlanet.y, dirToPlanet.x).normalized()
+		#	# adjust velocity to be more perpendicular to the planet
+		#	velocity += perp * delta * orbitPullSpeed
+		#	velocity = velocity.limit_length(targetSpeed)
+		#	gravityDirection = (dirToPlanet).normalized()
+		#	velocity += gravityDirection * delta * gravity_c * 2;
+		#	var motion = velocity * delta
+		#	move_and_collide(motion)
+		#	
+		#else:
+		#print(dirToPlanet.length())
+		gravityDirection = (dirToPlanet).normalized()
+		velocity += gravityDirection * delta * gravity_c * 2;
 		var motion = velocity * delta
 		move_and_collide(motion)
 	else:
-		var dirToPlanet = gravityCenterPos - position
-		gravityDirection = (dirToPlanet).normalized()
-		velocity += gravityDirection * delta * gravity_c * 2;
+		velocity = velocity.limit_length(velocity.length() * 0.999)
 		var motion = velocity * delta
 		move_and_collide(motion)
 
 func _process(_delta) -> void:
 	sprite.look_at(position + velocity)
-	if hasGravityCenter:
+	if gravityCenter:
 		line.clear_points()
-		line.add_point(gravityCenterPos - position)
+		line.add_point(gravityCenter.position - position)
 		line.add_point(Vector2(0, 0))
 		hololine.clear_points()
-		hololine.add_point(gravityCenterPos - position)
+		hololine.add_point(gravityCenter.position - position)
 		hololine.add_point(Vector2(0, 0))
