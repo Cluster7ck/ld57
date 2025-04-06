@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=10 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
+[ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
 radius = 72.1734
@@ -68,3 +69,11 @@ z_index = 1
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kpjcp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 30
+texture = ExtResource("5_cxr5p")
+preprocess = 1.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
