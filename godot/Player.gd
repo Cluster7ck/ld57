@@ -15,6 +15,7 @@ var gravityCenterPos = Vector2(0, 0)
 
 func _ready() -> void:
 	GameManager.gravity_target.connect(on_new_gravity_center)
+	velocity = Vector2(100, 0)
 	pass
 
 func on_new_gravity_center(gravity_center_pos):

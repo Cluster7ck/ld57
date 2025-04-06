@@ -26,7 +26,7 @@ func on_new_gravity_center(gravity_center_pos):
 	else:
 		hasGravityCenter = false
 
-func _process(delta):
+func _process(_delta):
 	if focusPlanet:
 		if !hasGravityCenter and target:
 			#position = target.position + target.velocity.normalized() * lookAheadMul
