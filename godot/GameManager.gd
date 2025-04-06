@@ -67,6 +67,9 @@ func set_ship(the_ship: Player) -> void:
 	ship = the_ship
 		
 func _on_collectible(chemicals: CollectibleResource) -> void:
+	if chemicals.energy > 0:
+		ship.energy = min(100, ship.energy + chemicals.energy)
+		return
 	for i in chemicals.get_chems().keys():
 		if i in collectibles_on_ship:
 			collectibles_on_ship[i] += chemicals.chemicals[i]
