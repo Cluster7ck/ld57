@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkkiiekkodufs"]
+
+[ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_8olkm"]
+
+[node name="Planet" instance=ExtResource("1_8olkm")]
+
+[node name="WiggleBig2" parent="Kreis" index="0"]
+visible = true
+
+[node name="lines" parent="Kreis" index="1"]
+visible = false
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "Wiggle"
