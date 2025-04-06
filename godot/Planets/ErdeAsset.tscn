@@ -1,7 +1,7 @@
 [gd_scene load_steps=158 format=3 uid="uid://bkc4xp3sixe1u"]
 
 [ext_resource type="Texture2D" uid="uid://bv87t0m4c1yxc" path="res://Planets/PlanetSprites/planets_red.png" id="1_a5j07"]
-[ext_resource type="Script" uid="uid://c4lpa52vqc0ry" path="res://Planets/Earth.gd" id="1_b8bo6"]
+[ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_b8bo6"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="2_y8hv4"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_wrt1v"]
 [ext_resource type="Texture2D" uid="uid://bpr1b7nbyvqe6" path="res://Planets/Overlays/animationsheets/erdeanimation.png" id="11_mv71j"]

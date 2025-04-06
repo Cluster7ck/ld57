@@ -17,11 +17,11 @@ func _ready() -> void:
 	default_zoom = zoom
 	pass
 	
-func on_new_gravity_center(gravity_center_pos):
-	if gravity_center_pos:
+func on_new_gravity_center(gravity_center: GravityCenter):
+	if gravity_center:
 		if focusPlanet:
-			position = gravity_center_pos
-		gravityCenterPos = gravity_center_pos
+			position = gravity_center.position
+		gravityCenterPos = gravity_center.position
 		hasGravityCenter = true
 	else:
 		hasGravityCenter = false
