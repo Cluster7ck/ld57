@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
+radius = 72.1734
 
 [sub_resource type="Shader" id="Shader_kne1u"]
 code = "shader_type canvas_item;
@@ -44,7 +45,7 @@ initialBoost = 200
 dampingFactor = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kpjcp")
+shape = SubResource("CircleShape2D_e80uo")
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
@@ -65,5 +66,5 @@ texture_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 z_index = 1
 rotation = 1.5708
-scale = Vector2(0.257813, 0.257813)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kpjcp")

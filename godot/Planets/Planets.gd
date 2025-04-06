@@ -26,7 +26,7 @@ func _ready() -> void:
 			var chem_scene = ResourceLoader.load(path)
 			collectibles.append(chem_scene)
 	
-	var planetPoints = []
+	var planetPoints = [Vector2(0,0)]
 	var collectiblePoints = []
 	for i in range(numPlanets):
 		var x = rng.randf_range(-extents, extents)
@@ -60,11 +60,15 @@ func _ready() -> void:
 					planetPoints.pop_at(j)
 		i += 1
 		
-	for p in planetPoints:
-		var planet = planets[floor(rng.randf_range(0, planets.size()))]
-		var instance = planet.instantiate()
-		instance.position = p
-		add_child(instance)
+	for idx in range(0, planetPoints.size()):
+		var p = planetPoints[idx]
+		if idx == 0:
+			pass
+		else:
+			var planet = planets[floor(rng.randf_range(0, planets.size()))]
+			var instance = planet.instantiate()
+			instance.position = p
+			add_child(instance)
 		
 	for p in collectiblePoints:
 		var collectible = collectibles[floor(rng.randf_range(0, collectibles.size()))]
