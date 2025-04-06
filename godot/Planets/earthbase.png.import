@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qvgp2foetyko"
-path="res://.godot/imported/earthbase.png-f232f226632f61b47f485abdb256e3d0.ctex"
+path="res://.godot/imported/earthbase.png-7699775c278013636122ead19e928268.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Planets/PlanetSprites/earthbase.png"
-dest_files=["res://.godot/imported/earthbase.png-f232f226632f61b47f485abdb256e3d0.ctex"]
+source_file="res://Planets/earthbase.png"
+dest_files=["res://.godot/imported/earthbase.png-7699775c278013636122ead19e928268.ctex"]
 
 [params]
 
