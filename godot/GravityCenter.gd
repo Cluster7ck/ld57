@@ -34,6 +34,10 @@ func do_earth_transform(new_stage: int):
 		stage += 1
 		var tween = create_tween()
 		tween.tween_property(get_node(^"AnimatedSprite2D"), "modulate", Color.hex(0x6de3d1ff), 1)
+	if stage == new_stage - 1 and new_stage == 3:
+		stage += 1
+		var tween = create_tween()
+		tween.tween_property(get_node(^"Atmosphere"), "modulate", Color(79/255, 188/255, 255/255, 100/255), 1)
 		
 
 func get_real_size() -> float:

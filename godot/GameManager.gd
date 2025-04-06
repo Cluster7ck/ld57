@@ -15,18 +15,26 @@ var stage = 0
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 100,
-		Chem.ChemC: 100,
+		Chem.ChemO: 4,
+		Chem.ChemC: 2,
 		# H20
-		Chem.ChemH: 100,
+		Chem.ChemH: 8,
 		Chem.ChemN: 0,
 	},
 	{
 		# O2
-		Chem.ChemO: 300,
-		Chem.ChemC: 300,
+		Chem.ChemO: 4,
+		Chem.ChemC: 10,
 		# H20
-		Chem.ChemH: 300,
+		Chem.ChemH: 2,
+		Chem.ChemN: 0,
+	},
+	{
+		# O2
+		Chem.ChemO: 15,
+		Chem.ChemC: 2,
+		# H20
+		Chem.ChemH: 2,
 		Chem.ChemN: 0,
 	}
 ]
@@ -91,7 +99,7 @@ func goal_reached() -> int:
 	return stage
 			
 func _process(delta: float) -> void:
-	if ship.energy <= 0:
+	if ship and ship.energy <= 0:
 		print("dead as fuck")
 		pass
 	if attached_to_earth:
@@ -113,6 +121,8 @@ func _process(delta: float) -> void:
 			if didStuff:
 				var new_stage = goal_reached()
 				if new_stage > 0:
+					for chem in Chem.values():
+						collectibles_on_earth[chem] = 0
 					gravity_center.do_earth_transform(new_stage)
 
 			on_earth_collectibles.emit(collectibles_on_earth)

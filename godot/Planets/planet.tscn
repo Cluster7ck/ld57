@@ -21,6 +21,7 @@ h_amount = 100
 o_amount = 0
 c_amount = 0
 n_amount = 0
+energy = 0
 metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
