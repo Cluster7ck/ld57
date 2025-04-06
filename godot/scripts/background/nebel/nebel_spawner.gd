@@ -49,9 +49,15 @@ func _ready() -> void:
 		var instance = fog.instantiate()
 		instance.position = p
 		add_child(instance)
-		instance.scale = Vector2(rng.randf_range(2, 3), rng.randf_range(2, 3))
-
-
+		instance.scale = Vector2(rng.randf_range(2, 5), rng.randf_range(2, 5))
+		instance.rotation = randf_range(-90, 90)
+		
+		for c in get_children():
+			c.modulate = Color(c.modulate.r, c.modulate.g, c.modulate.b, randf_range(0.1, 0.4))
+			pass
+			
+		
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

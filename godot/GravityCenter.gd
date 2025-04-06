@@ -3,6 +3,7 @@ extends Area2D
 @onready var spriteParent: Node2D = $Kreis
 @onready var collisionShape: CollisionShape2D = $CollisionShape2D
 
+
 var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	rotation = rng.randf_range(0, TAU)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://copm4k5oy1n86"]
+
+[ext_resource type="PackedScene" uid="uid://fkeopbroi2uw" path="res://Collectibles/Collectible.tscn" id="1_onq7g"]
+[ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_sth21"]
+
+[sub_resource type="Resource" id="Resource_pycgb"]
+script = ExtResource("2_sth21")
+h_amount = 2
+o_amount = 1
+c_amount = 0
+n_amount = 0
+metadata/_custom_type_script = "uid://dqflb3pcrgatw"
+
+[node name="Collectible" instance=ExtResource("1_onq7g")]
+collectible_resource = SubResource("Resource_pycgb")
