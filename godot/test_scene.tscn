@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgligukrdbouf"]
+[gd_scene load_steps=8 format=3 uid="uid://byqqkyl4i26e7"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://dqfahshlfndrr" path="res://Scenes/game_ui.tscn" id="4_2nij2"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
-[ext_resource type="Script" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
+[ext_resource type="Script" uid="uid://eogqlge7mpkg" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3

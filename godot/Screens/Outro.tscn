@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://chs8co2218qjp"]
+
+[ext_resource type="Theme" uid="uid://c0ss7tfimdhva" path="res://assets/ui/game_ui.tres" id="1_4sspb"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4sspb")
+metadata/_edit_vertical_guides_ = [959.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -416.0
+offset_right = 679.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 122.0
+offset_right = 893.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 72
+text = "You did it!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 208.0
+offset_right = 824.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 34
+text = "You saved earth!"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 283.0
+offset_right = 813.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "You collected"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 432.0
+offset_right = 839.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "And it only took you"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 492.0
+offset_right = 814.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 54
+text = "05:12"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 558.0
+offset_right = 814.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 32
+text = "Lightyears"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 656.0
+offset_right = 795.0
+offset_bottom = 713.0
+text = "Fly Again"
