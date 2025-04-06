@@ -78,15 +78,21 @@ func _process(_delta) -> void:
 			earthTether.clear_points()
 			earthTether.add_point(gravityCenter.position - position)
 			earthTether.add_point(Vector2(0, 0))
-		if current_tractor_beam_length > tractor_beam_snap_range:
-			GameManager.gravity_target.emit(null)
+		#if current_tractor_beam_length > tractor_beam_snap_range:
+		#	GameManager.gravity_target.emit(null)
 		
 	## X-Loop
 	if position.x <= -30000 && velocity.x < 0 || position.x >= 30000 && velocity.x > 0:
 		position.x = position.x *-1
+		if velocity.length() < 800:
+			velocity *= 1000
+			velocity.limit_length(800)
 	## Y-Loop
 	if position.y <= -30000 && velocity.y < 0 || position.y >= 30000 && velocity.y > 0:
 		position.y = position.y *-1
+		if velocity.length() < 800:
+			velocity *= 1000
+			velocity.limit_length(800)
 		
 		
 	

@@ -7,7 +7,6 @@ const DEFAULT_SIZE = 222
 @onready var spriteParent: Node2D = $Kreis
 @onready var collisionShape: CollisionShape2D = $CollisionShape2D
 @onready var circleSprite: CanvasItem = $Kreis
-@onready var animatedSprite: CanvasItem = $AnimatedSprite2D
 @onready var blur: CanvasItem = $Blur
 
 var stage = 0
@@ -27,7 +26,6 @@ func _ready() -> void:
 		
 func do_earth_transform(new_stage: int):
 	if stage == new_stage - 1 and new_stage == 1:
-		print("Earth transform new_stage 1")
 		stage += 1
 		var tween = create_tween()
 		tween.tween_property(blur, "modulate", Color.hex(0x4395a1ff), 1)
@@ -35,8 +33,7 @@ func do_earth_transform(new_stage: int):
 	if stage == new_stage - 1 and new_stage == 2:
 		stage += 1
 		var tween = create_tween()
-		tween.tween_property(animatedSprite, "modulate", Color.hex(0x6de3d1ff), 1)
-		print("Earth transform stage 2")
+		tween.tween_property(get_node(^"AnimatedSprite2D"), "modulate", Color.hex(0x6de3d1ff), 1)
 		
 
 func get_real_size() -> float:
@@ -44,7 +41,7 @@ func get_real_size() -> float:
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and lastFrameEmit != Engine.get_frames_drawn() && position.distance_to(GameManager.ship.position) <= GameManager.ship.tractor_beam_range:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and lastFrameEmit != Engine.get_frames_drawn():
 			#print("emitting gravity target " + str(Engine.get_frames_drawn()) + ", " + str(get_instance_id()))
 			GameManager.gravity_target.emit(self)
 			lastFrameEmit = Engine.get_frames_drawn()

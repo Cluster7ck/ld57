@@ -73,7 +73,7 @@ func _on_collectible(chemicals: CollectibleResource) -> void:
 		else:
 			collectibles_on_ship[i] = chemicals.chemicals[i]
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if attached_to_earth:
 		var velocity = ship.velocity
 		ship.velocity = velocity.limit_length(velocity.length() * 0.99)
