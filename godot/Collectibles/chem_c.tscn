@@ -10,6 +10,7 @@ h_amount = 0
 o_amount = 0
 c_amount = 1
 n_amount = 0
+energy = 0
 metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [node name="Collectible2" instance=ExtResource("1_a4lqh")]
