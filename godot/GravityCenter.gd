@@ -6,7 +6,11 @@ const DEFAULT_SIZE = 222
 @export var drainFrom: bool = true
 @onready var spriteParent: Node2D = $Kreis
 @onready var collisionShape: CollisionShape2D = $CollisionShape2D
+@onready var circleSprite: CanvasItem = $Kreis
+@onready var animatedSprite: CanvasItem = $AnimatedSprite2D
+@onready var blur: CanvasItem = $Blur
 
+var stage = 0
 var lastFrameEmit = -1
 
 var rng = RandomNumberGenerator.new()
@@ -20,6 +24,23 @@ func _ready() -> void:
 		#collisionShape.shape.set_radius((collisionShape.shape.radius * randScale) + 200)
 	else:
 		apply_scale(Vector2(2.5, 2.5))
+		
+func do_earth_transform(new_stage: int):
+	if stage == 0 and new_stage == 1:
+		stage = 1
+		var tween = create_tween()
+		tween.tween_property(blur, "modulate", Color.hex(0x4395a1ff), 1)
+	if stage == 1 and new_stage == 2:
+		print("Earth transform new_stage 1")
+		stage = 2
+		var tween = create_tween()
+		tween.tween_property(circleSprite, "modulate", Color.hex(0x0084c2ff), 1)
+	if stage == 2 and new_stage == 3:
+		stage = 3
+		var tween = create_tween()
+		tween.tween_property(animatedSprite, "modulate", Color.hex(0x6de3d1ff), 1)
+		print("Earth transform stage 2")
+		
 
 func get_real_size() -> float:
 	return DEFAULT_SIZE * scale.x

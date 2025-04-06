@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddamqeo2d3nda"]
+
+[ext_resource type="PackedScene" uid="uid://bskeu2xepq3n6" path="res://Scenes/background/star/star.tscn" id="1_0mej0"]
+
+[node name="Star" instance=ExtResource("1_0mej0")]
+
+[node name="Star-Texture" parent="." index="0"]
+modulate = Color(0, 0.668423, 0.97122, 1)
