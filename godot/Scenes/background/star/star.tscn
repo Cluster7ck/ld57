@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bskeu2xepq3n6"]
+
+[ext_resource type="Texture2D" uid="uid://swgey7io5nnv" path="res://background/stars/star-4.png" id="1_ih7y6"]
+
+[node name="Star" type="Node2D"]
+z_index = -1
+
+[node name="Star-Texture" type="Sprite2D" parent="."]
+modulate = Color(0.309804, 0.807843, 0.0235294, 1)
+position = Vector2(717, 410)
+texture = ExtResource("1_ih7y6")

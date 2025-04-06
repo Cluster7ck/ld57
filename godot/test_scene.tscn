@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byqqkyl4i26e7"]
+[gd_scene load_steps=8 format=3 uid="uid://byqqkyl4i26e7"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://dqfahshlfndrr" path="res://Scenes/game_ui.tscn" id="4_2nij2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
+[ext_resource type="Script" uid="uid://eogqlge7mpkg" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -54,6 +55,13 @@ minDistFog = 2000.0
 numFogs = 1000.0
 nebel_parent = NodePath("../ParallaxBackground/ParallaxLayer Nebel")
 
+[node name="StarSpawner" type="Node" parent="." node_paths=PackedStringArray("star_parent")]
+script = ExtResource("7_8pr8v")
+extents = 20000.0
+minDistFog = 2000.0
+numFogs = 1000.0
+star_parent = NodePath("../ParallaxBackground/ParallaxLayer Star")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -65,3 +73,6 @@ one_shot = true
 
 [node name="ParallaxLayer Nebel" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 0.9)
+
+[node name="ParallaxLayer Star" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.95, 0.95)
