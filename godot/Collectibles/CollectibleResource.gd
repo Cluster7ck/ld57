@@ -5,6 +5,7 @@ class_name CollectibleResource
 @export var o_amount: int
 @export var c_amount: int
 @export var n_amount: int
+@export var energy: int = 0
 
 var chemicals = {}
 func get_chems() -> Dictionary:

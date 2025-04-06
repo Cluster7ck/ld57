@@ -6,10 +6,11 @@
 
 [sub_resource type="Resource" id="Resource_pycgb"]
 script = ExtResource("2_sth21")
-h_amount = 2
-o_amount = 1
+h_amount = 1
+o_amount = 0
 c_amount = 0
 n_amount = 0
+energy = 0
 metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [node name="Collectible" instance=ExtResource("1_onq7g")]

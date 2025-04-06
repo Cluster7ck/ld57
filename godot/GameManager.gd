@@ -67,6 +67,9 @@ func set_ship(the_ship: Player) -> void:
 	ship = the_ship
 		
 func _on_collectible(chemicals: CollectibleResource) -> void:
+	if chemicals.energy > 0:
+		ship.energy = min(100, ship.energy + chemicals.energy)
+		return
 	for i in chemicals.get_chems().keys():
 		if i in collectibles_on_ship:
 			collectibles_on_ship[i] += chemicals.chemicals[i]
@@ -88,6 +91,9 @@ func goal_reached() -> int:
 	return stage
 			
 func _process(delta: float) -> void:
+	if ship.energy <= 0:
+		print("dead as fuck")
+		pass
 	if attached_to_earth:
 		var dist = (gravity_center.position - ship.position).length()
 		if dist < gravity_center.get_real_size() + 1000:
@@ -103,6 +109,7 @@ func _process(delta: float) -> void:
 					collectibles_on_ship[i] -= drain
 					collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
 					#print(collectibles_on_earth)
+			ship.energy = min(100, drain_rate * delta + ship.energy)
 			if didStuff:
 				var new_stage = goal_reached()
 				if new_stage > 0:
