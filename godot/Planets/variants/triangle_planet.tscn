@@ -4,5 +4,11 @@
 
 [node name="Planet2" instance=ExtResource("1_pcp8b")]
 
+[node name="triangle1" parent="Kreis" index="7"]
+visible = true
+
+[node name="triangle2" parent="Kreis" index="8"]
+visible = true
+
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "triangle"
