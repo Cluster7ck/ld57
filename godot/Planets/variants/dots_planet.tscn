@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2n1j3avgxqu2"]
+[gd_scene load_steps=4 format=3 uid="uid://7w0ec4em4c6w"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_aladu"]
 [ext_resource type="Texture2D" uid="uid://blr1njbsd3214" path="res://Planets/PlanetSprites/planets_blue.png" id="2_2y0nn"]
@@ -9,17 +9,12 @@
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_2y0nn")
 
-[node name="WiggleBig2" parent="Kreis" index="0"]
+[node name="WiggleBig2" parent="Kreis" index="1"]
 texture = ExtResource("3_dj0q1")
 
-[node name="dots" parent="Kreis" index="5"]
+[node name="dots" parent="Kreis" index="6"]
 visible = true
-
-[node name="triangle1" parent="Kreis" index="7"]
-visible = false
-
-[node name="triangle2" parent="Kreis" index="8"]
-visible = false
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "dots"
+speed_scale = 0.5

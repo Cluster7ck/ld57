@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://c7oq7rg08hua2"]
+[gd_scene load_steps=154 format=3 uid="uid://c7oq7rg08hua2"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_b8bo6"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_40dsp"]
@@ -590,26 +590,6 @@ region = Rect2(5888, 1024, 256, 256)
 atlas = ExtResource("11_mv71j")
 region = Rect2(6144, 1024, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmu7s"]
-atlas = ExtResource("11_mv71j")
-region = Rect2(6400, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_soy4v"]
-atlas = ExtResource("11_mv71j")
-region = Rect2(6656, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tip5e"]
-atlas = ExtResource("11_mv71j")
-region = Rect2(6912, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgy1g"]
-atlas = ExtResource("11_mv71j")
-region = Rect2(7168, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6vnu"]
-atlas = ExtResource("11_mv71j")
-region = Rect2(7424, 1024, 256, 256)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_nd5v8"]
 animations = [{
 "frames": [{
@@ -1047,21 +1027,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vlgph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmu7s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_soy4v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tip5e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rgy1g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6vnu")
 }],
 "loop": true,
 "name": &"default",
@@ -1072,6 +1037,7 @@ animations = [{
 script = ExtResource("1_b8bo6")
 
 [node name="Blur" type="Sprite2D" parent="."]
+modulate = Color(0.961057, 0.410475, 3.85046e-07, 1)
 position = Vector2(-1, 0)
 scale = Vector2(1.33594, 1.33594)
 texture = ExtResource("2_40dsp")

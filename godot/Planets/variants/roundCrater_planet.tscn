@@ -522,13 +522,15 @@ animations = [{
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_ghgyj")
 
-[node name="WiggleBig2" parent="Kreis" index="0"]
+[node name="WiggleBig2" parent="Kreis" index="1"]
 texture = ExtResource("3_kddeo")
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "round-crater"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="3"]
+modulate = Color(0.0627451, 0.243137, 0.290196, 0.576471)
+self_modulate = Color(0, 0.642427, 0.642427, 0.54902)
 scale = Vector2(1.70313, 1.70313)
 sprite_frames = SubResource("SpriteFrames_mg0hw")
 autoplay = "default"
