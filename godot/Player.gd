@@ -4,6 +4,7 @@ class_name Player
 @onready var line: Line2D = $Line2D
 @onready var hololine: Line2D = $HoloLine2D
 @onready var earthTether: Line2D = $EarthTether
+@onready var earthDepositParticles: CPUParticles2D = $EarthDepositParticles2D
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
@@ -30,9 +31,6 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
-		#var tween = get_tree().create_tween()
-		#tween.tween_property(self, gravity_c, PLANET_GRAVITY, 0.2)
-		#tween.tween_callback(self.queue_free)
 	else:
 		gravityCenter = null
 		line.clear_points()
@@ -49,24 +47,8 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	if gravityCenter:
 		var dirToPlanet = gravityCenter.position - position
-		#if gravityCenter.name == "Erde":
-		#	var orbit = gravityCenter.get_real_size() + 300
-		#	var targetSpeed = sqrt(gravity_c * 2 * orbit)
-		#	var perp = Vector2(dirToPlanet.y, dirToPlanet.x).normalized()
-		#	# adjust velocity to be more perpendicular to the planet
-		#	velocity += perp * delta * orbitPullSpeed
-		#	velocity = velocity.limit_length(targetSpeed)
-		#	gravityDirection = (dirToPlanet).normalized()
-		#	velocity += gravityDirection * delta * gravity_c * 2;
-		#	var motion = velocity * delta
-		#	move_and_collide(motion)
-		#	
-		#else:
-		#print(dirToPlanet.length())
 		gravityDirection = (dirToPlanet).normalized()
-		print(gravityDirection)
 		velocity += gravityDirection * delta * gravity_c * 2;
-		print(velocity)
 		
 		var motion = velocity * delta
 		move_and_collide(motion)
