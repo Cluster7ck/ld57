@@ -18,9 +18,9 @@ func _ready() -> void:
 	velocity = Vector2(100, 0)
 	pass
 
-func on_new_gravity_center(gravity_center_pos):
-	if gravity_center_pos:
-		gravityCenterPos = gravity_center_pos
+func on_new_gravity_center(gravity_center: GravityCenter):
+	if gravity_center:
+		gravityCenterPos = gravity_center.position
 		hasGravityCenter = true
 		velocity += (gravityCenterPos - position).normalized() * initialBoost
 		#var tween = get_tree().create_tween()

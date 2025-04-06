@@ -6,6 +6,7 @@ extends Node
 @export var minDistCollectibles: float
 @export var collectibleChance: float
 
+var earthPrefab = preload("res://Planets/ErdeAsset.tscn")
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -63,6 +64,9 @@ func _ready() -> void:
 	for idx in range(0, planetPoints.size()):
 		var p = planetPoints[idx]
 		if idx == 0:
+			var instance = earthPrefab.instantiate()
+			instance.position = p
+			add_child(instance)
 			pass
 		else:
 			var planet = planets[floor(rng.randf_range(0, planets.size()))]
