@@ -4,15 +4,15 @@
 
 [node name="Nebel" instance=ExtResource("1_qketv")]
 
-[node name="Blur2" parent="." index="0"]
-modulate = Color(0.172549, 0.537255, 0.827451, 0.415686)
-position = Vector2(847, 540)
-scale = Vector2(1.14075, 0.246859)
-
-[node name="Blur" parent="." index="1"]
+[node name="Blur" parent="." index="0"]
 modulate = Color(0.230982, 0.165649, 0.510957, 1)
 position = Vector2(764, 489)
 scale = Vector2(0.949221, 0.574219)
+
+[node name="Blur2" parent="." index="1"]
+modulate = Color(0.172549, 0.537255, 0.827451, 0.415686)
+position = Vector2(847, 540)
+scale = Vector2(1.14075, 0.246859)
 
 [node name="Blur3" parent="." index="2"]
 modulate = Color(0.0731857, 0.339161, 0.296021, 1)

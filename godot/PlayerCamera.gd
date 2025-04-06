@@ -8,8 +8,13 @@ extends Camera2D
 var hasGravityCenter = false
 var gravityCenterPos: Vector2 = Vector2(0, 0)
 
+var default_zoom
+var max_vel = 1
+var zoom_scale
+
 func _ready() -> void:
 	GameManager.gravity_target.connect(on_new_gravity_center)
+	default_zoom = zoom
 	pass
 	
 func on_new_gravity_center(gravity_center_pos):
@@ -33,3 +38,12 @@ func _process(delta):
 		else:
 			position = target.position + target.velocity.normalized() * lookAheadMul
 	
+	#zoom_by_speed()
+
+
+func zoom_by_speed():
+	max_vel = max(max_vel, target.velocity.length())
+	var scale = max(abs(1-target.velocity.length()/max_vel), 0.2)
+	print("scale: ", scale)
+	zoom = default_zoom - Vector2(scale, scale)
+	pass

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="1_ovkeo"]
 
 [node name="Nebel" type="Node2D"]
+z_index = -2
 
 [node name="Blur" type="Sprite2D" parent="."]
 modulate = Color(0.024612, 0.207753, 0.440193, 1)

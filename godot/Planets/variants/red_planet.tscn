@@ -12,15 +12,8 @@ texture = ExtResource("2_ghgyj")
 [node name="WiggleBig2" parent="Kreis" index="0"]
 texture = ExtResource("3_kddeo")
 
-[node name="lines" parent="Kreis" index="2"]
-scale = Vector2(1.36644, 1.36644)
-
-[node name="hills" parent="Kreis" index="3"]
-scale = Vector2(1.36644, 1.36644)
-
-[node name="rounds" parent="Kreis" index="4"]
+[node name="rounds" parent="Kreis" index="3"]
 visible = true
-scale = Vector2(1.36644, 1.36644)
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "round-crater"

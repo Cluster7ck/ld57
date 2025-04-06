@@ -49,6 +49,7 @@ func _ready() -> void:
 		var instance = fog.instantiate()
 		instance.position = p
 		add_child(instance)
+		instance.scale = Vector2(rng.randf_range(2, 3), rng.randf_range(2, 3))
 
 
 

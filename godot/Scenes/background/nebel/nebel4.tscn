@@ -4,13 +4,13 @@
 
 [node name="Nebel" instance=ExtResource("1_qumr7")]
 
-[node name="Blur2" parent="." index="0"]
-position = Vector2(750, 557)
-scale = Vector2(1.8927, 0.409583)
-
-[node name="Blur" parent="." index="1"]
+[node name="Blur" parent="." index="0"]
 position = Vector2(603.499, 461)
 scale = Vector2(1.50977, 0.808594)
+
+[node name="Blur2" parent="." index="1"]
+position = Vector2(750, 557)
+scale = Vector2(1.8927, 0.409583)
 
 [node name="Blur3" parent="." index="2"]
 modulate = Color(0.2449, 0.79, 0.69915, 1)

@@ -26,8 +26,8 @@ zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("4_coq8p")
-lookAheadMul = 500
 target = NodePath("../Player")
+lookAheadMul = 1200
 
 [node name="PlanetSpawner" type="Node" parent="."]
 script = ExtResource("5_2nij2")

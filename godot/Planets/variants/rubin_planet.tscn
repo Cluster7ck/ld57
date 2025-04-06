@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtmt48tttba8h"]
+[gd_scene load_steps=3 format=3 uid="uid://df5lgxsscjl1p"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_8fy8x"]
 [ext_resource type="Texture2D" uid="uid://8dp68de3ipfo" path="res://Planets/PlanetSprites/planets_rubin.png" id="2_ndbe6"]
@@ -7,6 +7,3 @@
 
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_ndbe6")
-
-[node name="lines" parent="Kreis" index="2"]
-visible = true
