@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6mcruxbtqapg"
+path="res://.godot/imported/flblub 1.wav-67416a7bb6cf85253e7d98b26334f99e.sample"
+
+[deps]
+
+source_file="res://assets/audio_effects/flblub 1.wav"
+dest_files=["res://.godot/imported/flblub 1.wav-67416a7bb6cf85253e7d98b26334f99e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

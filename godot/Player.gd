@@ -78,6 +78,7 @@ func _process(delta) -> void:
 		var beam_alpha = 1-current_tractor_beam_length/tractor_beam_snap_range
 		hololine.modulate.a = hololine_default_alpha * beam_alpha
 		line.material.set_shader_parameter("alpha", beam_alpha*2)
+		line.material.set_shader_parameter("override_color", Vector3(1, energy/100, energy/100))
 		if gravityCenter.name == "Erde":
 			earthTether.clear_points()
 			earthTether.add_point(gravityCenter.position - position)
