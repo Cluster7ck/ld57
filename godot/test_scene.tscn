@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
-[ext_resource type="Script" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
+[ext_resource type="Script" uid="uid://eogqlge7mpkg" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
 
 [sub_resource type="Curve2D" id="Curve2D_buypi"]
 _data = {
