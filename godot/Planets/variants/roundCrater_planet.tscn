@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://ckkleuxqck1y6"]
+[gd_scene load_steps=78 format=3 uid="uid://n1dssdjiqmnx"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_reje7"]
 [ext_resource type="Texture2D" uid="uid://bv87t0m4c1yxc" path="res://Planets/PlanetSprites/planets_red.png" id="2_ghgyj"]
@@ -525,7 +525,10 @@ texture = ExtResource("2_ghgyj")
 [node name="WiggleBig2" parent="Kreis" index="0"]
 texture = ExtResource("3_kddeo")
 
-[node name="lines" parent="Kreis" index="1"]
+[node name="triangle1" parent="Kreis" index="7"]
+visible = false
+
+[node name="triangle2" parent="Kreis" index="8"]
 visible = false
 
 [node name="AnimationPlayer" parent="." index="2"]
