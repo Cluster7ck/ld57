@@ -10,7 +10,26 @@ signal on_ship_collectibles(collectibles: Dictionary)
 signal on_earth_collectibles(collectibles: Dictionary)
 
 
-var collectibles_on_ship = {}
+var collectibles_on_ship = { }
+var stage = 0
+var goals = [
+	{
+		# O2
+		Chem.ChemO: 100,
+		Chem.ChemC: 100,
+		# H20
+		Chem.ChemH: 100,
+		Chem.ChemN: 0,
+	},
+	{
+		# O2
+		Chem.ChemO: 300,
+		Chem.ChemC: 300,
+		# H20
+		Chem.ChemH: 300,
+		Chem.ChemN: 0,
+	}
+]
 var collectibles_on_earth = {}
 var attached_to_earth = false
 var gravity_center: GravityCenter = null
@@ -20,6 +39,7 @@ var ship: Player = null
 func _ready() -> void:
 	for chem in Chem.values():
 		collectibles_on_ship[chem] = 0
+		collectibles_on_earth[chem] = 0
 	on_collectible.connect(_on_collectible)
 	gravity_target.connect(_on_gravity_target)
 	
@@ -57,6 +77,15 @@ func _physics_process(delta: float) -> void:
 	if attached_to_earth:
 		var velocity = ship.velocity
 		ship.velocity = velocity.limit_length(velocity.length() * 0.99)
+		
+func goal_reached() -> int:
+	if stage >= goals.size():
+		return stage
+	for i in goals[stage].keys():
+		if collectibles_on_earth.get(i, 0) < goals[stage][i]:
+			return -1
+	stage += 1
+	return stage
 			
 func _process(delta: float) -> void:
 	if attached_to_earth:
@@ -75,10 +104,9 @@ func _process(delta: float) -> void:
 					collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
 					#print(collectibles_on_earth)
 			if didStuff:
-				if collectibles_on_earth.get(Chem.ChemH, 0) >= 30:
-					gravity_center.do_earth_transform(2)
-				elif collectibles_on_earth.get(Chem.ChemH, 0) >= 10:
-					gravity_center.do_earth_transform(1)
+				var new_stage = goal_reached()
+				if new_stage > 0:
+					gravity_center.do_earth_transform(new_stage)
 
 			on_earth_collectibles.emit(collectibles_on_earth)
 			on_ship_collectibles.emit(collectibles_on_ship)

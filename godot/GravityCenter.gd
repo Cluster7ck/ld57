@@ -26,17 +26,14 @@ func _ready() -> void:
 		apply_scale(Vector2(2.5, 2.5))
 		
 func do_earth_transform(new_stage: int):
-	if stage == 0 and new_stage == 1:
-		stage = 1
+	if stage == new_stage - 1 and new_stage == 1:
+		print("Earth transform new_stage 1")
+		stage += 1
 		var tween = create_tween()
 		tween.tween_property(blur, "modulate", Color.hex(0x4395a1ff), 1)
-	if stage == 1 and new_stage == 2:
-		print("Earth transform new_stage 1")
-		stage = 2
-		var tween = create_tween()
 		tween.tween_property(circleSprite, "modulate", Color.hex(0x0084c2ff), 1)
-	if stage == 2 and new_stage == 3:
-		stage = 3
+	if stage == new_stage - 1 and new_stage == 2:
+		stage += 1
 		var tween = create_tween()
 		tween.tween_property(animatedSprite, "modulate", Color.hex(0x6de3d1ff), 1)
 		print("Earth transform stage 2")

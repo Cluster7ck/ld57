@@ -18,27 +18,28 @@ func _ready() -> void:
 	pass
 	
 func on_new_gravity_center(gravity_center: GravityCenter):
-	if gravity_center:
-		if focusPlanet:
-			position = gravity_center.position
-		gravityCenterPos = gravity_center.position
-		hasGravityCenter = true
-	else:
-		hasGravityCenter = false
+	pass
+	#if gravity_center:
+	#	if focusPlanet:
+	#		position = gravity_center.position
+	#	gravityCenterPos = gravity_center.position
+	#	hasGravityCenter = true
+	#else:
+	#	hasGravityCenter = false
 
 func _process(_delta):
-	if focusPlanet:
-		if !hasGravityCenter and target:
-			position = target.position + target.velocity.normalized() * lookAheadMul
-			pass
-	else:
-		if hasGravityCenter:
-			var dir = gravityCenterPos - target.position
-			dir = dir.limit_length(dir.length() * 0.5)
-			position = target.position + dir.normalized()
-		else:
-			position = target.position + target.velocity.normalized() * lookAheadMul
-			pass
+	#if focusPlanet:
+	#	if !hasGravityCenter and target:
+	#		position = target.position + target.velocity.normalized() * lookAheadMul
+	#		pass
+	#else:
+	#if hasGravityCenter:
+	#	var dir = gravityCenterPos - target.position
+	#	dir = dir.limit_length(dir.length() * 0.5)
+	#	position = target.position + dir.normalized()
+	#else:
+	position = target.position #+ target.velocity.normalized() * lookAheadMul
+	pass
 	zoom_by_speed()
 
 
