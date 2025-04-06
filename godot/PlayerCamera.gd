@@ -29,20 +29,20 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 func _process(_delta):
 	if focusPlanet:
 		if !hasGravityCenter and target:
-			#position = target.position + target.velocity.normalized() * lookAheadMul
+			position = target.position + target.velocity.normalized() * lookAheadMul
 			pass
 	else:
 		if hasGravityCenter:
 			var dir = gravityCenterPos - target.position
 			dir = dir.limit_length(dir.length() * 0.5)
-			position = target.position + dir
-			zoom_by_speed()
+			position = target.position + dir.normalized()
 		else:
 			position = target.position + target.velocity.normalized() * lookAheadMul
-	
+			pass
+	zoom_by_speed()
 
 
 func zoom_by_speed():
-	var scale = min(1/max(target.velocity.length()/50, 0.01), 0.1)
-	zoom = default_zoom + Vector2(scale, scale)
+	var scale = target.velocity.length()/7500*0.2
+	zoom = default_zoom - Vector2(scale, scale)
 	pass

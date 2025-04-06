@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=11 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
+[ext_resource type="Material" uid="uid://cup4ng0i6gmta" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
@@ -37,8 +38,8 @@ shader_parameter/speed = -3.0
 shader_parameter/texture_to_scroll = ExtResource("2_kne1u")
 
 [sub_resource type="Curve" id="Curve_kne1u"]
-_data = [Vector2(0, 0.494382), 0.0, 0.505618, 0, 1, Vector2(1, 1), 0.505618, 0.0, 1, 0]
-point_count = 2
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
@@ -52,6 +53,14 @@ shape = SubResource("CircleShape2D_e80uo")
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e80uo")
 width = 46.0
+width_curve = SubResource("Curve_kne1u")
+texture = ExtResource("2_kne1u")
+texture_mode = 1
+
+[node name="EarthTether" type="Line2D" parent="."]
+texture_repeat = 2
+material = ExtResource("3_tdg3f")
+width = 800.0
 width_curve = SubResource("Curve_kne1u")
 texture = ExtResource("2_kne1u")
 texture_mode = 1
@@ -71,6 +80,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kpjcp")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 4
 amount = 30
 texture = ExtResource("5_cxr5p")
 preprocess = 1.0
