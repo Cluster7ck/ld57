@@ -82,4 +82,13 @@ func _process(_delta) -> void:
 			earthTether.clear_points()
 			earthTether.add_point(gravityCenter.position - position)
 			earthTether.add_point(Vector2(0, 0))
+		
+	## X-Loop
+	if position.x <= -30000 && velocity.x < 0 || position.x >= 30000 && velocity.x > 0:
+		position.x = position.x *-1
+	## Y-Loop
+	if position.y <= -30000 && velocity.y < 0 || position.y >= 30000 && velocity.y > 0:
+		position.y = position.y *-1
+		
+		
 	
