@@ -1,0 +1,256 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp6gkjk2757jw"]
+
+[ext_resource type="Theme" uid="uid://c0ss7tfimdhva" path="res://assets/ui/game_ui.tres" id="1_jev7y"]
+[ext_resource type="Texture2D" uid="uid://dhlv63m0lmbkd" path="res://assets/ui/circle-active.png" id="2_8ytrl"]
+[ext_resource type="Texture2D" uid="uid://qxv22cynchqj" path="res://assets/ui/circle-empty.png" id="3_uma4e"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jev7y")
+metadata/_edit_vertical_guides_ = [959.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -416.0
+offset_right = 679.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inro-1" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/Inro-1"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 109.0
+offset_right = 893.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 72
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Inro-1"]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 221.0
+offset_right = 880.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 34
+text = "You are our last hope!"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/Inro-1"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 529.0
+offset_right = 998.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 34
+text = "Earth has exhausted its resources. "
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/Inro-1"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 682.0
+offset_right = 795.0
+offset_bottom = 739.0
+text = "Next"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-1"]
+position = Vector2(630, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8ytrl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/Inro-1"]
+position = Vector2(661, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/Inro-1"]
+position = Vector2(724, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/Inro-1"]
+position = Vector2(693, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Inro-2" type="Control" parent="Panel"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/Inro-2"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 109.0
+offset_right = 893.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 72
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Inro-2"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 289.0
+offset_right = 1174.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 34
+text = "Collect enough resources and bring them back to Earth."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/Inro-2"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 682.0
+offset_right = 795.0
+offset_bottom = 739.0
+text = "Next"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(630, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(661, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8ytrl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(724, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(693, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Inro-3" type="Control" parent="Panel"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/Inro-3"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 109.0
+offset_right = 893.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 72
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Inro-3"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 252.0
+offset_right = 1189.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 34
+text = "Click on the planets to use their gravitational force to steer the rocket."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Panel/Inro-3"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 682.0
+offset_right = 795.0
+offset_bottom = 739.0
+text = "Next"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-3"]
+position = Vector2(630, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/Inro-3"]
+position = Vector2(661, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/Inro-3"]
+position = Vector2(724, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/Inro-3"]
+position = Vector2(693, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8ytrl")
+
+[node name="Inro-4" type="Control" parent="Panel"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/Inro-4"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 109.0
+offset_right = 893.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 72
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Inro-4"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 252.0
+offset_right = 1189.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 34
+text = "Regenerate energy from the suns to fly longer."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Panel/Inro-4"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 682.0
+offset_right = 795.0
+offset_bottom = 739.0
+text = "Next"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-4"]
+position = Vector2(630, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/Inro-4"]
+position = Vector2(661, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel/Inro-4"]
+position = Vector2(724, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8ytrl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/Inro-4"]
+position = Vector2(693, 624)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uma4e")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=154 format=3 uid="uid://c7oq7rg08hua2"]
+[gd_scene load_steps=155 format=3 uid="uid://c7oq7rg08hua2"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_b8bo6"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_40dsp"]
 [ext_resource type="Texture2D" uid="uid://qvgp2foetyko" path="res://Planets/earthbase.png" id="2_b8bo6"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="2_y8hv4"]
+[ext_resource type="Texture2D" uid="uid://tlq77wbynxq8" path="res://Planets/amtosphere.png" id="3_hajuy"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_wrt1v"]
 [ext_resource type="Texture2D" uid="uid://bpr1b7nbyvqe6" path="res://Planets/Overlays/animationsheets/erdeanimation.png" id="11_mv71j"]
 
@@ -1042,7 +1043,13 @@ position = Vector2(-1, 0)
 scale = Vector2(1.33594, 1.33594)
 texture = ExtResource("2_40dsp")
 
+[node name="Amtosphere" type="Sprite2D" parent="."]
+modulate = Color(0.309804, 0.737255, 1, 0.392157)
+scale = Vector2(1.05449, 1.05449)
+texture = ExtResource("3_hajuy")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_m568k")
 
 [node name="Kreis" type="Sprite2D" parent="."]
@@ -1069,7 +1076,7 @@ texture = ExtResource("3_wrt1v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.882631, 0.861453, 0.676233, 1)
 z_index = 1
-scale = Vector2(1.70313, 1.70313)
+scale = Vector2(1.74219, 1.74219)
 sprite_frames = SubResource("SpriteFrames_nd5v8")
 autoplay = "default"
 

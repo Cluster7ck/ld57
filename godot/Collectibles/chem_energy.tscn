@@ -9,7 +9,8 @@ script = ExtResource("2_tvwut")
 h_amount = 0
 o_amount = 0
 c_amount = 0
-n_amount = 1
+n_amount = 0
+energy = 5
 metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [node name="Collectible" instance=ExtResource("1_bnvye")]
