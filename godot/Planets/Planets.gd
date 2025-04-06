@@ -6,8 +6,6 @@ extends Node
 @export var minDistCollectibles: float
 @export var collectibleChance: float
 
-var collectible =  preload("res://Collectible.tscn")
-
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +17,14 @@ func _ready() -> void:
 			var path = planet_variants_path + planet
 			var planet_scene = ResourceLoader.load(path)
 			planets.append(planet_scene)
+			
+	var collectibles = []
+	var chem_varaints_path = "res://Collectibles/"
+	for chem in ResourceLoader.list_directory(chem_varaints_path):
+		if chem.begins_with("chem") and chem.ends_with(".tscn"):
+			var path = chem_varaints_path +  chem
+			var chem_scene = ResourceLoader.load(path)
+			collectibles.append(chem_scene)
 	
 	var planetPoints = []
 	var collectiblePoints = []
@@ -28,7 +34,6 @@ func _ready() -> void:
 		var point = Vector2(x, y)
 		planetPoints.append(point)
 		
-	var toRemove = []
 	var i = 0
 	while i < planetPoints.size():
 		var popped = 0
@@ -62,6 +67,7 @@ func _ready() -> void:
 		add_child(instance)
 		
 	for p in collectiblePoints:
+		var collectible = collectibles[floor(rng.randf_range(0, collectibles.size()))]
 		var instance = collectible.instantiate()
 		instance.position = p
 		add_child(instance)
