@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_pycgb"]
 script = ExtResource("2_sth21")
-h_amount = 2
+h_amount = 1
 o_amount = 1
 c_amount = 0
 n_amount = 0

@@ -14,11 +14,13 @@ class_name Player
 @export var orbitPullSpeed = 100
 @export var tractor_beam_range = 1000
 @export var tractor_beam_snap_range = 3500
+@export var energy_drain_rate = 1
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var gravityCenter: GravityCenter = null
 var hololine_default_alpha
 var current_tractor_beam_length = 0
+var energy = 100.0
 
 func _ready() -> void:
 	hololine_default_alpha = hololine.modulate.a
@@ -57,9 +59,11 @@ func _physics_process(delta: float) -> void:
 		var motion = velocity * delta
 		move_and_collide(motion)
 
-func _process(_delta) -> void:
+func _process(delta) -> void:
 	sprite.look_at(position + velocity)
 	if gravityCenter:
+		if gravityCenter.name != "Erde":
+			energy = max(0, energy - energy_drain_rate * delta)
 		if hololine.get_point_count() > 1:
 			current_tractor_beam_length = hololine.get_point_position(0).distance_to(hololine.get_point_position(1))
 		else:

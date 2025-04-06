@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqfahshlfndrr"]
+[gd_scene load_steps=8 format=3 uid="uid://dqfahshlfndrr"]
 
 [ext_resource type="FontFile" uid="uid://td1g0q2p0jwa" path="res://assets/ui/ShareTechMono-Regular.ttf" id="1_bw2rt"]
 [ext_resource type="Texture2D" uid="uid://cld884nwyxnmq" path="res://assets/ui/panel.png" id="1_gek4i"]
@@ -21,6 +21,10 @@ Label/font_sizes/font_size = 18
 Label/fonts/font = ExtResource("1_bw2rt")
 Panel/styles/panel = SubResource("StyleBoxTexture_bw2rt")
 
+[sub_resource type="Gradient" id="Gradient_x63ue"]
+offsets = PackedFloat32Array(0, 0.534351, 1)
+colors = PackedColorArray(0.0588235, 0.858824, 0.737255, 1, 0.561742, 0.934261, 0.877653, 1, 1, 1, 1, 1)
+
 [node name="GameUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -31,6 +35,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_xjnnq")
 script = ExtResource("3_x63ue")
+gradient = SubResource("Gradient_x63ue")
 metadata/_edit_horizontal_guides_ = [56.0]
 
 [node name="UIObenRechts" type="Control" parent="."]
