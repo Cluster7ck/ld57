@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
-[ext_resource type="Script" uid="uid://bbq6dofguopku" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
+[ext_resource type="Script" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
 [ext_resource type="Texture2D" uid="uid://dpw77cs5aqls3" path="res://Planets/Overlays/SVGs/Planeten_Linien.svg" id="4_qj7hq"]
 [ext_resource type="Texture2D" uid="uid://dibnh5p7fsv3a" path="res://Planets/Overlays/planets_Huegel-rund.png" id="5_a2p7a"]
@@ -272,7 +272,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_t65lr"]
 resource_name = "triangle"
-length = 11.0
+length = 8.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -280,7 +281,7 @@ tracks/0/path = NodePath("Kreis/triangle2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 11),
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-350, -8.183), Vector2(467.58, -8.183)]
@@ -292,10 +293,10 @@ tracks/1/path = NodePath("Kreis/triangle1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.4, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4, 4.01, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-533.041, 0), Vector2(322.63, 0), Vector2(-533.041, 0)]
+"values": [Vector2(-533.041, 0), Vector2(287.562, 0), Vector2(-533.041, 0), Vector2(287.562, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os8dk"]
@@ -311,7 +312,7 @@ _data = {
 &"triangle": SubResource("Animation_t65lr")
 }
 
-[node name="Planet" type="Area2D"]
+[node name="Planet2" type="Area2D"]
 script = ExtResource("1_imu5u")
 metadata/_edit_vertical_guides_ = [204.0, -14.0, 177.0, 12.0, 130.0, -87.0, 101.0, 80.0]
 metadata/_edit_horizontal_guides_ = [149.0]
@@ -341,6 +342,7 @@ scale = Vector2(1.13415, 1.13415)
 texture = ExtResource("3_6ynlh")
 
 [node name="lines" type="Sprite2D" parent="Kreis"]
+visible = false
 position = Vector2(-350, -17.748)
 scale = Vector2(1.36644, 1.36644)
 texture = ExtResource("4_qj7hq")
