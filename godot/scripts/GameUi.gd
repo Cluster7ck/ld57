@@ -14,8 +14,6 @@ func _on_ship_collectibles(collectibles: Dictionary) -> void:
 		if key == GameManager.Chem.ChemH:
 			h_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
 		elif key == GameManager.Chem.ChemO:
-			print(GameManager.stage)
-			print(GameManager.goals[GameManager.stage][key])
 			o_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
 		elif key == GameManager.Chem.ChemC:
 			c_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))

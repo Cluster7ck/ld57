@@ -11,4 +11,4 @@ func on_player_enter(_body: Node2D):
 		# todo - add animation
 		queue_free()
 	else:
-		print("What the fuck")
+		pass

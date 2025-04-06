@@ -84,9 +84,15 @@ func _process(_delta) -> void:
 	## X-Loop
 	if position.x <= -30000 && velocity.x < 0 || position.x >= 30000 && velocity.x > 0:
 		position.x = position.x *-1
+		if velocity.length() < 800:
+			velocity *= 1000
+			velocity.limit_length(800)
 	## Y-Loop
 	if position.y <= -30000 && velocity.y < 0 || position.y >= 30000 && velocity.y > 0:
 		position.y = position.y *-1
+		if velocity.length() < 800:
+			velocity *= 1000
+			velocity.limit_length(800)
 		
 		
 	
