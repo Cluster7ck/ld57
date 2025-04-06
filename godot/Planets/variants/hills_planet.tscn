@@ -3,7 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_8fy8x"]
 [ext_resource type="Texture2D" uid="uid://8dp68de3ipfo" path="res://Planets/PlanetSprites/planets_rubin.png" id="2_ndbe6"]
 
-[node name="Planet" instance=ExtResource("1_8fy8x")]
+[node name="Planet2" instance=ExtResource("1_8fy8x")]
 
 [node name="Kreis" parent="." index="1"]
 texture = ExtResource("2_ndbe6")
+
+[node name="hills" parent="Kreis" index="2"]
+visible = true
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "hills"
