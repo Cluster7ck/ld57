@@ -25,11 +25,10 @@ position = Vector2(1, -1)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(0.35, 0.35)
-position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("4_coq8p")
 target = NodePath("../Player")
-lookAheadMul = 2000
+lookAheadMul = 0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Camera2D"]
 amount = 200

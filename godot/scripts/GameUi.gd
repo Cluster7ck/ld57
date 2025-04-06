@@ -12,14 +12,19 @@ func _ready() -> void:
 func _on_ship_collectibles(collectibles: Dictionary) -> void:
 	for key in collectibles.keys():
 		if key == GameManager.Chem.ChemH:
-			h_label.text = str(int(floor(collectibles[key])))
+			h_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
 		elif key == GameManager.Chem.ChemO:
-			o_label.text = str(int(floor(collectibles[key])))
+			print(GameManager.stage)
+			print(GameManager.goals[GameManager.stage][key])
+			o_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
 		elif key == GameManager.Chem.ChemC:
-			c_label.text = str(int(floor(collectibles[key])))
+			c_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
 		elif key == GameManager.Chem.ChemN:
 			pass
 			# Handle Nitrogen if needed
+			
+func fmt(current, goal):
+	return str(int(floor(current))) + "/" + str(int(floor(goal)))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
