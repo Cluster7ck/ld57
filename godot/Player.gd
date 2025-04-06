@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var line: Line2D = $Line2D
 @onready var hololine: Line2D = $HoloLine2D
@@ -10,15 +11,20 @@ extends CharacterBody2D
 @export var PLANET_GRAVITY = 800.0
 @export var dampingFactor = 20
 @export var orbitPullSpeed = 100
+@export var tractor_beam_range = 1000
+@export var tractor_beam_snap_range = 3500
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var gravityCenter: GravityCenter = null
+var hololine_default_alpha
+var current_tractor_beam_length = 0
 
 func _ready() -> void:
+	hololine_default_alpha = hololine.modulate.a
 	GameManager.gravity_target.connect(on_new_gravity_center)
 	velocity = Vector2(100, 0)
 	GameManager.set_ship(self)
-	pass
+
 
 func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
@@ -72,16 +78,26 @@ func _physics_process(delta: float) -> void:
 func _process(_delta) -> void:
 	sprite.look_at(position + velocity)
 	if gravityCenter:
+		if hololine.get_point_count() > 1:
+			current_tractor_beam_length = hololine.get_point_position(0).distance_to(hololine.get_point_position(1))
+		else:
+			current_tractor_beam_length = 0
 		line.clear_points()
 		line.add_point(gravityCenter.position - position)
 		line.add_point(Vector2(0, 0))
 		hololine.clear_points()
 		hololine.add_point(gravityCenter.position - position)
 		hololine.add_point(Vector2(0, 0))
+		
+		var beam_alpha = 1-current_tractor_beam_length/tractor_beam_snap_range
+		hololine.modulate.a = hololine_default_alpha * beam_alpha
+		line.material.set_shader_parameter("alpha", beam_alpha*2)
 		if gravityCenter.name == "Erde":
 			earthTether.clear_points()
 			earthTether.add_point(gravityCenter.position - position)
 			earthTether.add_point(Vector2(0, 0))
+		if current_tractor_beam_length > tractor_beam_snap_range:
+			GameManager.gravity_target.emit(null)
 		
 	## X-Loop
 	if position.x <= -30000 && velocity.x < 0 || position.x >= 30000 && velocity.x > 0:

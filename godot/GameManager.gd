@@ -11,7 +11,7 @@ var collectibles_on_earth = {}
 var attached_to_earth = false
 var gravity_center: GravityCenter = null
 var drain_rate = 5
-var ship: Node2D
+var ship: Player
 
 func _ready() -> void:
 	for chem in Chem.values():
@@ -48,9 +48,10 @@ func _on_collectible(chemicals: CollectibleResource) -> void:
 			collectibles_on_ship[i] = chemicals.chemicals[i]
 
 func _physics_process(delta: float) -> void:
-	if attached_to_earth:
-		var velocity = ship.velocity
-		ship.velocity = velocity.limit_length(velocity.length() * 0.99)
+	pass
+	#if attached_to_earth:
+		#var velocity = ship.velocity
+		#ship.velocity = velocity.limit_length(velocity.length() * 0.99)
 			
 func _process(delta: float) -> void:
 	if attached_to_earth:
@@ -78,5 +79,4 @@ func _process(delta: float) -> void:
 						drain = collectibles[i]
 					collectibles[i] -= drain
 					collectibles_on_ship[i] = collectibles_on_ship.get(i, 0) + drain
-			#print(collectibles_on_ship)
 	pass

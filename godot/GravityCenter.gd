@@ -26,7 +26,7 @@ func get_real_size() -> float:
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and lastFrameEmit != Engine.get_frames_drawn():
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and lastFrameEmit != Engine.get_frames_drawn() && position.distance_to(GameManager.ship.position) <= GameManager.ship.tractor_beam_range:
 			#print("emitting gravity target " + str(Engine.get_frames_drawn()) + ", " + str(get_instance_id()))
 			GameManager.gravity_target.emit(self)
 			lastFrameEmit = Engine.get_frames_drawn()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
-[ext_resource type="Material" uid="uid://cup4ng0i6gmta" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
+[ext_resource type="Material" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
@@ -15,6 +15,8 @@ code = "shader_type canvas_item;
 
 uniform float speed = 0.08;
 uniform sampler2D texture_to_scroll;
+uniform vec3 color;
+uniform float alpha;
 
 void fragment() {
  float angle_rad = radians(0);
@@ -28,14 +30,20 @@ void fragment() {
 
  vec2 texelSize = vec2(1.0) / vec2(textureSize(texture_to_scroll, 0));
  vec2 snappedUV = round(scaled_uv / texelSize) * texelSize;
-
+ 
  COLOR = texture(texture_to_scroll, snappedUV);
+ COLOR.r = color.r;
+ COLOR.g = color.g;
+ COLOR.b = color.b;
+ COLOR.a = COLOR.a * alpha;
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e80uo"]
 shader = SubResource("Shader_kne1u")
-shader_parameter/speed = -3.0
+shader_parameter/speed = -3.5
 shader_parameter/texture_to_scroll = ExtResource("2_kne1u")
+shader_parameter/color = Vector3(1, 1, 1)
+shader_parameter/alpha = 1.0
 
 [sub_resource type="Curve" id="Curve_kne1u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
@@ -45,6 +53,7 @@ point_count = 1
 script = ExtResource("1_kpjcp")
 initialBoost = 200
 dampingFactor = 80
+tractor_beam_range = 2500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e80uo")
@@ -66,7 +75,7 @@ texture = ExtResource("2_kne1u")
 texture_mode = 1
 
 [node name="HoloLine2D" type="Line2D" parent="."]
-modulate = Color(1, 1, 1, 0.309804)
+modulate = Color(1, 1, 1, 0.67451)
 width = 45.61
 texture = ExtResource("3_e80uo")
 texture_mode = 2
