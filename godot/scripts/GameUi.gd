@@ -13,12 +13,21 @@ func _ready() -> void:
 
 func _on_ship_collectibles(collectibles: Dictionary) -> void:
 	for key in collectibles.keys():
+		var goals = {
+			GameManager.Chem.ChemC: 10000,
+			GameManager.Chem.ChemO: 10000,
+			GameManager.Chem.ChemH: 10000,
+			GameManager.Chem.ChemN: 10000,
+		}
+		if GameManager.stage <= 2:
+			goals = GameManager.goals[GameManager.stage]
+		
 		if key == GameManager.Chem.ChemH:
-			h_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
+			h_label.text = fmt(collectibles[key], max(0, goals[key]))
 		elif key == GameManager.Chem.ChemO:
-			o_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
+			o_label.text = fmt(collectibles[key], max(0, goals[key]))
 		elif key == GameManager.Chem.ChemC:
-			c_label.text = fmt(collectibles[key], max(0, GameManager.goals[GameManager.stage][key]-GameManager.collectibles_on_earth[key]))
+			c_label.text = fmt(collectibles[key], max(0, goals[key]))
 		elif key == GameManager.Chem.ChemN:
 			pass
 			# Handle Nitrogen if needed
