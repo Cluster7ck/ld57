@@ -64,9 +64,9 @@ func _physics_process(delta: float) -> void:
 		#else:
 		#print(dirToPlanet.length())
 		gravityDirection = (dirToPlanet).normalized()
-		print(gravityDirection)
+		#print(gravityDirection)
 		velocity += gravityDirection * delta * gravity_c * 2;
-		print(velocity)
+		#print(velocity)
 		
 		var motion = velocity * delta
 		move_and_collide(motion)

@@ -12,12 +12,20 @@ var attached_to_earth = false
 var gravity_center: GravityCenter = null
 var drain_rate = 5
 var ship: Player
-
+var ui_manager: UIManager
+var earth : Node2D:
+	set(value):
+		earth = value
+		
 func _ready() -> void:
 	for chem in Chem.values():
 		collectibles_on_ship[chem] = 0
 	on_collectible.connect(_on_collectible)
 	gravity_target.connect(_on_gravity_target)
+	ui_manager = get_tree().get_first_node_in_group("uimanager")
+	if ui_manager: 
+		ui_manager.earth = earth
+		ui_manager.ship = ship
 	
 func _on_gravity_target(target: GravityCenter) -> void:
 	if target and target.name == "Erde":
@@ -39,6 +47,8 @@ func _on_gravity_target(target: GravityCenter) -> void:
 		
 func set_ship(the_ship: Node2D) -> void:
 	ship = the_ship
+	if ui_manager:
+		ui_manager.ship = ship
 		
 func _on_collectible(chemicals: CollectibleResource) -> void:
 	for i in chemicals.get_chems().keys():
