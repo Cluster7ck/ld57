@@ -379,11 +379,13 @@ texture = ExtResource("9_t65lr")
 
 [node name="triangle1" type="Sprite2D" parent="Kreis"]
 visible = false
+modulate = Color(1, 1, 1, 0.482353)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("11_op64h")
 
 [node name="triangle2" type="Sprite2D" parent="Kreis"]
 visible = false
+modulate = Color(1, 1, 1, 0.435294)
 position = Vector2(-350, -8.183)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("10_5jmsf")
