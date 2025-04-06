@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
 [ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_op64h"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
-[ext_resource type="Script" uid="uid://bbq6dofguopku" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
+[ext_resource type="Script" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
 [ext_resource type="Texture2D" uid="uid://dpw77cs5aqls3" path="res://Planets/Overlays/SVGs/Planeten_Linien.svg" id="4_qj7hq"]
 [ext_resource type="Texture2D" uid="uid://dibnh5p7fsv3a" path="res://Planets/Overlays/planets_Huegel-rund.png" id="5_a2p7a"]

@@ -1069,6 +1069,6 @@ texture = ExtResource("3_wrt1v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.882631, 0.861453, 0.676233, 1)
 z_index = 1
-scale = Vector2(1.70313, 1.70313)
+scale = Vector2(1.74219, 1.74219)
 sprite_frames = SubResource("SpriteFrames_nd5v8")
 autoplay = "default"

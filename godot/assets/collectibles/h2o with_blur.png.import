@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gu4qurhednfc"
-path="res://.godot/imported/h2o with_blur(1).png-46588f8b712b6fed7bad06ea6b9994fd.ctex"
+uid="uid://dmmam16mxh57p"
+path="res://.godot/imported/h2o with_blur.png-7963e533537483c6949753e726aed124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/collectibles/h2o with_blur(1).png"
-dest_files=["res://.godot/imported/h2o with_blur(1).png-46588f8b712b6fed7bad06ea6b9994fd.ctex"]
+source_file="res://assets/collectibles/h2o with_blur.png"
+dest_files=["res://.godot/imported/h2o with_blur.png-7963e533537483c6949753e726aed124.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beorgwo27afxr"
-path="res://.godot/imported/h2o_plain(1).png-1717f75a8ed0a0185c23850cf02108d1.ctex"
+uid="uid://tlq77wbynxq8"
+path="res://.godot/imported/amtosphere.png-4e953ce326650cb2abc8000914036f74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/collectibles/h2o_plain(1).png"
-dest_files=["res://.godot/imported/h2o_plain(1).png-1717f75a8ed0a0185c23850cf02108d1.ctex"]
+source_file="res://Planets/amtosphere.png"
+dest_files=["res://.godot/imported/amtosphere.png-4e953ce326650cb2abc8000914036f74.ctex"]
 
 [params]
 
