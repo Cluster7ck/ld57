@@ -22,10 +22,7 @@ func _ready() -> void:
 		apply_scale(Vector2(2.5, 2.5))
 
 func get_real_size() -> float:
-	if name != "Erde":
-		return DEFAULT_SIZE * scale.x
-	else:
-		return DEFAULT_SIZE * 2.5
+	return DEFAULT_SIZE * scale.x
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:

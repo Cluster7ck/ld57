@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=27 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
-[ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
+[ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_op64h"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
 [ext_resource type="Script" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="4_d5osa"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://e1oc3uw4n7i4" path="res://Planets/Overlays/planets_triangel-2.png" id="10_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://cc6udn47mkjhc" path="res://Planets/Overlays/planets_triangle-1.png" id="11_op64h"]
 
-[sub_resource type="Resource" id="Resource_op64h"]
-script = ExtResource("2_5jmsf")
+[sub_resource type="Resource" id="Resource_vldem"]
+script = ExtResource("2_op64h")
 h_amount = 100
 o_amount = 0
 c_amount = 0
@@ -324,12 +324,11 @@ _data = {
 
 [node name="Planet2" type="Area2D"]
 script = ExtResource("1_imu5u")
-collectibles = SubResource("Resource_op64h")
+collectibles = SubResource("Resource_vldem")
 metadata/_edit_vertical_guides_ = [204.0, -14.0, 177.0, 12.0, 130.0, -87.0, 101.0, 80.0]
 metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_mtr83")
 
 [node name="Blur" type="Sprite2D" parent="."]

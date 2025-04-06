@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var line: Line2D = $Line2D
 @onready var hololine: Line2D = $HoloLine2D
+@onready var earthTether: Line2D = $EarthTether
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
@@ -29,6 +30,7 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 	else:
 		gravityCenter = null
 		line.clear_points()
+		earthTether.clear_points()
 		hololine.clear_points()
 	
 func _input(event):
@@ -56,7 +58,10 @@ func _physics_process(delta: float) -> void:
 		#else:
 		#print(dirToPlanet.length())
 		gravityDirection = (dirToPlanet).normalized()
+		print(gravityDirection)
 		velocity += gravityDirection * delta * gravity_c * 2;
+		print(velocity)
+		
 		var motion = velocity * delta
 		move_and_collide(motion)
 	else:
@@ -73,3 +78,8 @@ func _process(_delta) -> void:
 		hololine.clear_points()
 		hololine.add_point(gravityCenter.position - position)
 		hololine.add_point(Vector2(0, 0))
+		if gravityCenter.name == "Erde":
+			earthTether.clear_points()
+			earthTether.add_point(gravityCenter.position - position)
+			earthTether.add_point(Vector2(0, 0))
+	
