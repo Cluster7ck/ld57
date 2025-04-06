@@ -1,7 +1,8 @@
-[gd_scene load_steps=158 format=3 uid="uid://bkc4xp3sixe1u"]
+[gd_scene load_steps=159 format=3 uid="uid://c7oq7rg08hua2"]
 
-[ext_resource type="Texture2D" uid="uid://bv87t0m4c1yxc" path="res://Planets/PlanetSprites/planets_red.png" id="1_a5j07"]
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_b8bo6"]
+[ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_40dsp"]
+[ext_resource type="Texture2D" uid="uid://qvgp2foetyko" path="res://Planets/PlanetSprites/earthbase.png" id="2_b8bo6"]
 [ext_resource type="Texture2D" uid="uid://cgf60soyslq3x" path="res://Planets/Overlays/planet-texture_Krater.png" id="2_y8hv4"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_wrt1v"]
 [ext_resource type="Texture2D" uid="uid://bpr1b7nbyvqe6" path="res://Planets/Overlays/animationsheets/erdeanimation.png" id="11_mv71j"]
@@ -1070,14 +1071,21 @@ animations = [{
 [node name="Erde" type="Area2D"]
 script = ExtResource("1_b8bo6")
 
+[node name="Blur" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.33594, 1.33594)
+texture = ExtResource("2_40dsp")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_m568k")
 
 [node name="Kreis" type="Sprite2D" parent="."]
+modulate = Color(0.628938, 0.460681, 0.359992, 1)
 clip_children = 2
 position = Vector2(1, 1)
 scale = Vector2(0.855469, 0.855469)
-texture = ExtResource("1_a5j07")
+texture = ExtResource("2_b8bo6")
 
 [node name="WiggleBig2" type="Sprite2D" parent="Kreis"]
 visible = false
@@ -1094,7 +1102,7 @@ scale = Vector2(1.13415, 1.13415)
 texture = ExtResource("3_wrt1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.0156863, 1, 0.729412, 1)
+modulate = Color(0.882631, 0.861453, 0.676233, 1)
 z_index = 1
 scale = Vector2(1.70313, 1.70313)
 sprite_frames = SubResource("SpriteFrames_nd5v8")

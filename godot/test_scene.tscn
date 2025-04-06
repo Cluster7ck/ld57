@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgligukrdbouf"]
+[gd_scene load_steps=7 format=3 uid="uid://bgligukrdbouf"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://dqfahshlfndrr" path="res://Scenes/game_ui.tscn" id="4_2nij2"]
+[ext_resource type="Texture2D" uid="uid://2xpu5ekrrffe" path="res://background/stars/star-3.png" id="4_7cbxl"]
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
@@ -28,6 +29,15 @@ position_smoothing_speed = 2.0
 script = ExtResource("4_coq8p")
 target = NodePath("../Player")
 lookAheadMul = 2000
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Camera2D"]
+amount = 200
+texture = ExtResource("4_7cbxl")
+lifetime = 15.0
+preprocess = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(3000, 2500)
+gravity = Vector2(0, 0)
 
 [node name="PlanetSpawner" type="Node" parent="."]
 script = ExtResource("5_2nij2")
