@@ -17,7 +17,7 @@ func _ready() -> void:
 			var path = fog_variants_path + fog
 			var fog_scene = ResourceLoader.load(path)
 			fogs.append(fog_scene)
-	print("fog count: ", fogs.size())
+			
 	var fogPoints = []
 	for i in range(numFogs):
 		var x = rng.randf_range(-extents, extents)
