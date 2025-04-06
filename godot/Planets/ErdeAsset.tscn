@@ -1079,3 +1079,6 @@ z_index = 1
 scale = Vector2(1.74219, 1.74219)
 sprite_frames = SubResource("SpriteFrames_nd5v8")
 autoplay = "default"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-220, -220, 440, 440)

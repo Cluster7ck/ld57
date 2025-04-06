@@ -1,12 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://byqqkyl4i26e7"]
+[gd_scene load_steps=12 format=3 uid="uid://bgligukrdbouf"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://vovj6lw5mp4f" path="res://scripts/ui_manager.gd" id="2_buypi"]
+[ext_resource type="Texture2D" uid="uid://f2vkee1awq23" path="res://assets/arrow.svg" id="2_vr1i5"]
+[ext_resource type="Texture2D" uid="uid://buax8ixehj56m" path="res://assets/earthicon.svg" id="3_rpuu0"]
 [ext_resource type="PackedScene" uid="uid://dqfahshlfndrr" path="res://Scenes/game_ui.tscn" id="4_2nij2"]
 [ext_resource type="Texture2D" uid="uid://2xpu5ekrrffe" path="res://background/stars/star-3.png" id="4_7cbxl"]
 [ext_resource type="Script" uid="uid://bgg4td3nmd8dx" path="res://PlayerCamera.gd" id="4_coq8p"]
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
 [ext_resource type="Script" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
+
+[sub_resource type="Curve2D" id="Curve2D_buypi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 414, 254, 0, 0, 0, 0, 1138, 742)
+}
+point_count = 2
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -16,9 +25,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="UIManager" type="Node2D" parent="." node_paths=PackedStringArray("earth_indicator", "path2d", "path2dFollower") groups=["uimanager"]]
+script = ExtResource("2_buypi")
+earth_indicator = NodePath("Path2D/PathFollow2D/EarthIndicator")
+path2d = NodePath("Path2D")
+path2dFollower = NodePath("Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="UIManager"]
+curve = SubResource("Curve2D_buypi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="UIManager/Path2D"]
+position = Vector2(579.841, 365.782)
+rotation = 0.593085
+progress = 200.0
+
+[node name="EarthIndicator" type="Sprite2D" parent="UIManager/Path2D/PathFollow2D"]
+modulate = Color(1, 1, 1, 0.619608)
+z_index = 5
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vr1i5")
+
+[node name="EarthIndicator2" type="Sprite2D" parent="UIManager/Path2D/PathFollow2D/EarthIndicator"]
+z_index = 5
+texture = ExtResource("3_rpuu0")
+offset = Vector2(0, 139.675)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("4_2nij2")]
+theme = null
 
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(1, -1)

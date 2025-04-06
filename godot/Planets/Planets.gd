@@ -67,6 +67,8 @@ func _ready() -> void:
 			var instance = earthPrefab.instantiate()
 			instance.position = p
 			add_child(instance)
+			GameManager.earth = instance
+			
 			pass
 		else:
 			var planet = planets[floor(rng.randf_range(0, planets.size()))]
