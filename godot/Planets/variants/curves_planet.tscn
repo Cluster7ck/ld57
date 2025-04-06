@@ -1,17 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://4gn1q852msal"]
+[gd_scene load_steps=2 format=3 uid="uid://cdn0y4pshuq3t"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_nixfw"]
 
 [node name="Planet2" instance=ExtResource("1_nixfw")]
 
-[node name="curves" parent="Kreis" index="6"]
+[node name="curves" parent="Kreis" index="7"]
 visible = true
-
-[node name="triangle1" parent="Kreis" index="7"]
-visible = false
-
-[node name="triangle2" parent="Kreis" index="8"]
-visible = false
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "curves"

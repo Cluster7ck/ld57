@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvhf8ybso0d37"]
+[gd_scene load_steps=2 format=3 uid="uid://dl5b6wa04s4na"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_g0tac"]
 
 [node name="Planet2" instance=ExtResource("1_g0tac")]
 
-[node name="rounds" parent="Kreis" index="3"]
+[node name="lines" parent="Kreis" index="2"]
 visible = true
+modulate = Color(1, 1, 1, 0.427451)
 
-[node name="triangle1" parent="Kreis" index="7"]
-visible = false
-
-[node name="triangle2" parent="Kreis" index="8"]
-visible = false
+[node name="rounds" parent="Kreis" index="4"]
+visible = true
+modulate = Color(1, 1, 1, 0.34902)
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "round-crater"
+speed_scale = 0.2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://df5lgxsscjl1p"]
+[gd_scene load_steps=3 format=3 uid="uid://dtpix8enls0yh"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_8fy8x"]
 [ext_resource type="Texture2D" uid="uid://8dp68de3ipfo" path="res://Planets/PlanetSprites/planets_rubin.png" id="2_ndbe6"]
@@ -10,6 +10,9 @@ texture = ExtResource("2_ndbe6")
 
 [node name="hills" parent="Kreis" index="2"]
 visible = true
+modulate = Color(0.77, 0.77, 0.77, 1)
+self_modulate = Color(1, 1, 1, 0.341176)
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "hills"
+speed_scale = 0.1

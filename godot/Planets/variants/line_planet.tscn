@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b540xo5xmr2sk"]
+[gd_scene load_steps=3 format=3 uid="uid://ds6tkgmdasqs8"]
 
 [ext_resource type="PackedScene" uid="uid://byb844gh4nnl7" path="res://Planets/planet.tscn" id="1_x0bft"]
 [ext_resource type="Texture2D" uid="uid://byw1vy1y2p3li" path="res://Planets/PlanetSprites/planets_ocean.png" id="2_nrvmc"]
@@ -12,8 +12,5 @@ texture = ExtResource("2_nrvmc")
 [node name="lines" parent="Kreis" index="1"]
 visible = true
 
-[node name="triangle1" parent="Kreis" index="7"]
-visible = false
-
-[node name="triangle2" parent="Kreis" index="8"]
-visible = false
+[node name="AnimationPlayer" parent="." index="2"]
+speed_scale = 0.5

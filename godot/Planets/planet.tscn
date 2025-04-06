@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=26 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
+[ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_5jmsf"]
+[ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://be88bkwdutdj6" path="res://Planets/PlanetSprites/planets_orange.png" id="2_d5osa"]
 [ext_resource type="Texture2D" uid="uid://ccylqgb2cl0pf" path="res://Planets/Overlays/WiggleLong.svg" id="3_6ynlh"]
 [ext_resource type="Script" uid="uid://bbq6dofguopku" path="res://Planets/variants/RandomPlanetSpritePicker.gd" id="3_t65lr"]
@@ -13,15 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://e1oc3uw4n7i4" path="res://Planets/Overlays/planets_triangel-2.png" id="10_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://cc6udn47mkjhc" path="res://Planets/Overlays/planets_triangle-1.png" id="11_op64h"]
 
+[sub_resource type="Resource" id="Resource_op64h"]
+script = ExtResource("2_5jmsf")
+h_amount = 100
+o_amount = 0
+c_amount = 0
+n_amount = 0
+metadata/_custom_type_script = "uid://dqflb3pcrgatw"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
-radius = 425.001
+radius = 425.0
 
 [sub_resource type="Animation" id="Animation_ua4di"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kreis/WiggleBig2/WiggleBig:position")
+tracks/0/path = NodePath("Kreis/WiggleBig:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -146,7 +156,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kreis/WiggleBig2/WiggleBig:position")
+tracks/0/path = NodePath("Kreis/WiggleBig:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -314,11 +324,19 @@ _data = {
 
 [node name="Planet2" type="Area2D"]
 script = ExtResource("1_imu5u")
+collectibles = SubResource("Resource_op64h")
 metadata/_edit_vertical_guides_ = [204.0, -14.0, 177.0, 12.0, 130.0, -87.0, 101.0, 80.0]
 metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_mtr83")
+
+[node name="Blur" type="Sprite2D" parent="."]
+modulate = Color(0.10101, 0, 0.885977, 1)
+position = Vector2(-2, 0)
+scale = Vector2(1.60938, 1.60938)
+texture = ExtResource("2_5jmsf")
 
 [node name="Kreis" type="Sprite2D" parent="."]
 clip_children = 2
@@ -327,18 +345,18 @@ scale = Vector2(0.855469, 0.855469)
 texture = ExtResource("2_d5osa")
 script = ExtResource("3_t65lr")
 
+[node name="WiggleBig" type="Sprite2D" parent="Kreis"]
+visible = false
+modulate = Color(1, 1, 1, 0.321569)
+position = Vector2(-137, 7)
+scale = Vector2(1.32576, 1.32576)
+texture = ExtResource("3_6ynlh")
+
 [node name="WiggleBig2" type="Sprite2D" parent="Kreis"]
 visible = false
 modulate = Color(1, 1, 1, 0.435294)
 position = Vector2(-136, 39)
 scale = Vector2(1.16895, 1.16895)
-texture = ExtResource("3_6ynlh")
-
-[node name="WiggleBig" type="Sprite2D" parent="Kreis/WiggleBig2"]
-visible = false
-modulate = Color(1, 1, 1, 0.321569)
-position = Vector2(-137, 7)
-scale = Vector2(1.13415, 1.13415)
 texture = ExtResource("3_6ynlh")
 
 [node name="lines" type="Sprite2D" parent="Kreis"]
