@@ -56,8 +56,6 @@ func _ready() -> void:
 		for c in get_children():
 			c.modulate = Color(c.modulate.r, c.modulate.g, c.modulate.b, randf_range(0.1, 0.4))
 			pass
-			
-		
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
