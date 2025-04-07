@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7lgfe4vuiblv"]
+[gd_scene load_steps=6 format=3 uid="uid://7lgfe4vuiblv"]
 
 [ext_resource type="PackedScene" uid="uid://fkeopbroi2uw" path="res://Collectibles/Collectible.tscn" id="1_bnvye"]
 [ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_tvwut"]
 [ext_resource type="Texture2D" uid="uid://bbkxxrkylx3rw" path="res://assets/collectibles/energy with_blur.png" id="3_kcpg2"]
+[ext_resource type="AudioStream" uid="uid://cl7x3ekesrtu" path="res://assets/audio_effects/wasser1.wav" id="3_tvwut"]
 
 [sub_resource type="Resource" id="Resource_5770t"]
 script = ExtResource("2_tvwut")
@@ -15,6 +16,7 @@ metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [node name="Collectible" instance=ExtResource("1_bnvye")]
 collectible_resource = SubResource("Resource_5770t")
+on_pickup_audio_clip = ExtResource("3_tvwut")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_kcpg2")
