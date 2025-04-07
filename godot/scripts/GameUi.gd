@@ -24,7 +24,7 @@ func _ready() -> void:
 	txt_quest_sub.text = quest_texts.sub_text_quest_1
 	_on_ship_collectibles(GameManager.collectibles_on_ship)
 	help_button.pressed.connect(_on_help_button)
-	pass # Replace with function body.
+
 
 func _on_ship_collectibles(collectibles: Dictionary) -> void:
 	for key in collectibles.keys():
@@ -72,6 +72,9 @@ func _process(_delta: float) -> void:
 	if color_by_energy_level:
 		energy_label.label_settings.font_color = energy_gradient.sample(GameManager.ship.energy/100)
 	energy_label.text = str(int(floor(GameManager.ship.energy))) + "%"
+	if GameManager.is_goal_reached_ship():
+		txt_quest_sub.text = " - Return to Earth - "
+		pass
 
 func _on_help_button():
 	GameManager.ui_manager.open_intro()
