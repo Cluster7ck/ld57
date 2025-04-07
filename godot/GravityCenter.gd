@@ -11,8 +11,9 @@ const DEFAULT_SIZE = 222
 
 var stage = 0
 var lastFrameEmit = -1
-
 var rng = RandomNumberGenerator.new()
+
+
 func _ready() -> void:
 	if name != "Erde":
 		rotation = rng.randf_range(0, TAU)

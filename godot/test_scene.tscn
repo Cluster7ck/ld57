@@ -32,7 +32,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 script = ExtResource("2_buypi")
 intro_screen = NodePath("../CanvasLayer/Intro")
-outro_screen = NodePath("../CanvasLayer/Outro")
+outro_screen = NodePath("../CanvasLayer/Win Outro")
 gameOver_screen = NodePath("../CanvasLayer/Game Over")
 earth_indicator = NodePath("Path2D/PathFollow2D/EarthIndicator")
 path2d = NodePath("Path2D")
@@ -67,7 +67,7 @@ theme = null
 [node name="Intro" parent="CanvasLayer" instance=ExtResource("5_4gito")]
 z_index = 1
 
-[node name="Outro" parent="CanvasLayer" instance=ExtResource("6_4gito")]
+[node name="Win Outro" parent="CanvasLayer" instance=ExtResource("6_4gito")]
 visible = false
 
 [node name="Game Over" parent="CanvasLayer" instance=ExtResource("5_oo8pe")]

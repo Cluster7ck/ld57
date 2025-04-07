@@ -29,27 +29,38 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if earth_indicator.visible:
-		if path2d.curve.point_count < 2:
-			path2d.curve.add_point(ship.position)
-			path2d.curve.add_point(earth.position)
-		path2d.curve.set_point_position(0, ship.position)
-		path2d.curve.set_point_position(1, earth.position)
-		
-		path2dFollower.progress = compass_distance_to_ship
+	if GameManager.current_state == GameManagerClass.GameState.playing:
+		if earth_indicator.visible:
+			if path2d.curve.point_count < 2:
+				path2d.curve.add_point(ship.position)
+				path2d.curve.add_point(earth.position)
+			if !ship: ship = GameManager.ship
+			if !earth: earth = GameManager.earth
+			path2d.curve.set_point_position(0, ship.position)
+			path2d.curve.set_point_position(1, earth.position)
+			
+			path2dFollower.progress = compass_distance_to_ship
 
 
 func finish_intro():
 	intro_screen.visible = false
 	pass
 
+func gameOver():
+	## fancy game over sequence here
+	gameOver_screen.visible = true
+	pass
+
+func win():
+	## fancy win sequence here
+	outro_screen.visible = true
+	pass
+
 func _on_earth_leaves_viewport():
 	earth_indicator.visible = true
-	#print("leave")
 	pass
 
 func _on_earth_enters_viewport():
-	#print("enters")
 	earth_indicator.visible = false
 	pass
 
