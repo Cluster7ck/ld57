@@ -17,10 +17,10 @@ var stage = 0
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 4,
-		Chem.ChemC: 2,
+		Chem.ChemO: 1,
+		Chem.ChemC: 0,
 		# H20
-		Chem.ChemH: 8,
+		Chem.ChemH: 0,
 		Chem.ChemN: 0,
 	},
 	{
@@ -180,7 +180,7 @@ func _process(delta: float) -> void:
 				print("goal_depositing")
 				goal_depositing = true
 			if goal_depositing:
-				print("goal_depositing doing")
+				#print("goal_depositing doing")
 				var didStuff = false
 				for i in collectibles_on_ship.keys():
 					if collectibles_on_ship[i] > 0:
@@ -196,6 +196,7 @@ func _process(delta: float) -> void:
 				if didStuff:
 					var new_stage = goal_reached_inc_stage()
 					if new_stage > 0 and new_stage < goals.size():
+						print("goal_depositing_end")
 						goal_depositing = false
 						for chem in Chem.values():
 							collectibles_on_earth[chem] = 0
