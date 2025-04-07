@@ -4,5 +4,9 @@
 
 [node name="Planet2" instance=ExtResource("1_vwobn")]
 
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+
 [node name="wolken" parent="Kreis" index="10"]
 visible = true
+color = Color(0, 0, 0, 0.721569)
