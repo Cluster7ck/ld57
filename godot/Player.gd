@@ -29,6 +29,8 @@ var current_tractor_beam_length = 0
 var energy = 100.0
 const BEAM_AUDIO_EFFECT = preload("res://utilities/beam_audio_effect.tscn")
 
+var rng : RandomNumberGenerator = RandomNumberGenerator.new()
+
 func _ready() -> void:
 	hololine_default_alpha = hololine.modulate.a
 	velocity = Vector2(100, 0)
@@ -41,7 +43,9 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
+		audio_stream_player_2d.pitch_scale = rng.randf_range(0.97, 1.03)
 		audio_stream_player_2d.play(0.08)
+		
 	else:
 		gravityCenter = null
 		line.clear_points()
