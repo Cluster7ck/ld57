@@ -29,11 +29,10 @@ var energy = 100.0
 
 func _ready() -> void:
 	hololine_default_alpha = hololine.modulate.a
-	GameManager.gravity_target.connect(on_new_gravity_center)
 	velocity = Vector2(100, 0)
-	GameManager.set_ship(self)
-	
 	warp_fade_animation_player.animation_finished.connect(_on_fade_finished)
+	GameManager.gravity_target.connect(on_new_gravity_center)
+	GameManager.on_new_ship.emit(self)
 
 
 func on_new_gravity_center(gravity_center: GravityCenter):

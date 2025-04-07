@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=28 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_5jmsf"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2intoaetyom" path="res://Planets/Overlays/planets_curves.png" id="9_t65lr"]
 [ext_resource type="Texture2D" uid="uid://e1oc3uw4n7i4" path="res://Planets/Overlays/planets_triangel-2.png" id="10_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://cc6udn47mkjhc" path="res://Planets/Overlays/planets_triangle-1.png" id="11_op64h"]
+[ext_resource type="Texture2D" uid="uid://db0pxns44wgpx" path="res://assets/particlesprites/Element 15.svg" id="15_vldem"]
 
 [sub_resource type="Resource" id="Resource_vldem"]
 script = ExtResource("2_op64h")
@@ -407,6 +408,24 @@ modulate = Color(1, 1, 1, 0.435294)
 position = Vector2(-350, -8.183)
 scale = Vector2(1.16895, 1.16895)
 texture = ExtResource("10_5jmsf")
+
+[node name="wolken" type="CPUParticles2D" parent="Kreis"]
+visible = false
+z_index = -1
+position = Vector2(-1.16895, -1.16895)
+scale = Vector2(1.16895, 1.16895)
+amount = 50
+texture = ExtResource("15_vldem")
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+scale_amount_max = 5.0
+color = Color(0.0966791, 0.40801, 0.417512, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -67,7 +67,7 @@ func _ready() -> void:
 			var instance = earthPrefab.instantiate()
 			instance.position = p
 			add_child(instance)
-			GameManager.earth = instance
+			GameManager.on_new_earth.emit(instance as Node2D)
 			
 			pass
 		else:

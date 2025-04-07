@@ -8,6 +8,8 @@ signal on_collectible(chemicals: CollectibleResource)
 
 signal on_ship_collectibles(collectibles: Dictionary)
 signal on_earth_collectibles(collectibles: Dictionary)
+signal on_new_earth(new_earth: Node2D)
+signal on_new_ship(new_ship: Player)
 
 
 var collectibles_on_ship = { }
@@ -47,14 +49,14 @@ var total_collectible_count: int = 0:
 			count += total_collectibles_collected[i]
 		return count
 var attached_to_earth = false
+var goal_depositing = false
 var gravity_center: GravityCenter = null
 var drain_rate = 5
+var energy_load_rate = 20;
 var ship: Player
 var ui_manager: UIManager
 var time_in_game: float
-var earth : Node2D:
-	set(value):
-		earth = value
+var earth: Node2D
 		
 enum GameState {playing, pause, win, lose}
 var current_state : GameState = GameState.pause
@@ -68,10 +70,9 @@ func _ready() -> void:
 		on_collectible.connect(_on_collectible)
 	if !gravity_target.is_connected(_on_gravity_target):
 		gravity_target.connect(_on_gravity_target)
-	ui_manager = get_tree().get_first_node_in_group("uimanager")
-	if ui_manager: 
-		ui_manager.earth = earth
-		ui_manager.ship = ship
+	on_new_ship.connect(set_ship)
+	on_new_earth.connect(set_earth)
+	
 	
 func _on_gravity_target(target: GravityCenter) -> void:
 	if target and target.name == "Erde":
@@ -102,8 +103,9 @@ func restart_game():
 
 func set_ship(the_ship: Player) -> void:
 	ship = the_ship
-	if ui_manager:
-		ui_manager.ship = ship
+	
+func set_earth(the_earth: Node2D) -> void:
+	earth = the_earth
 		
 func _on_collectible(chemicals: CollectibleResource) -> void:
 	if chemicals.energy > 0:
@@ -126,16 +128,23 @@ func _physics_process(_delta: float) -> void:
 		var velocity = ship.velocity
 		ship.velocity = velocity.limit_length(velocity.length() * 0.99)
 		
-func goal_reached() -> int:
+func goal_reached_inc_stage() -> int:
 	if stage >= goals.size():
 		current_state = GameState.win
 		ui_manager.win()
 		return stage
+		
 	for i in goals[stage].keys():
 		if collectibles_on_earth.get(i, 0) < goals[stage][i]:
 			return -1
 	stage += 1
 	return stage
+	
+func is_goal_reached_ship() -> bool:
+	for i in goals[stage].keys():
+		if collectibles_on_ship.get(i, 0) < goals[stage][i]:
+			return false
+	return true
 			
 func _process(delta: float) -> void:
 	if current_state == GameState.playing:
@@ -148,30 +157,35 @@ func _process(delta: float) -> void:
 		else:
 			## turbo shitty, aber irgendwie fixt es das problem
 			ui_manager = get_tree().get_first_node_in_group("uimanager")
-			return
 		pass
 	if attached_to_earth:
 		var dist = (gravity_center.position - ship.position).length()
 		if dist < gravity_center.get_real_size() + 1000:
-			var didStuff = false
-			for i in collectibles_on_ship.keys():
-				if collectibles_on_ship[i] > 0:
-					didStuff = true
-					ship.earthDepositParticles.emitting = true
-					# drain at rate of 5 per second
-					var drain = drain_rate * delta
-					if (collectibles_on_ship[i] - drain) < 0:
-						drain = collectibles_on_ship[i]
-					collectibles_on_ship[i] -= drain
-					collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
-					#print(collectibles_on_earth)
-			ship.energy = min(100, drain_rate * delta + ship.energy)
-			if didStuff:
-				var new_stage = goal_reached()
-				if new_stage > 0 and new_stage < goals.size():
-					for chem in Chem.values():
-						collectibles_on_earth[chem] = 0
-					gravity_center.do_earth_transform(new_stage)
+			ship.energy = min(100, energy_load_rate * delta + ship.energy)
+			if is_goal_reached_ship():
+				print("goal_depositing")
+				goal_depositing = true
+			if goal_depositing:
+				print("goal_depositing doing")
+				var didStuff = false
+				for i in collectibles_on_ship.keys():
+					if collectibles_on_ship[i] > 0:
+						didStuff = true
+						ship.earthDepositParticles.emitting = true
+						# drain at rate of 5 per second
+						var drain = drain_rate * delta
+						if (collectibles_on_ship[i] - drain) < 0:
+							drain = collectibles_on_ship[i]
+						collectibles_on_ship[i] -= drain
+						collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
+						#print(collectibles_on_earth)
+				if didStuff:
+					var new_stage = goal_reached_inc_stage()
+					if new_stage > 0 and new_stage < goals.size():
+						goal_depositing = false
+						for chem in Chem.values():
+							collectibles_on_earth[chem] = 0
+						gravity_center.do_earth_transform(new_stage)
 
 			on_earth_collectibles.emit(collectibles_on_earth)
 			on_ship_collectibles.emit(collectibles_on_ship)
@@ -207,9 +221,3 @@ func reset_values():
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
-	
-	ui_manager = get_tree().get_first_node_in_group("uimanager")
-	if ui_manager: 
-		ui_manager.earth = earth
-		ui_manager.ship = ship
-	pass
