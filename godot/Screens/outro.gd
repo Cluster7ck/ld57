@@ -17,14 +17,14 @@ func set_values():
 	var minutes_string: String = ""
 	m = floor(GameManager.time_in_game /60)
 	if m < 10:
-		minutes_string = " "
+		minutes_string = "0"
 	minutes_string += str(m)
 	
 	var s: int = 0
 	var seconds_string: String = ""
 	s = fmod(floor(GameManager.time_in_game), 60)
 	if s < 10:
-		seconds_string = " "
+		seconds_string = "0"
 	seconds_string += str(s)
 	
 	txt_timecont.text = minutes_string + ":" + seconds_string
