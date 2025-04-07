@@ -10,6 +10,7 @@ extends Node2D
 @export var path2dFollower: PathFollow2D
 @export var compass_distance_to_ship: int = 200
 @export var warp_fade_animation_player: AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var earth: Node2D
 var ship: Node2D
@@ -45,6 +46,10 @@ func _process(_delta: float) -> void:
 				return
 			path2d.curve.set_point_position(0, ship.position)
 			path2d.curve.set_point_position(1, earth.position)
+			if GameManager.is_goal_reached_ship() && !animation_player.is_playing():
+				animation_player.play("arrow_pulsating")
+			elif !GameManager.is_goal_reached_ship():
+				animation_player.stop()
 			path2dFollower.progress = compass_distance_to_ship
 
 

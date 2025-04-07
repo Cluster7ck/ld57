@@ -1081,5 +1081,4 @@ sprite_frames = SubResource("SpriteFrames_nd5v8")
 autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-visible = false
 rect = Rect2(-220, -220, 440, 440)

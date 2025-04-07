@@ -6,7 +6,7 @@ class_name Player
 @onready var earthTether: Line2D = $EarthTether
 @onready var earthDepositParticles: CPUParticles2D = $EarthDepositParticles2D
 @onready var sprite: Node2D = $Node2D
-@export var initialBoost = 600
+@export var initialBoost = 100
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var warp_fade_animation_player: AnimationPlayer = $"../CanvasLayer/Warp Fade/AnimationPlayer"
 

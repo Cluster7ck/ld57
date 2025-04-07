@@ -4,6 +4,7 @@ class_name GameManagerClass
 enum Chem { ChemO, ChemH, ChemC, ChemN }
 
 signal gravity_target(target: GravityCenter)
+signal stage_changed(stage: int)
 signal on_collectible(collectible: Collectible)
 
 signal on_ship_collectibles(collectibles: Dictionary)
@@ -11,8 +12,13 @@ signal on_earth_collectibles(collectibles: Dictionary)
 signal on_new_earth(new_earth: Node2D)
 signal on_new_ship(new_ship: Player)
 
+
+
 var collectibles_on_ship = { }
-var stage = 0
+var stage = 0:
+	set(value):
+		stage = value
+		stage_changed.emit(stage)
 var goals = [
 	{
 		# O2
