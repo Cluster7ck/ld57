@@ -45,7 +45,7 @@ btn3 = NodePath("Panel/Inro-3/Button")
 btn4 = NodePath("Panel/Inro-4/Button")
 panel_parent = NodePath("Panel")
 metadata/_edit_vertical_guides_ = [959.0, 764.0]
-metadata/_edit_horizontal_guides_ = [553.0, 322.0]
+metadata/_edit_horizontal_guides_ = [553.0, 322.0, 1040.0]
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -55,6 +55,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uma4e")
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -45.0
+offset_right = 908.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.588235)
+theme_override_font_sizes/font_size = 22
+text = "Ludum Dare 57"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -914.0
+offset_top = -45.0
+offset_right = -35.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.588235)
+theme_override_font_sizes/font_size = 22
+text = "A game by Robin Schmitz, Lennart Erpenbeck, Jasmin Bleeke & Dorena Diekamp"
+horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -298,6 +330,7 @@ text = "Game Name"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Panel/Inro-4"]
+layout_mode = 0
 offset_left = 167.0
 offset_top = 501.0
 offset_right = 1187.0

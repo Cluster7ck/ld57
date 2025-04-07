@@ -22,17 +22,22 @@ func _ready() -> void:
 	
 	txt_quest_main.text = quest_texts.main_text_quest_1
 	txt_quest_sub.text = quest_texts.sub_text_quest_1
-	_on_ship_collectibles(GameManager.collectibles_on_ship)
+	_on_ship_collectibles({
+		GameManager.Chem.ChemC: 0,
+		GameManager.Chem.ChemO: 0,
+		GameManager.Chem.ChemH: 0,
+		GameManager.Chem.ChemN: 0,
+	})
 	help_button.pressed.connect(_on_help_button)
 
 
 func _on_ship_collectibles(collectibles: Dictionary) -> void:
 	for key in collectibles.keys():
 		var goals = {
-			GameManager.Chem.ChemC: 10000,
-			GameManager.Chem.ChemO: 10000,
-			GameManager.Chem.ChemH: 10000,
-			GameManager.Chem.ChemN: 10000,
+			GameManager.Chem.ChemC: 10,
+			GameManager.Chem.ChemO: 10,
+			GameManager.Chem.ChemH: 10,
+			GameManager.Chem.ChemN: 10,
 		}
 		if GameManager.stage <= 2:
 			goals = GameManager.goals[GameManager.stage]
