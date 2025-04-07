@@ -19,7 +19,6 @@ class_name Player
 @export var energy_drain_rate = 1
 @export var tractor_beam_energy_gradient: Gradient
 @export var space_boundaries: Vector2 = Vector2(30000, 30000)
-@export var beam_audio_clip: AudioStreamWAV
 
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
@@ -27,7 +26,6 @@ var gravityCenter: GravityCenter = null
 var hololine_default_alpha
 var current_tractor_beam_length = 0
 var energy = 100.0
-const BEAM_AUDIO_EFFECT = preload("res://utilities/beam_audio_effect.tscn")
 
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 

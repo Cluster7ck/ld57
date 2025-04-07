@@ -4,6 +4,3 @@
 
 [node name="AudioEffect" instance=ExtResource("1_uhx82")]
 pitch_range = 0.05
-
-[node name="AudioStreamPlayer2D" parent="." index="0"]
-bus = &"ManySoundeffects"

@@ -160,6 +160,8 @@ func goal_reached_inc_stage() -> int:
 	return stage
 	
 func is_goal_reached_ship() -> bool:
+	if stage >= goals.size():
+		return true
 	for i in goals[stage].keys():
 		if collectibles_on_ship.get(i, 0) < goals[stage][i]:
 			return false
