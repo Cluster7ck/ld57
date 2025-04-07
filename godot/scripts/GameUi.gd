@@ -2,6 +2,8 @@ extends Control
 class_name GameUi
 
 @export var gradient: Gradient = Gradient.new()
+@export var color_by_energy_level: bool = false
+@export var energy_gradient: Gradient
 @onready var o_label: Label = $UIObenRechts/Panel/HBoxContainer/O_BoxContainer/PointCount
 @onready var c_label: Label = $UIObenRechts/Panel/HBoxContainer/C_BoxContainer/PointCount
 @onready var h_label: Label = $UIObenRechts/Panel/HBoxContainer/H_BoxContainer/PointCount
@@ -40,6 +42,8 @@ func fmt(current, goal):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if color_by_energy_level:
+		energy_label.label_settings.font_color = energy_gradient.sample(GameManager.ship.energy/100)
 	energy_label.text = str(int(floor(GameManager.ship.energy))) + "%"
 
 func _on_help_button():
