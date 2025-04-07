@@ -22,6 +22,17 @@ gradient = SubResource("Gradient_x63ue")
 metadata/_edit_horizontal_guides_ = [56.0]
 metadata/_edit_vertical_guides_ = [1908.0, 1447.0, 1467.0]
 
+[node name="UIObenLinks" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="UIObenLinks"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 85.0
+text = "?"
+
 [node name="UIObenRechts" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 1

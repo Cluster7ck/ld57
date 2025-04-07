@@ -23,6 +23,7 @@ func _ready() -> void:
 	panels = panel_parent.get_children()
 	
 	update_visible_panel()
+	visibility_changed.connect(_on_visibility_changed)
 
 
 
@@ -39,3 +40,9 @@ func next_intro_screen():
 func _on_btn4_up():
 	ui_manager.finish_intro()
 	GameManager.current_state = GameManagerClass.GameState.playing
+
+func _on_visibility_changed():
+	if is_visible_in_tree():
+		current_panel = 0
+		pass
+	pass
