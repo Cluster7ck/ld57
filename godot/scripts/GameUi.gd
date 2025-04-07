@@ -34,7 +34,7 @@ func _on_ship_collectibles(collectibles: Dictionary) -> void:
 			# Handle Nitrogen if needed
 			
 func fmt(current, goal):
-	return str(int(floor(current))) + "/" + str(int(floor(goal)))
+	return str(int(ceil(current))) + "/" + str(int(floor(goal)))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
