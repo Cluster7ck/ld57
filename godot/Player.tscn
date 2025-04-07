@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]
 [ext_resource type="Texture2D" uid="uid://c0g1bq3gfs8f" path="res://assets/particlesprites/Element 3.svg" id="8_5ncpa"]
-[ext_resource type="AudioStream" uid="uid://ced3lywxhqyoa" path="res://assets/audio_effects/02-BeepBox-Song(6)-2.wav" id="10_hp6x6"]
+[ext_resource type="AudioStream" uid="uid://bftbdyymwtfll" path="res://assets/audio_effects/beam.wav" id="10_hp6x6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
 radius = 72.1734

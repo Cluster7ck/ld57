@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://byb844gh4nnl7"]
+[gd_scene load_steps=30 format=3 uid="uid://byb844gh4nnl7"]
 
 [ext_resource type="Script" uid="uid://dys7smaq7n70g" path="res://GravityCenter.gd" id="1_imu5u"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="2_5jmsf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://e1oc3uw4n7i4" path="res://Planets/Overlays/planets_triangel-2.png" id="10_5jmsf"]
 [ext_resource type="Texture2D" uid="uid://cc6udn47mkjhc" path="res://Planets/Overlays/planets_triangle-1.png" id="11_op64h"]
 [ext_resource type="Texture2D" uid="uid://db0pxns44wgpx" path="res://assets/particlesprites/Element 15.svg" id="15_vldem"]
+[ext_resource type="Texture2D" uid="uid://b11ce1ll1qbee" path="res://Planets/Overlays/orbit(1).png" id="16_wkyl1"]
 
 [sub_resource type="Resource" id="Resource_vldem"]
 script = ExtResource("2_op64h")
@@ -149,6 +150,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("orbit:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_icnbx"]
@@ -311,6 +324,23 @@ tracks/1/keys = {
 "values": [Vector2(-533.041, 0), Vector2(287.562, 0), Vector2(-533.041, 0), Vector2(287.562, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wkyl1"]
+resource_name = "orbit"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("orbit:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os8dk"]
 _data = {
 &"RESET": SubResource("Animation_ua4di"),
@@ -320,6 +350,7 @@ _data = {
 &"hills": SubResource("Animation_fk8v2"),
 &"krater": SubResource("Animation_6ynlh"),
 &"linien": SubResource("Animation_mfru2"),
+&"orbit": SubResource("Animation_wkyl1"),
 &"round-crater": SubResource("Animation_bvywh"),
 &"triangle": SubResource("Animation_t65lr")
 }
@@ -431,4 +462,11 @@ color = Color(0.0966791, 0.40801, 0.417512, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_os8dk")
 }
-autoplay = "linien"
+autoplay = "orbit"
+
+[node name="orbit" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.482353)
+position = Vector2(1, 1)
+scale = Vector2(1, 1)
+texture = ExtResource("16_wkyl1")
