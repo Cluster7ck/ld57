@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqfahshlfndrr"]
+[gd_scene load_steps=7 format=3 uid="uid://dqfahshlfndrr"]
 
 [ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_xjnnq"]
+[ext_resource type="Gradient" uid="uid://oj4gtkip5dwd" path="res://assets/gradients/energy_charge_gradient.tres" id="3_gjn1n"]
 [ext_resource type="Script" uid="uid://bdjjqj287ls1x" path="res://scripts/GameUi.gd" id="3_x63ue"]
 [ext_resource type="Texture2D" uid="uid://cvkklsea5ah4j" path="res://assets/ui/battery Icon.png" id="3_xjnnq"]
 
 [sub_resource type="Gradient" id="Gradient_x63ue"]
 offsets = PackedFloat32Array(0, 0.534351, 1)
 colors = PackedColorArray(0.0588235, 0.858824, 0.737255, 1, 0.561742, 0.934261, 0.877653, 1, 1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x63ue"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -19,8 +22,20 @@ mouse_filter = 2
 theme = ExtResource("1_xjnnq")
 script = ExtResource("3_x63ue")
 gradient = SubResource("Gradient_x63ue")
+energy_gradient = ExtResource("3_gjn1n")
 metadata/_edit_horizontal_guides_ = [56.0]
 metadata/_edit_vertical_guides_ = [1908.0, 1447.0, 1467.0]
+
+[node name="UIObenLinks" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="UIObenLinks"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 85.0
+text = "?"
 
 [node name="UIObenRechts" type="Control" parent="."]
 layout_mode = 1
@@ -98,8 +113,10 @@ stretch_mode = 4
 
 [node name="PointCount" type="Label" parent="UIObenRechts/Panel2/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "100%"
+label_settings = SubResource("LabelSettings_x63ue")
 
 [node name="Panel" type="Panel" parent="UIObenRechts"]
 layout_mode = 1

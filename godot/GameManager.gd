@@ -11,7 +11,6 @@ signal on_earth_collectibles(collectibles: Dictionary)
 signal on_new_earth(new_earth: Node2D)
 signal on_new_ship(new_ship: Player)
 
-
 var collectibles_on_ship = { }
 var stage = 0
 var goals = [
@@ -211,7 +210,7 @@ func _process(delta: float) -> void:
 		if new_stage > 0 and new_stage < goals.size():
 			goal_depositing = false
 			ship.earthDepositParticles.emitting = false
-			gravity_center.do_earth_transform(new_stage)
+			if gravity_center: gravity_center.do_earth_transform(new_stage)
 			for chem in Chem.values():
 				collectibles_on_earth[chem] = 0
 

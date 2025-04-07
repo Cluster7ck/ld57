@@ -48,6 +48,11 @@ func _process(_delta: float) -> void:
 			path2dFollower.progress = compass_distance_to_ship
 
 
+func open_intro():
+	GameManager.current_state = GameManagerClass.GameState.pause
+	intro_screen.visible = true
+	pass
+
 func finish_intro():
 	intro_screen.visible = false
 	pass

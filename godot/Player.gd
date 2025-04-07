@@ -10,7 +10,6 @@ class_name Player
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var warp_fade_animation_player: AnimationPlayer = $"../CanvasLayer/Warp Fade/AnimationPlayer"
 
-
 @export var DEFAULT_GRAVITY = 600.0
 @export var PLANET_GRAVITY = 800.0
 @export var dampingFactor = 20
@@ -20,12 +19,17 @@ class_name Player
 @export var energy_drain_rate = 1
 @export var tractor_beam_energy_gradient: Gradient
 @export var space_boundaries: Vector2 = Vector2(30000, 30000)
+@export var beam_audio_clip: AudioStreamWAV
+
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var gravityCenter: GravityCenter = null
 var hololine_default_alpha
 var current_tractor_beam_length = 0
 var energy = 100.0
+const BEAM_AUDIO_EFFECT = preload("res://utilities/beam_audio_effect.tscn")
+
+var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	hololine_default_alpha = hololine.modulate.a
@@ -39,12 +43,15 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
-		audio_stream_player_2d.play()
+		audio_stream_player_2d.pitch_scale = rng.randf_range(0.97, 1.03)
+		audio_stream_player_2d.play(0.08)
+		
 	else:
 		gravityCenter = null
 		line.clear_points()
 		earthTether.clear_points()
 		hololine.clear_points()
+		
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -69,6 +76,7 @@ func _physics_process(delta: float) -> void:
 		move_and_collide(motion)
 
 func _process(delta) -> void:
+	
 	if GameManager.current_state != GameManagerClass.GameState.playing:
 		return
 	sprite.look_at(position + velocity)
@@ -118,7 +126,13 @@ func _process(delta) -> void:
 			#velocity *= 1000
 			#velocity.limit_length(800)
 		
-		
+func play_audio():
+	var effect = BEAM_AUDIO_EFFECT.instantiate()
+	effect.audio_clip = beam_audio_clip
+	get_tree().root.add_child(effect)
+	effect.audio_stream_player_2d.play()
+	pass
+
 	
 func _on_fade_finished(anim_name: StringName):
 	if anim_name == "fade_in":

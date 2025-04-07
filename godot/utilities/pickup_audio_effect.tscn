@@ -3,6 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://vxhnhd20qdo1" path="res://utilities/audio_effect.tscn" id="1_uhx82"]
 
 [node name="AudioEffect" instance=ExtResource("1_uhx82")]
-
-[node name="AudioStreamPlayer2D" parent="." index="0"]
-bus = &"ManySoundeffects"
+pitch_range = 0.05

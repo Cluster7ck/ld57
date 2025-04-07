@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://mxk62po3y3a8"]
+
+[ext_resource type="PackedScene" uid="uid://vxhnhd20qdo1" path="res://utilities/audio_effect.tscn" id="1_ld0xj"]
+
+[node name="Player_Beam_AudioEffect" instance=ExtResource("1_ld0xj")]
