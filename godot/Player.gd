@@ -50,6 +50,7 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 		line.clear_points()
 		earthTether.clear_points()
 		hololine.clear_points()
+		audio_stream_player_2d.stop()
 		
 	
 func _input(event):
