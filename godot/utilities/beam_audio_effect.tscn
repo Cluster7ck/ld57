@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://vxhnhd20qdo1" path="res://utilities/audio_effect.tscn" id="1_ld0xj"]
 
 [node name="Player_Beam_AudioEffect" instance=ExtResource("1_ld0xj")]
+
+[node name="AudioStreamPlayer2D" parent="." index="0"]
+bus = &"ManySoundeffects"

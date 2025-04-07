@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duwq8bkbdpysi"
+path="res://.godot/imported/scifiInstruments (7)playerdetach.wav-63bbab32a31f2630b788f62793551e66.sample"
+
+[deps]
+
+source_file="res://assets/audio_effects/scifiInstruments (7)playerdetach.wav"
+dest_files=["res://.godot/imported/scifiInstruments (7)playerdetach.wav-63bbab32a31f2630b788f62793551e66.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

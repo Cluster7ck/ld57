@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb0as8qodr5s4"]
+
+[ext_resource type="Texture2D" uid="uid://c0g1bq3gfs8f" path="res://assets/particlesprites/Element 3.svg" id="1_7bpcq"]
+
+[sub_resource type="Curve" id="Curve_hxmid"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hdm47"]
+_data = [Vector2(0, 0.613348), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_a2hog"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.114993, 0.282387, 0.442504)
+colors = PackedColorArray(0.898039, 0.27451, 0.768627, 1, 0.882353, 0.862745, 0.380392, 1, 0, 0.721569, 0.984314, 1, 0.0470588, 0.890196, 0.756863, 1)
+
+[node name="CollectItemParticle" type="Node2D"]
+
+[node name="CPUParticles" type="CPUParticles2D" parent="."]
+z_index = 4
+emitting = false
+amount = 20
+texture = ExtResource("1_7bpcq")
+lifetime = 2.19
+one_shot = true
+preprocess = 1.0
+explosiveness = 0.69
+lifetime_randomness = 0.03
+emission_shape = 1
+emission_sphere_radius = 58.65
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 49.06
+initial_velocity_max = 496.4
+linear_accel_min = 2.7
+linear_accel_max = 45.67
+damping_max = 17.22
+damping_curve = SubResource("Curve_hxmid")
+scale_amount_min = 0.2
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_hdm47")
+color_ramp = SubResource("Gradient_a2hog")
+hue_variation_min = -1.0
+hue_variation_max = -1.0

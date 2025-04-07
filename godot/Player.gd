@@ -44,7 +44,7 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
 		audio_stream_player_2d.pitch_scale = rng.randf_range(0.97, 1.03)
-		audio_stream_player_2d.play(0.08)
+		audio_stream_player_2d.play(0.00)
 		
 	else:
 		gravityCenter = null
@@ -126,12 +126,7 @@ func _process(delta) -> void:
 			#velocity *= 1000
 			#velocity.limit_length(800)
 		
-func play_audio():
-	var effect = BEAM_AUDIO_EFFECT.instantiate()
-	effect.audio_clip = beam_audio_clip
-	get_tree().root.add_child(effect)
-	effect.audio_stream_player_2d.play()
-	pass
+
 
 	
 func _on_fade_finished(anim_name: StringName):
