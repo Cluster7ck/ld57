@@ -11,6 +11,7 @@ offsets = PackedFloat32Array(0, 0.534351, 1)
 colors = PackedColorArray(0.0588235, 0.858824, 0.737255, 1, 0.561742, 0.934261, 0.877653, 1, 1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x63ue"]
+font_size = 28
 
 [node name="GameUI" type="Control" node_paths=PackedStringArray("quest_texts")]
 layout_mode = 3
