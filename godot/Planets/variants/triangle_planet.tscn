@@ -10,5 +10,5 @@ visible = true
 [node name="triangle2" parent="Kreis" index="9"]
 visible = true
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "triangle"

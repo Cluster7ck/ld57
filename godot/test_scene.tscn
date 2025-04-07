@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgligukrdbouf"]
+[gd_scene load_steps=19 format=3 uid="uid://bgligukrdbouf"]
 
 [ext_resource type="PackedScene" uid="uid://x2uwdjhdtvmc" path="res://Player.tscn" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://vovj6lw5mp4f" path="res://scripts/ui_manager.gd" id="2_buypi"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://qr5b4wtt2tn2" path="res://Planets/Planets.gd" id="5_2nij2"]
 [ext_resource type="PackedScene" uid="uid://cp6gkjk2757jw" path="res://Screens/Intro.tscn" id="5_4gito"]
 [ext_resource type="Script" uid="uid://ckjve0kdf6d0k" path="res://scripts/background/nebel/nebel_spawner.gd" id="5_7cbxl"]
-[ext_resource type="PackedScene" uid="uid://cto23880j56as" path="res://Screens/GameOver.tscn" id="5_oo8pe"]
+[ext_resource type="PackedScene" uid="uid://b4i7h2gf0il38" path="res://Screens/GameOver.tscn" id="5_oo8pe"]
 [ext_resource type="PackedScene" uid="uid://chs8co2218qjp" path="res://Screens/Outro.tscn" id="6_4gito"]
 [ext_resource type="Script" path="res://scripts/background/nebel/star_spawner.gd" id="7_8pr8v"]
 
@@ -20,6 +20,60 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_fbuy2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4gito"]
+resource_name = "fade_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0k8yu"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0k8yu"]
+_data = {
+&"RESET": SubResource("Animation_fbuy2"),
+&"fade_in": SubResource("Animation_4gito"),
+&"fade_out": SubResource("Animation_0k8yu")
+}
+
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -28,7 +82,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UIManager" type="Node2D" parent="." node_paths=PackedStringArray("intro_screen", "outro_screen", "gameOver_screen", "earth_indicator", "path2d", "path2dFollower") groups=["uimanager"]]
+[node name="UIManager" type="Node2D" parent="." node_paths=PackedStringArray("intro_screen", "outro_screen", "gameOver_screen", "earth_indicator", "path2d", "path2dFollower", "warp_fade_animation_player") groups=["uimanager"]]
 unique_name_in_owner = true
 script = ExtResource("2_buypi")
 intro_screen = NodePath("../CanvasLayer/Intro")
@@ -37,6 +91,7 @@ gameOver_screen = NodePath("../CanvasLayer/Game Over")
 earth_indicator = NodePath("Path2D/PathFollow2D/EarthIndicator")
 path2d = NodePath("Path2D")
 path2dFollower = NodePath("Path2D/PathFollow2D")
+warp_fade_animation_player = NodePath("../CanvasLayer/Warp Fade/AnimationPlayer")
 
 [node name="Path2D" type="Path2D" parent="UIManager"]
 curve = SubResource("Curve2D_buypi")
@@ -61,8 +116,30 @@ offset = Vector2(0, 139.675)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Warp Fade" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Warp Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_0k8yu")
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Warp Fade"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("4_2nij2")]
-theme = null
 
 [node name="Intro" parent="CanvasLayer" instance=ExtResource("5_4gito")]
 z_index = 1
@@ -75,6 +152,7 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(1, -1)
+space_boundaries = Vector2(22000, 22000)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(0.35, 0.35)

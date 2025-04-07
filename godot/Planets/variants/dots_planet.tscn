@@ -6,7 +6,7 @@
 
 [node name="Planet2" instance=ExtResource("1_aladu")]
 
-[node name="Kreis" parent="." index="1"]
+[node name="Kreis" parent="." index="2"]
 texture = ExtResource("2_2y0nn")
 
 [node name="WiggleBig2" parent="Kreis" index="1"]
@@ -15,6 +15,6 @@ texture = ExtResource("3_dj0q1")
 [node name="dots" parent="Kreis" index="6"]
 visible = true
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "dots"
 speed_scale = 0.5

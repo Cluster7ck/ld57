@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://chs8co2218qjp"]
+[gd_scene load_steps=9 format=3 uid="uid://chs8co2218qjp"]
 
 [ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_4sspb"]
 [ext_resource type="Texture2D" uid="uid://clvojaq8wo5gd" path="res://assets/ui/Drop.png" id="2_bsndj"]
-[ext_resource type="Script" uid="uid://ciif2lj21audu" path="res://Screens/outro.gd" id="2_t8ljw"]
+[ext_resource type="Script" path="res://Screens/outro.gd" id="2_t8ljw"]
 [ext_resource type="Texture2D" uid="uid://cvyhfah7ocft3" path="res://assets/ui/leaves.png" id="3_t8ljw"]
 [ext_resource type="Texture2D" uid="uid://d04dt4jihaxgd" path="res://assets/ui/Circle-Quarter.png" id="4_df6na"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8ljw"]
+bg_color = Color(0.0255, 0.048325, 0.15, 0.901961)
 
 [sub_resource type="InputEventKey" id="InputEventKey_bsndj"]
 device = -1
@@ -24,6 +27,16 @@ grow_vertical = 2
 theme = ExtResource("1_4sspb")
 script = ExtResource("2_t8ljw")
 metadata/_edit_vertical_guides_ = [959.0]
+metadata/_edit_horizontal_guides_ = [432.0]
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8ljw")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -59,34 +72,79 @@ theme_override_font_sizes/font_size = 34
 text = "You saved earth!"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 541.0
-offset_top = 283.0
-offset_right = 813.0
-offset_bottom = 318.0
+[node name="Label8" type="Label" parent="Panel"]
+offset_left = 649.0
+offset_top = 291.0
+offset_right = 974.0
+offset_bottom = 326.0
 theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.529412)
 theme_override_font_sizes/font_size = 30
-text = "You collected"
+text = "You used"
+horizontal_alignment = 1
+
+[node name="timecont3" type="Label" parent="Panel"]
+offset_left = 678.0
+offset_top = 327.0
+offset_right = 950.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 54
+text = "100"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="Panel"]
+offset_left = 678.0
+offset_top = 388.0
+offset_right = 950.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 32
+text = "Energy"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel"]
+offset_left = 377.0
+offset_top = 292.0
+offset_right = 702.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "You visited"
+horizontal_alignment = 1
+
+[node name="timecont2" type="Label" parent="Panel"]
+offset_left = 406.0
+offset_top = 328.0
+offset_right = 678.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 54
+text = "463"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Panel"]
+offset_left = 406.0
+offset_top = 389.0
+offset_right = 678.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 32
+text = "Planets"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 432.0
-offset_right = 839.0
-offset_bottom = 467.0
+offset_left = 513.0
+offset_top = 480.0
+offset_right = 838.0
+offset_bottom = 515.0
 theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.529412)
 theme_override_font_sizes/font_size = 30
-text = "And it only took you"
+text = "It took you"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Panel"]
+[node name="timecont" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 542.0
-offset_top = 492.0
+offset_top = 516.0
 offset_right = 814.0
-offset_bottom = 554.0
+offset_bottom = 578.0
 theme_override_font_sizes/font_size = 54
 text = "05:12"
 horizontal_alignment = 1
@@ -94,11 +152,11 @@ horizontal_alignment = 1
 [node name="Label6" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 542.0
-offset_top = 558.0
+offset_top = 577.0
 offset_right = 814.0
-offset_bottom = 595.0
+offset_bottom = 614.0
 theme_override_font_sizes/font_size = 32
-text = "Lightyears"
+text = "Years"
 horizontal_alignment = 1
 
 [node name="Drop" type="Sprite2D" parent="Panel"]

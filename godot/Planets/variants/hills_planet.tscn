@@ -5,14 +5,14 @@
 
 [node name="Planet2" instance=ExtResource("1_8fy8x")]
 
-[node name="Kreis" parent="." index="1"]
+[node name="Kreis" parent="." index="2"]
 texture = ExtResource("2_ndbe6")
 
-[node name="hills" parent="Kreis" index="2"]
+[node name="hills" parent="Kreis" index="3"]
 visible = true
 modulate = Color(0.77, 0.77, 0.77, 1)
 self_modulate = Color(1, 1, 1, 0.341176)
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "hills"
 speed_scale = 0.1

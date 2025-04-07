@@ -6,11 +6,11 @@
 [node name="Planet2" instance=ExtResource("1_x0bft")]
 rotation = -0.755728
 
-[node name="Kreis" parent="." index="1"]
+[node name="Kreis" parent="." index="2"]
 texture = ExtResource("2_nrvmc")
 
-[node name="lines" parent="Kreis" index="1"]
+[node name="lines" parent="Kreis" index="2"]
 visible = true
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 speed_scale = 0.5

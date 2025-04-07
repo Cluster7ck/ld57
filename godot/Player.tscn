@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dc5rmn0s1wdpo" path="res://assets/tractorbeam.png" id="3_5ncpa"]
-[ext_resource type="Material" uid="uid://cup4ng0i6gmta" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
+[ext_resource type="Material" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
 [ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]

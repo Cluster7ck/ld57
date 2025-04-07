@@ -17,6 +17,7 @@ class_name Player
 @export var tractor_beam_snap_range = 3500
 @export var energy_drain_rate = 1
 @export var tractor_beam_energy_gradient: Gradient
+@export var space_boundaries: Vector2 = Vector2(30000, 30000)
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var gravityCenter: GravityCenter = null
@@ -29,6 +30,8 @@ func _ready() -> void:
 	GameManager.gravity_target.connect(on_new_gravity_center)
 	velocity = Vector2(100, 0)
 	GameManager.set_ship(self)
+	
+	GameManager.ui_manager.warp_fade_animation_player.animation_finished.connect(_on_fade_finished)
 
 
 func on_new_gravity_center(gravity_center: GravityCenter):
@@ -95,17 +98,39 @@ func _process(delta) -> void:
 		#	GameManager.gravity_target.emit(null)
 		
 	## X-Loop
-	if position.x <= -30000 && velocity.x < 0 || position.x >= 30000 && velocity.x > 0:
-		position.x = position.x *-1
-		if velocity.length() < 800:
-			velocity *= 1000
-			velocity.limit_length(800)
+	if position.x <= -space_boundaries.x && velocity.x < 0 || position.x >= space_boundaries.x && velocity.x > 0:
+		GameManager.ui_manager.warp_fade_in()
+		## Snap on warping
+		GameManager.gravity_target.emit(null)
+		#position.x = position.x *-1
+		#if velocity.length() < 800:
+			#velocity *= 1000
+			#velocity.limit_length(800)
 	## Y-Loop
-	if position.y <= -30000 && velocity.y < 0 || position.y >= 30000 && velocity.y > 0:
-		position.y = position.y *-1
-		if velocity.length() < 800:
-			velocity *= 1000
-			velocity.limit_length(800)
+	if position.y <= -space_boundaries.y && velocity.y < 0 || position.y >= space_boundaries.y && velocity.y > 0:
+		GameManager.ui_manager.warp_fade_in()
+		## Snap on warping
+		GameManager.gravity_target.emit(null)
+		#position.y = position.y *-1
+		#if velocity.length() < 800:
+			#velocity *= 1000
+			#velocity.limit_length(800)
 		
 		
 	
+func _on_fade_finished(anim_name: StringName):
+	if anim_name == "fade_in":
+		if position.x <= -space_boundaries.x && velocity.x < 0 || position.x >= space_boundaries.x && velocity.x > 0:
+			position.x = position.x *-1
+			
+		if position.y <= -space_boundaries.y && velocity.y < 0 || position.y >= space_boundaries.y && velocity.y > 0:
+			position.y = position.y *-1
+		
+		if velocity.length() < 800:
+			velocity *= 1000
+			velocity.limit_length(800)
+		
+		GameManager.ui_manager.warp_fade_out()
+	if anim_name == "fade_out":
+		pass
+	pass
