@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]
 [ext_resource type="Texture2D" uid="uid://c0g1bq3gfs8f" path="res://assets/particlesprites/Element 3.svg" id="8_5ncpa"]
-[ext_resource type="AudioStream" uid="uid://utwb4m2gnc05" path="res://assets/audio_effects/wahwah.wav" id="9_wi0c6"]
+[ext_resource type="AudioStream" uid="uid://dak16gr5iad4v" path="res://assets/audio_effects/scifiInstruments (8)playerattach.wav" id="9_wi0c6"]
 
 [sub_resource type="Gradient" id="Gradient_wi0c6"]
 offsets = PackedFloat32Array(0.25, 0.5, 0.75, 1)

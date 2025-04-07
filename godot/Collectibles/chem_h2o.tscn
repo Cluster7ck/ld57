@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://fkeopbroi2uw" path="res://Collectibles/Collectible.tscn" id="1_onq7g"]
 [ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_sth21"]
+[ext_resource type="AudioStream" uid="uid://cbv688w5nnbno" path="res://assets/audio_effects/05-pulsewidthsounds.wav" id="3_pycgb"]
 [ext_resource type="Texture2D" uid="uid://dmmam16mxh57p" path="res://assets/collectibles/h2o with_blur.png" id="3_sth21"]
-[ext_resource type="AudioStream" uid="uid://bs2gp6hn1etcp" path="res://assets/audio_effects/fblub2.wav" id="4_pycgb"]
 
 [sub_resource type="Resource" id="Resource_pycgb"]
 script = ExtResource("2_sth21")
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://dqflb3pcrgatw"
 
 [node name="Collectible" instance=ExtResource("1_onq7g")]
 collectible_resource = SubResource("Resource_pycgb")
-on_pickup_audio_clip = ExtResource("4_pycgb")
+on_pickup_audio_clip = ExtResource("3_pycgb")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_sth21")
