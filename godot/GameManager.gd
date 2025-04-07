@@ -62,6 +62,7 @@ var ship: Player
 var ui_manager: UIManager
 var time_in_game: float
 var total_energy_drained: float = 0
+var total_planets_visited: float = 0
 var earth: Node2D
 		
 enum GameState {playing, pause, win, lose}
@@ -228,13 +229,17 @@ func _process(delta: float) -> void:
 	pass
 
 func reset_values():
+	total_energy_drained = 0
+	total_planets_visited = 0
 	time_in_game = 0
+	
 	collectibles_on_ship = { }
 	collectibles_on_earth = {}
 	total_collectibles_collected = {}
 	total_collectible_count = 0
 	stage = 0
 	attached_to_earth = false
+	goal_depositing = false
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
