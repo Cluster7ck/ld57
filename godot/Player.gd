@@ -7,6 +7,7 @@ class_name Player
 @onready var earthDepositParticles: CPUParticles2D = $EarthDepositParticles2D
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 @export var DEFAULT_GRAVITY = 600.0
@@ -38,6 +39,7 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
+		audio_stream_player_2d.play()
 	else:
 		gravityCenter = null
 		line.clear_points()

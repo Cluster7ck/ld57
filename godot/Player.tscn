@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=18 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]
 [ext_resource type="Texture2D" uid="uid://c0g1bq3gfs8f" path="res://assets/particlesprites/Element 3.svg" id="8_5ncpa"]
+[ext_resource type="AudioStream" uid="uid://utwb4m2gnc05" path="res://assets/audio_effects/wahwah.wav" id="9_wi0c6"]
 
 [sub_resource type="Gradient" id="Gradient_wi0c6"]
 offsets = PackedFloat32Array(0.25, 0.5, 0.75, 1)
@@ -146,3 +147,6 @@ scale_amount_curve = SubResource("Curve_dtqjt")
 color_ramp = SubResource("Gradient_hp6x6")
 hue_variation_min = -1.0
 hue_variation_max = -1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wi0c6")
