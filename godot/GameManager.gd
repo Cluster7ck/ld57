@@ -49,6 +49,7 @@ var total_collectible_count: int = 0:
 			count += total_collectibles_collected[i]
 		return count
 var attached_to_earth = false
+var goal_depositing = false
 var gravity_center: GravityCenter = null
 var drain_rate = 5
 var energy_load_rate = 20;
@@ -130,15 +131,16 @@ func goal_reached_inc_stage() -> int:
 		current_state = GameState.win
 		ui_manager.win()
 		return stage
-	if is_goal_reached():
-		stage += 1
-		return stage
-	else:
-		return -1
-	
-func is_goal_reached() -> bool:
+		
 	for i in goals[stage].keys():
 		if collectibles_on_earth.get(i, 0) < goals[stage][i]:
+			return -1
+	stage += 1
+	return stage
+	
+func is_goal_reached_ship() -> bool:
+	for i in goals[stage].keys():
+		if collectibles_on_ship.get(i, 0) < goals[stage][i]:
 			return false
 	return true
 			
@@ -155,24 +157,30 @@ func _process(delta: float) -> void:
 		var dist = (gravity_center.position - ship.position).length()
 		if dist < gravity_center.get_real_size() + 1000:
 			ship.energy = min(100, energy_load_rate * delta + ship.energy)
-			var didStuff = false
-			for i in collectibles_on_ship.keys():
-				if collectibles_on_ship[i] > 0:
-					didStuff = true
-					ship.earthDepositParticles.emitting = true
-					# drain at rate of 5 per second
-					var drain = drain_rate * delta
-					if (collectibles_on_ship[i] - drain) < 0:
-						drain = collectibles_on_ship[i]
-					collectibles_on_ship[i] -= drain
-					collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
-					#print(collectibles_on_earth)
-			if didStuff:
-				var new_stage = goal_reached_inc_stage()
-				if new_stage > 0 and new_stage < goals.size():
-					for chem in Chem.values():
-						collectibles_on_earth[chem] = 0
-					gravity_center.do_earth_transform(new_stage)
+			if is_goal_reached_ship():
+				print("goal_depositing")
+				goal_depositing = true
+			if goal_depositing:
+				print("goal_depositing doing")
+				var didStuff = false
+				for i in collectibles_on_ship.keys():
+					if collectibles_on_ship[i] > 0:
+						didStuff = true
+						ship.earthDepositParticles.emitting = true
+						# drain at rate of 5 per second
+						var drain = drain_rate * delta
+						if (collectibles_on_ship[i] - drain) < 0:
+							drain = collectibles_on_ship[i]
+						collectibles_on_ship[i] -= drain
+						collectibles_on_earth[i] = collectibles_on_earth.get(i, 0) + drain
+						#print(collectibles_on_earth)
+				if didStuff:
+					var new_stage = goal_reached_inc_stage()
+					if new_stage > 0 and new_stage < goals.size():
+						goal_depositing = false
+						for chem in Chem.values():
+							collectibles_on_earth[chem] = 0
+						gravity_center.do_earth_transform(new_stage)
 
 			on_earth_collectibles.emit(collectibles_on_earth)
 			on_ship_collectibles.emit(collectibles_on_ship)
