@@ -22,27 +22,27 @@ var stage = 0:
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 1, # 3
-		Chem.ChemC: 0, # 3
+		Chem.ChemO: 3,
+		Chem.ChemC: 3,
 		# H20
-		Chem.ChemH: 0, # 8
-		Chem.ChemN: 0, # 0
+		Chem.ChemH: 8,
+		Chem.ChemN: 0,
 	},
 	{
 		# O2
-		Chem.ChemO: 0, # 4
-		Chem.ChemC: 0, # 10
+		Chem.ChemO: 4,
+		Chem.ChemC: 10,
 		# H20
-		Chem.ChemH: 1, # 2
-		Chem.ChemN: 0, # 0
+		Chem.ChemH: 2,
+		Chem.ChemN: 0,
 	},
 	{
 		# O2
-		Chem.ChemO: 1, # 15
-		Chem.ChemC: 0, # 2
+		Chem.ChemO: 15,
+		Chem.ChemC: 2,
 		# H20
-		Chem.ChemH: 0, # 2
-		Chem.ChemN: 0, # 0
+		Chem.ChemH: 2,
+		Chem.ChemN: 0,
 	}
 ]
 var collectibles_on_earth = {}
@@ -98,9 +98,8 @@ func _on_gravity_target(target: GravityCenter) -> void:
 		attached_to_earth = false
 		gravity_center = null
 		drain_rate = 5
-
-
-
+		
+		
 func restart_game():
 	get_tree().reload_current_scene()
 	
@@ -151,8 +150,7 @@ func _physics_process(_delta: float) -> void:
 func goal_reached_inc_stage() -> int:
 	if stage >= goals.size():
 		current_state = GameState.win
-		var ui : UIManager = get_tree().get_first_node_in_group("uimanager") as UIManager
-		ui.win()
+		ui_manager.win()
 		return stage
 		
 	for i in goals[stage].keys():
@@ -186,7 +184,7 @@ func _process(delta: float) -> void:
 		if dist < gravity_center.get_real_size() + 1000:
 			ship.energy = min(100, energy_load_rate * delta + ship.energy)
 			if !goal_depositing and is_goal_reached_ship():
-				#print("goal_depositing")
+				print("goal_depositing")
 				goal_depositing = true
 		else:
 			ship.earthDepositParticles.emitting = false
@@ -239,4 +237,4 @@ func reset_values():
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
-	ui_manager = get_tree().get_first_node_in_group("uimanager") as UIManager
+	ui_manager = get_tree().get_first_node_in_group("uimanager")
