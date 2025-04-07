@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqfahshlfndrr"]
 
-[ext_resource type="Theme" uid="uid://c0ss7tfimdhva" path="res://assets/ui/game_ui.tres" id="1_xjnnq"]
+[ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_xjnnq"]
 [ext_resource type="Script" uid="uid://bdjjqj287ls1x" path="res://scripts/GameUi.gd" id="3_x63ue"]
 [ext_resource type="Texture2D" uid="uid://cvkklsea5ah4j" path="res://assets/ui/battery Icon.png" id="3_xjnnq"]
 

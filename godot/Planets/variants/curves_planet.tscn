@@ -7,5 +7,5 @@
 [node name="curves" parent="Kreis" index="7"]
 visible = true
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "curves"

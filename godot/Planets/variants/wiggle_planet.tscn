@@ -10,6 +10,6 @@ visible = true
 [node name="WiggleBig2" parent="Kreis" index="1"]
 visible = true
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "Wiggle"
 speed_scale = 0.5
