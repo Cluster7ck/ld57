@@ -145,7 +145,7 @@ theme_override_font_sizes/font_size = 30
 text = "It took you"
 horizontal_alignment = 1
 
-[node name="timecont" type="Label" parent="Panel"]
+[node name="txt_timecont" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 542.0
 offset_top = 516.0

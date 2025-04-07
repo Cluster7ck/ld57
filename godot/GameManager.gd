@@ -55,12 +55,14 @@ var drain_rate = 5
 var energy_load_rate = 20;
 var ship: Player
 var ui_manager: UIManager
+var time_in_game: float
 var earth: Node2D
 		
 enum GameState {playing, pause, win, lose}
 var current_state : GameState = GameState.pause
 
 func _ready() -> void:
+	reset_values()
 	for chem in Chem.values():
 		collectibles_on_ship[chem] = 0
 		collectibles_on_earth[chem] = 0
@@ -159,6 +161,9 @@ func is_goal_reached_ship() -> bool:
 	return true
 			
 func _process(delta: float) -> void:
+	if current_state == GameState.playing:
+		time_in_game += delta
+		pass
 	if ship and ship.energy <= 0:
 		current_state = GameState.lose
 		if ui_manager:
@@ -220,6 +225,7 @@ func _process(delta: float) -> void:
 	pass
 
 func reset_values():
+	time_in_game = 0
 	collectibles_on_ship = { }
 	collectibles_on_earth = {}
 	total_collectibles_collected = {}
