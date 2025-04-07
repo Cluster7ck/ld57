@@ -1,9 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cp6gkjk2757jw"]
+[gd_scene load_steps=16 format=3 uid="uid://cp6gkjk2757jw"]
 
 [ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_jev7y"]
 [ext_resource type="Texture2D" uid="uid://dhlv63m0lmbkd" path="res://assets/ui/circle-active.png" id="2_8ytrl"]
 [ext_resource type="Script" uid="uid://dv46p6lqg4kym" path="res://Screens/Intro.gd" id="2_uma4e"]
 [ext_resource type="Texture2D" uid="uid://qxv22cynchqj" path="res://assets/ui/circle-empty.png" id="3_uma4e"]
+[ext_resource type="Texture2D" uid="uid://bkraxiuop1ki2" path="res://assets/ui/erde-gold-freisteller.png" id="5_g1elf"]
+[ext_resource type="Texture2D" uid="uid://ci0gtrl7oxcvm" path="res://assets/collectibles/c with_blur.png" id="6_kwe8t"]
+[ext_resource type="Texture2D" uid="uid://bbkxxrkylx3rw" path="res://assets/collectibles/energy with_blur.png" id="7_wjbqv"]
+[ext_resource type="Texture2D" uid="uid://dmmam16mxh57p" path="res://assets/collectibles/h2o with_blur.png" id="8_bvf0r"]
+[ext_resource type="Texture2D" uid="uid://dia6b8e4a2odr" path="res://assets/collectibles/o2 with_blur.png" id="9_p2iwm"]
+[ext_resource type="Texture2D" uid="uid://dc0q4erta03p5" path="res://assets/ui/intro-steuerung2.png" id="10_kwe8t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uma4e"]
 bg_color = Color(0.0255, 0.048325, 0.15, 0.901961)
@@ -38,7 +44,8 @@ btn2 = NodePath("Panel/Inro-2/Button")
 btn3 = NodePath("Panel/Inro-3/Button")
 btn4 = NodePath("Panel/Inro-4/Button")
 panel_parent = NodePath("Panel")
-metadata/_edit_vertical_guides_ = [959.0]
+metadata/_edit_vertical_guides_ = [959.0, 764.0]
+metadata/_edit_horizontal_guides_ = [553.0]
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -127,6 +134,11 @@ position = Vector2(693, 624)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_uma4e")
 
+[node name="Erde-gold-freisteller" type="Sprite2D" parent="Panel/Inro-1"]
+position = Vector2(677.5, 394.5)
+scale = Vector2(0.586486, 0.586486)
+texture = ExtResource("5_g1elf")
+
 [node name="Inro-2" type="Control" parent="Panel"]
 visible = false
 anchors_preset = 0
@@ -181,6 +193,18 @@ texture = ExtResource("3_uma4e")
 position = Vector2(693, 624)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_uma4e")
+
+[node name="CWithBlur" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(482, 458)
+texture = ExtResource("6_kwe8t")
+
+[node name="H2oWithBlur" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(872, 459)
+texture = ExtResource("8_bvf0r")
+
+[node name="O2WithBlur" type="Sprite2D" parent="Panel/Inro-2"]
+position = Vector2(678, 458)
+texture = ExtResource("9_p2iwm")
 
 [node name="Inro-3" type="Control" parent="Panel"]
 visible = false
@@ -238,6 +262,11 @@ position = Vector2(693, 624)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_8ytrl")
 
+[node name="Intro-steuerung2" type="Sprite2D" parent="Panel/Inro-3"]
+position = Vector2(677, 472)
+scale = Vector2(0.678683, 0.678683)
+texture = ExtResource("10_kwe8t")
+
 [node name="Inro-4" type="Control" parent="Panel"]
 visible = false
 anchors_preset = 0
@@ -261,7 +290,7 @@ offset_top = 252.0
 offset_right = 1189.0
 offset_bottom = 497.0
 theme_override_font_sizes/font_size = 34
-text = "Regenerate energy from the suns to fly longer."
+text = "Be mindful of your energy — don’t drift off into space."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -272,7 +301,11 @@ offset_top = 682.0
 offset_right = 795.0
 offset_bottom = 739.0
 shortcut = SubResource("Shortcut_3n0s5")
-text = "Next"
+text = "Start Game"
+
+[node name="EnergyWithBlur" type="Sprite2D" parent="Panel/Inro-4"]
+position = Vector2(677, 437)
+texture = ExtResource("7_wjbqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-4"]
 position = Vector2(630, 624)
