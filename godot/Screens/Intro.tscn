@@ -45,7 +45,7 @@ btn3 = NodePath("Panel/Inro-3/Button")
 btn4 = NodePath("Panel/Inro-4/Button")
 panel_parent = NodePath("Panel")
 metadata/_edit_vertical_guides_ = [959.0, 764.0]
-metadata/_edit_horizontal_guides_ = [553.0]
+metadata/_edit_horizontal_guides_ = [553.0, 322.0]
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -78,19 +78,29 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Panel/Inro-1"]
 layout_mode = 0
 offset_left = 464.0
-offset_top = 109.0
+offset_top = 87.0
 offset_right = 893.0
-offset_bottom = 191.0
+offset_bottom = 169.0
 theme_override_font_sizes/font_size = 72
-text = "Game Name"
+text = "O.R.B.I.T"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/Inro-1"]
+offset_left = 363.0
+offset_top = 174.0
+offset_right = 990.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.8256, 0.8368, 0.96, 0.588235)
+theme_override_font_sizes/font_size = 22
+text = "Orbital Rescue Beam Infusion Team"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel/Inro-1"]
 layout_mode = 0
 offset_left = 477.0
-offset_top = 221.0
+offset_top = 223.0
 offset_right = 880.0
-offset_bottom = 261.0
+offset_bottom = 263.0
 theme_override_font_sizes/font_size = 34
 text = "You are our last hope!"
 horizontal_alignment = 1
@@ -98,9 +108,9 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="Panel/Inro-1"]
 layout_mode = 0
 offset_left = 356.0
-offset_top = 529.0
+offset_top = 504.0
 offset_right = 998.0
-offset_bottom = 584.0
+offset_bottom = 559.0
 theme_override_font_sizes/font_size = 34
 text = "Earth has exhausted its resources. "
 horizontal_alignment = 1
@@ -135,7 +145,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_uma4e")
 
 [node name="Erde-gold-freisteller" type="Sprite2D" parent="Panel/Inro-1"]
-position = Vector2(677.5, 394.5)
+position = Vector2(677.5, 380.5)
 scale = Vector2(0.586486, 0.586486)
 texture = ExtResource("5_g1elf")
 
@@ -146,6 +156,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Panel/Inro-2"]
+visible = false
 layout_mode = 0
 offset_left = 464.0
 offset_top = 109.0
@@ -158,9 +169,9 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Panel/Inro-2"]
 layout_mode = 0
 offset_left = 181.0
-offset_top = 289.0
+offset_top = 198.0
 offset_right = 1174.0
-offset_bottom = 372.0
+offset_bottom = 281.0
 theme_override_font_sizes/font_size = 34
 text = "Collect enough resources and bring them back to Earth."
 horizontal_alignment = 1
@@ -195,15 +206,15 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_uma4e")
 
 [node name="CWithBlur" type="Sprite2D" parent="Panel/Inro-2"]
-position = Vector2(482, 458)
+position = Vector2(482, 423)
 texture = ExtResource("6_kwe8t")
 
 [node name="H2oWithBlur" type="Sprite2D" parent="Panel/Inro-2"]
-position = Vector2(872, 459)
+position = Vector2(872, 424)
 texture = ExtResource("8_bvf0r")
 
 [node name="O2WithBlur" type="Sprite2D" parent="Panel/Inro-2"]
-position = Vector2(678, 458)
+position = Vector2(678, 423)
 texture = ExtResource("9_p2iwm")
 
 [node name="Inro-3" type="Control" parent="Panel"]
@@ -213,6 +224,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Panel/Inro-3"]
+visible = false
 layout_mode = 0
 offset_left = 464.0
 offset_top = 109.0
@@ -225,9 +237,9 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Panel/Inro-3"]
 layout_mode = 0
 offset_left = 169.0
-offset_top = 252.0
+offset_top = 194.0
 offset_right = 1189.0
-offset_bottom = 497.0
+offset_bottom = 439.0
 theme_override_font_sizes/font_size = 34
 text = "Click on the planets to use their gravitational force to steer the rocket."
 horizontal_alignment = 1
@@ -263,7 +275,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_8ytrl")
 
 [node name="Intro-steuerung2" type="Sprite2D" parent="Panel/Inro-3"]
-position = Vector2(677, 472)
+position = Vector2(677, 414)
 scale = Vector2(0.678683, 0.678683)
 texture = ExtResource("10_kwe8t")
 
@@ -274,6 +286,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Panel/Inro-4"]
+visible = false
 layout_mode = 0
 offset_left = 464.0
 offset_top = 109.0
@@ -286,9 +299,9 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Panel/Inro-4"]
 layout_mode = 0
 offset_left = 169.0
-offset_top = 252.0
+offset_top = 200.0
 offset_right = 1189.0
-offset_bottom = 497.0
+offset_bottom = 445.0
 theme_override_font_sizes/font_size = 34
 text = "Be mindful of your energy — don’t drift off into space."
 horizontal_alignment = 1
@@ -304,7 +317,7 @@ shortcut = SubResource("Shortcut_3n0s5")
 text = "Start Game"
 
 [node name="EnergyWithBlur" type="Sprite2D" parent="Panel/Inro-4"]
-position = Vector2(677, 437)
+position = Vector2(677, 409)
 texture = ExtResource("7_wjbqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-4"]
