@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://fkeopbroi2uw" path="res://Collectibles/Collectible.tscn" id="1_v1ueu"]
 [ext_resource type="Script" uid="uid://dqflb3pcrgatw" path="res://Collectibles/CollectibleResource.gd" id="2_ymtue"]
 [ext_resource type="Texture2D" uid="uid://dia6b8e4a2odr" path="res://assets/collectibles/o2 with_blur.png" id="3_leglp"]
-[ext_resource type="AudioStream" uid="uid://dbv3v45ocrswx" path="res://assets/audio_effects/02-pulsewidthsounds.wav" id="3_ymtue"]
+[ext_resource type="AudioStream" uid="uid://c6yalj78pa2c3" path="res://assets/collectible3.wav" id="3_ymtue"]
 
 [sub_resource type="Resource" id="Resource_m5smr"]
 script = ExtResource("2_ymtue")
