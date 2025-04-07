@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dc5rmn0s1wdpo" path="res://assets/tractorbeam.png" id="3_5ncpa"]
-[ext_resource type="Material" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
+[ext_resource type="Material" uid="uid://cup4ng0i6gmta" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
 [ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
-[ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]
+[ext_resource type="Texture2D" uid="uid://c0g1bq3gfs8f" path="res://assets/particlesprites/Element 3.svg" id="8_5ncpa"]
 
 [sub_resource type="Gradient" id="Gradient_wi0c6"]
 offsets = PackedFloat32Array(0.25, 0.5, 0.75, 1)
@@ -64,8 +64,10 @@ point_count = 2
 _data = [Vector2(0, 0.613348), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_5ncpa"]
-colors = PackedColorArray(1, 0.945098, 0.898039, 1, 0, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_hp6x6"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.285298, 0.572052, 0.941776)
+colors = PackedColorArray(0.898039, 0.27451, 0.768627, 1, 0.882353, 0.862745, 0.380392, 1, 0, 0.721569, 0.984314, 1, 0.0470588, 0.890196, 0.756863, 1)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
@@ -121,24 +123,26 @@ scale_amount_max = 0.1
 
 [node name="EarthDepositParticles2D" type="CPUParticles2D" parent="."]
 z_index = 4
-emitting = false
-amount = 340
-texture = ExtResource("5_cxr5p")
+amount = 21
+texture = ExtResource("8_5ncpa")
+lifetime = 2.19
 preprocess = 1.0
+explosiveness = 0.19
+lifetime_randomness = 0.03
 emission_shape = 1
-emission_sphere_radius = 102.21
+emission_sphere_radius = 58.65
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 202.1
-initial_velocity_max = 208.8
+initial_velocity_min = 49.06
+initial_velocity_max = 496.4
 linear_accel_min = 2.7
 linear_accel_max = 45.67
 damping_max = 17.22
 damping_curve = SubResource("Curve_tdg3f")
-scale_amount_min = 0.1
-scale_amount_max = 0.1
+scale_amount_min = 0.2
+scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_dtqjt")
-color_ramp = SubResource("Gradient_5ncpa")
-hue_variation_min = 0.36
-hue_variation_max = 1.0
+color_ramp = SubResource("Gradient_hp6x6")
+hue_variation_min = -1.0
+hue_variation_max = -1.0

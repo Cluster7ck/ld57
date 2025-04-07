@@ -1038,7 +1038,7 @@ animations = [{
 script = ExtResource("1_b8bo6")
 
 [node name="Blur" type="Sprite2D" parent="."]
-modulate = Color(0.961057, 0.410475, 3.85046e-07, 1)
+modulate = Color(0.952489, 0.68451, 0.74591, 1)
 position = Vector2(-1, 0)
 scale = Vector2(1.33594, 1.33594)
 texture = ExtResource("2_40dsp")
@@ -1053,7 +1053,7 @@ visible = false
 shape = SubResource("CircleShape2D_m568k")
 
 [node name="Kreis" type="Sprite2D" parent="."]
-modulate = Color(0.628938, 0.460681, 0.359992, 1)
+modulate = Color(0.980392, 0.964706, 0.866667, 1)
 clip_children = 2
 position = Vector2(1, 1)
 scale = Vector2(0.855469, 0.855469)
@@ -1074,11 +1074,12 @@ scale = Vector2(1.13415, 1.13415)
 texture = ExtResource("3_wrt1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.882631, 0.861453, 0.676233, 1)
+modulate = Color(0.862745, 0.745098, 0.556863, 1)
 z_index = 1
-scale = Vector2(1.74219, 1.74219)
+scale = Vector2(1.75781, 1.75781)
 sprite_frames = SubResource("SpriteFrames_nd5v8")
 autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 rect = Rect2(-220, -220, 440, 440)
