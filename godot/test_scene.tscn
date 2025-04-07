@@ -112,7 +112,7 @@ _data = {
 &"fade_out": SubResource("Animation_0k8yu")
 }
 
-[node name="Node2D" type="Control" groups=["uimanager"]]
+[node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

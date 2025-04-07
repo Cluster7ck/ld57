@@ -98,8 +98,9 @@ func _on_gravity_target(target: GravityCenter) -> void:
 		attached_to_earth = false
 		gravity_center = null
 		drain_rate = 5
-		
-		
+
+
+
 func restart_game():
 	get_tree().reload_current_scene()
 	
@@ -150,7 +151,8 @@ func _physics_process(_delta: float) -> void:
 func goal_reached_inc_stage() -> int:
 	if stage >= goals.size():
 		current_state = GameState.win
-		ui_manager.win()
+		var ui : UIManager = get_tree().get_first_node_in_group("uimanager") as UIManager
+		ui.win()
 		return stage
 		
 	for i in goals[stage].keys():
@@ -184,7 +186,7 @@ func _process(delta: float) -> void:
 		if dist < gravity_center.get_real_size() + 1000:
 			ship.energy = min(100, energy_load_rate * delta + ship.energy)
 			if !goal_depositing and is_goal_reached_ship():
-				print("goal_depositing")
+				#print("goal_depositing")
 				goal_depositing = true
 		else:
 			ship.earthDepositParticles.emitting = false
