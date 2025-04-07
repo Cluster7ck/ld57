@@ -22,10 +22,10 @@ var stage = 0:
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 1,
-		Chem.ChemC: 0,
+		Chem.ChemO: 3,
+		Chem.ChemC: 3,
 		# H20
-		Chem.ChemH: 0,
+		Chem.ChemH: 8,
 		Chem.ChemN: 0,
 	},
 	{
