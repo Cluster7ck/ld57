@@ -101,7 +101,7 @@ offset_top = 394.0
 offset_right = 1201.0
 offset_bottom = 477.0
 theme_override_font_sizes/font_size = 30
-text = "Ressources collected:"
+text = "Resources collected:"
 horizontal_alignment = 1
 autowrap_mode = 2
 
