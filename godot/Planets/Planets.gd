@@ -27,7 +27,7 @@ func _ready() -> void:
 			var chem_scene = ResourceLoader.load(path)
 			collectibles.append(chem_scene)
 	
-	var planetPoints = [Vector2(0,0)]
+	var planetPoints = [Vector2(1500,-600)]
 	var collectiblePoints = []
 	for i in range(numPlanets):
 		var x = rng.randf_range(-extents, extents)
