@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4i7h2gf0il38"]
+[gd_scene load_steps=4 format=3 uid="uid://cto23880j56as"]
 
-[ext_resource type="Theme" uid="uid://c0ss7tfimdhva" path="res://assets/ui/game_ui.tres" id="1_da3ok"]
+[ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_da3ok"]
+[ext_resource type="Script" uid="uid://myi074n7c83u" path="res://Screens/game_over_screen.gd" id="2_3uq6h"]
 [ext_resource type="Texture2D" uid="uid://bndb03x82rs7t" path="res://assets/ui/batteryEmpty.png" id="2_bwps1"]
 
-[node name="Intro" type="Control"]
+[node name="Game Over" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_da3ok")
+script = ExtResource("2_3uq6h")
 metadata/_edit_vertical_guides_ = [959.0]
 
 [node name="Panel" type="Panel" parent="."]
@@ -44,7 +46,7 @@ offset_top = 376.0
 offset_right = 1200.0
 offset_bottom = 605.0
 theme_override_font_sizes/font_size = 34
-text = "You have no energy left to continue flying and have gotten lost in space. 
+text = "You have no energy left to continue flying and have gotten lost in the depths of space. 
 
 Try to gather enough energy from the suns next time"
 horizontal_alignment = 1

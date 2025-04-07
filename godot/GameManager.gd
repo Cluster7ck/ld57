@@ -48,16 +48,22 @@ var earth : Node2D:
 	set(value):
 		earth = value
 		
+enum GameState {playing, pause, win, lose}
+var current_state : GameState = GameState.pause
+
 func _ready() -> void:
 	for chem in Chem.values():
 		collectibles_on_ship[chem] = 0
 		collectibles_on_earth[chem] = 0
-	on_collectible.connect(_on_collectible)
-	gravity_target.connect(_on_gravity_target)
+	if !on_collectible.is_connected(_on_collectible):
+		on_collectible.connect(_on_collectible)
+	if !gravity_target.is_connected(_on_gravity_target):
+		gravity_target.connect(_on_gravity_target)
 	ui_manager = get_tree().get_first_node_in_group("uimanager")
 	if ui_manager: 
 		ui_manager.earth = earth
 		ui_manager.ship = ship
+	print("gamemanager _ready")
 	
 func _on_gravity_target(target: GravityCenter) -> void:
 	if target and target.name == "Erde":
@@ -79,6 +85,12 @@ func _on_gravity_target(target: GravityCenter) -> void:
 		gravity_center = null
 		drain_rate = 5
 		
+		
+func restart_game():
+	get_tree().reload_current_scene()
+	reset_values()
+	pass
+
 func set_ship(the_ship: Player) -> void:
 	ship = the_ship
 	if ui_manager:
@@ -101,6 +113,9 @@ func _physics_process(_delta: float) -> void:
 		
 func goal_reached() -> int:
 	if stage >= goals.size():
+		print("win")
+		current_state = GameState.win
+		ui_manager.win()
 		return stage
 	for i in goals[stage].keys():
 		if collectibles_on_earth.get(i, 0) < goals[stage][i]:
@@ -110,6 +125,8 @@ func goal_reached() -> int:
 			
 func _process(delta: float) -> void:
 	if ship and ship.energy <= 0:
+		current_state = GameState.lose
+		ui_manager.gameOver()
 		print("dead as fuck")
 		pass
 	if attached_to_earth:
@@ -156,4 +173,14 @@ func _process(delta: float) -> void:
 
 			on_earth_collectibles.emit(collectibles_on_earth)
 			on_ship_collectibles.emit(collectibles_on_ship)
+	pass
+
+func reset_values():
+	collectibles_on_ship = { }
+	stage = 0
+	collectibles_on_earth = {}
+	attached_to_earth = false
+	gravity_center = null
+	drain_rate = 5
+	current_state = GameState.pause
 	pass
