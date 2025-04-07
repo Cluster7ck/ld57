@@ -111,7 +111,7 @@ func _process(delta) -> void:
 		
 	## X-Loop
 	if position.x <= -space_boundaries.x && velocity.x < 0 || position.x >= space_boundaries.x && velocity.x > 0:
-		GameManager.ui_manager.warp_fade_in()
+		get_tree().get_first_node_in_group("uimanager").warp_fade_in()
 		## Snap on warping
 		GameManager.gravity_target.emit(null)
 		#position.x = position.x *-1
