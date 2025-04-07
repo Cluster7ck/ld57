@@ -12,9 +12,8 @@ func _ready() -> void:
 func on_player_enter(_body: Node2D):
 	if collectible_resource:
 		GameManager.on_collectible.emit(self)
-		# todo - add animation
-	else:
-		pass
+
+
 
 func do_collection():
 	var effect = AUDIO_EFFECT.instantiate()

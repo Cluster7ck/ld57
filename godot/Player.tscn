@@ -75,6 +75,7 @@ script = ExtResource("1_kpjcp")
 initialBoost = 200
 dampingFactor = 80
 tractor_beam_range = 2500
+energy_drain_rate = 2
 tractor_beam_energy_gradient = SubResource("Gradient_wi0c6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -150,3 +151,5 @@ hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_wi0c6")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
