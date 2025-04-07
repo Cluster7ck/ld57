@@ -4,13 +4,13 @@
 
 [node name="Nebel" instance=ExtResource("1_kvx0b")]
 
-[node name="Blur2" parent="." index="0"]
-modulate = Color(0.345098, 0.14902, 0.776471, 1)
-
-[node name="Blur" parent="." index="1"]
+[node name="Blur" parent="." index="0"]
 modulate = Color(0.156283, 0.261583, 0.753135, 0.564706)
 position = Vector2(653, 516)
 scale = Vector2(1.72461, 1.12012)
+
+[node name="Blur2" parent="." index="1"]
+modulate = Color(0.345098, 0.14902, 0.776471, 1)
 
 [node name="Blur3" parent="." index="2"]
 modulate = Color(0.345098, 0.14902, 0.776471, 0.576471)
