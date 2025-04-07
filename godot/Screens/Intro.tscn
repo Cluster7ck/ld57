@@ -86,6 +86,7 @@ text = "O.R.B.I.T"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Panel/Inro-1"]
+layout_mode = 0
 offset_left = 363.0
 offset_top = 174.0
 offset_right = 990.0
@@ -296,14 +297,24 @@ theme_override_font_sizes/font_size = 72
 text = "Game Name"
 horizontal_alignment = 1
 
+[node name="Label3" type="Label" parent="Panel/Inro-4"]
+offset_left = 167.0
+offset_top = 501.0
+offset_right = 1187.0
+offset_bottom = 746.0
+theme_override_font_sizes/font_size = 34
+text = "Recharge on earth and gather fuel."
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Label2" type="Label" parent="Panel/Inro-4"]
 layout_mode = 0
 offset_left = 169.0
-offset_top = 200.0
+offset_top = 202.0
 offset_right = 1189.0
-offset_bottom = 445.0
+offset_bottom = 258.0
 theme_override_font_sizes/font_size = 34
-text = "Be mindful of your energy — don’t drift off into space."
+text = "Be mindful of your energy!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -317,7 +328,7 @@ shortcut = SubResource("Shortcut_3n0s5")
 text = "Start Game"
 
 [node name="EnergyWithBlur" type="Sprite2D" parent="Panel/Inro-4"]
-position = Vector2(677, 409)
+position = Vector2(677, 356)
 texture = ExtResource("7_wjbqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Inro-4"]
