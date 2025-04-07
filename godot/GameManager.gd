@@ -61,6 +61,7 @@ var energy_load_rate = 20;
 var ship: Player
 var ui_manager: UIManager
 var time_in_game: float
+var total_energy_drained: float = 0
 var earth: Node2D
 		
 enum GameState {playing, pause, win, lose}

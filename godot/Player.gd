@@ -80,7 +80,9 @@ func _process(delta) -> void:
 	sprite.look_at(position + velocity)
 	if gravityCenter:
 		if gravityCenter.name != "Erde":
+			var prevE = energy
 			energy = max(0, energy - energy_drain_rate * delta)
+			GameManager.total_energy_drained += prevE - energy
 		if hololine.get_point_count() > 1:
 			current_tractor_beam_length = hololine.get_point_position(0).distance_to(hololine.get_point_position(1))
 		else:
