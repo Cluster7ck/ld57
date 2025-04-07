@@ -44,6 +44,8 @@ func get_real_size() -> float:
 	return DEFAULT_SIZE * scale.x
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if GameManager.current_state != GameManagerClass.GameState.playing:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and lastFrameEmit != Engine.get_frames_drawn():
 			#print("emitting gravity target " + str(Engine.get_frames_drawn()) + ", " + str(get_instance_id()))

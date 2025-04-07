@@ -49,6 +49,8 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if GameManager.current_state != GameManagerClass.GameState.playing:
+		return
 	if gravityCenter:
 		var dirToPlanet = gravityCenter.position - position
 		gravityDirection = (dirToPlanet).normalized()
@@ -62,6 +64,8 @@ func _physics_process(delta: float) -> void:
 		move_and_collide(motion)
 
 func _process(delta) -> void:
+	if GameManager.current_state != GameManagerClass.GameState.playing:
+		return
 	sprite.look_at(position + velocity)
 	if gravityCenter:
 		if gravityCenter.name != "Erde":

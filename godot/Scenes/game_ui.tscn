@@ -47,6 +47,7 @@ offset_left = -517.0
 offset_top = 15.0
 offset_bottom = 172.0
 grow_horizontal = 0
+mouse_filter = 2
 
 [node name="Panel2" type="Panel" parent="UIObenRechts"]
 layout_mode = 1
@@ -57,6 +58,7 @@ offset_left = -146.0
 offset_right = -11.0
 offset_bottom = 85.0
 grow_horizontal = 0
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIObenRechts/Panel2"]
 layout_direction = 2
@@ -95,6 +97,7 @@ offset_left = -453.0
 offset_right = -157.0
 offset_bottom = 85.0
 grow_horizontal = 0
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIObenRechts/Panel"]
 layout_direction = 2

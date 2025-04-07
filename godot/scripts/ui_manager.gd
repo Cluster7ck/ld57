@@ -1,9 +1,14 @@
 class_name UIManager
 extends Node2D
 
+@export var intro_screen: Control
+@export var outro_screen: Control
+@export var gameOver_screen: Control
+
 @export var earth_indicator: Node2D
 @export var path2d: Path2D
 @export var path2dFollower: PathFollow2D
+@export var compass_distance_to_ship: int = 200
 
 var earth: 
 	set(value):
@@ -16,7 +21,9 @@ var ship: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	intro_screen.visible = true
+	outro_screen.visible = false
+	gameOver_screen.visible = false
 	pass # Replace with function body.
 
 
@@ -29,11 +36,12 @@ func _process(delta: float) -> void:
 		path2d.curve.set_point_position(0, ship.position)
 		path2d.curve.set_point_position(1, earth.position)
 		
-		path2dFollower.progress = 200
-		
-		pass
-	pass
+		path2dFollower.progress = compass_distance_to_ship
 
+
+func finish_intro():
+	intro_screen.visible = false
+	pass
 
 func _on_earth_leaves_viewport():
 	earth_indicator.visible = true

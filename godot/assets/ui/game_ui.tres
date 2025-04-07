@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c0ss7tfimdhva"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bklatd4htfqdq"]
 
 [ext_resource type="FontFile" uid="uid://td1g0q2p0jwa" path="res://assets/ui/ShareTechMono-Regular.ttf" id="1_1y6vj"]
 [ext_resource type="Texture2D" uid="uid://bmjehpavwso8q" path="res://assets/ui/buttons/b-blue-clicked.png" id="1_h8wph"]

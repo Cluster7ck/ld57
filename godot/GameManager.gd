@@ -48,6 +48,9 @@ var earth : Node2D:
 	set(value):
 		earth = value
 		
+enum GameState {playing, pause, win, lose}
+var current_state : GameState = GameState.pause
+
 func _ready() -> void:
 	for chem in Chem.values():
 		collectibles_on_ship[chem] = 0
