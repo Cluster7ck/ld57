@@ -22,27 +22,27 @@ var stage = 0:
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 3,
-		Chem.ChemC: 3,
+		Chem.ChemO: 1, # 3
+		Chem.ChemC: 0, # 3
 		# H20
-		Chem.ChemH: 8,
-		Chem.ChemN: 0,
+		Chem.ChemH: 0, # 8
+		Chem.ChemN: 0, # 0
 	},
 	{
 		# O2
-		Chem.ChemO: 4,
-		Chem.ChemC: 10,
+		Chem.ChemO: 0, # 4
+		Chem.ChemC: 0, # 10
 		# H20
-		Chem.ChemH: 2,
-		Chem.ChemN: 0,
+		Chem.ChemH: 1, # 2
+		Chem.ChemN: 0, # 0
 	},
 	{
 		# O2
-		Chem.ChemO: 15,
-		Chem.ChemC: 2,
+		Chem.ChemO: 1, # 15
+		Chem.ChemC: 0, # 2
 		# H20
-		Chem.ChemH: 2,
-		Chem.ChemN: 0,
+		Chem.ChemH: 0, # 2
+		Chem.ChemN: 0, # 0
 	}
 ]
 var collectibles_on_earth = {}
@@ -237,4 +237,4 @@ func reset_values():
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
-	ui_manager = get_tree().get_first_node_in_group("uimanager")
+	ui_manager = get_tree().get_first_node_in_group("uimanager") as UIManager
