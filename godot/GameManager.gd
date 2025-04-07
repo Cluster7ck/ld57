@@ -236,3 +236,4 @@ func reset_values():
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
+	ui_manager = get_tree().get_first_node_in_group("uimanager")
