@@ -9,6 +9,7 @@ class_name GameUi
 
 func _ready() -> void:
 	GameManager.on_ship_collectibles.connect(_on_ship_collectibles)
+	_on_ship_collectibles(GameManager.collectibles_on_ship)
 	pass # Replace with function body.
 
 func _on_ship_collectibles(collectibles: Dictionary) -> void:

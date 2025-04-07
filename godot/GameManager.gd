@@ -4,7 +4,7 @@ class_name GameManagerClass
 enum Chem { ChemO, ChemH, ChemC, ChemN }
 
 signal gravity_target(target: GravityCenter)
-signal on_collectible(chemicals: CollectibleResource)
+signal on_collectible(collectible: Collectible)
 
 signal on_ship_collectibles(collectibles: Dictionary)
 signal on_earth_collectibles(collectibles: Dictionary)
@@ -17,10 +17,10 @@ var stage = 0
 var goals = [
 	{
 		# O2
-		Chem.ChemO: 4,
-		Chem.ChemC: 2,
+		Chem.ChemO: 1,
+		Chem.ChemC: 0,
 		# H20
-		Chem.ChemH: 8,
+		Chem.ChemH: 0,
 		Chem.ChemN: 0,
 	},
 	{
@@ -107,20 +107,34 @@ func set_ship(the_ship: Player) -> void:
 func set_earth(the_earth: Node2D) -> void:
 	earth = the_earth
 		
-func _on_collectible(chemicals: CollectibleResource) -> void:
+func _on_collectible(collectible: Collectible) -> void:
+	var chemicals = collectible.collectible_resource
 	if chemicals.energy > 0:
 		ship.energy = min(100, ship.energy + chemicals.energy)
 		return
+	var collected = false
 	for i in chemicals.get_chems().keys():
-		if i in collectibles_on_ship:
-			collectibles_on_ship[i] += chemicals.chemicals[i]
-		else:
+		if i in collectibles_on_ship and chemicals.chemicals[i] > 0:
+			if collectibles_on_ship[i] < goals[stage][i]:
+				collectibles_on_ship[i] += chemicals.chemicals[i]
+				collected = true
+				if i in total_collectibles_collected:
+					total_collectibles_collected[i] += chemicals.chemicals[i]
+				else:
+					total_collectibles_collected[i] = chemicals.chemicals[i]
+		elif chemicals.chemicals[i] > 0:
 			collectibles_on_ship[i] = chemicals.chemicals[i]
+			collected = true
+			if i in total_collectibles_collected:
+				total_collectibles_collected[i] += chemicals.chemicals[i]
+			else:
+				total_collectibles_collected[i] = chemicals.chemicals[i]
+	if collected:
+		print(collectibles_on_ship)
+		collectible.do_collection()
+		on_earth_collectibles.emit(collectibles_on_earth)
+		on_ship_collectibles.emit(collectibles_on_ship)
 			
-		if i in total_collectibles_collected:
-			total_collectibles_collected[i] += chemicals.chemicals[i]
-		else:
-			total_collectibles_collected[i] = chemicals.chemicals[i]
 		
 
 func _physics_process(_delta: float) -> void:
@@ -163,10 +177,10 @@ func _process(delta: float) -> void:
 		if dist < gravity_center.get_real_size() + 1000:
 			ship.energy = min(100, energy_load_rate * delta + ship.energy)
 			if is_goal_reached_ship():
-				print("goal_depositing")
+				#print("goal_depositing")
 				goal_depositing = true
 			if goal_depositing:
-				print("goal_depositing doing")
+				#print("goal_depositing doing")
 				var didStuff = false
 				for i in collectibles_on_ship.keys():
 					if collectibles_on_ship[i] > 0:
@@ -182,6 +196,7 @@ func _process(delta: float) -> void:
 				if didStuff:
 					var new_stage = goal_reached_inc_stage()
 					if new_stage > 0 and new_stage < goals.size():
+						print("goal_depositing_end")
 						goal_depositing = false
 						for chem in Chem.values():
 							collectibles_on_earth[chem] = 0
@@ -221,3 +236,4 @@ func reset_values():
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
+	ui_manager = get_tree().get_first_node_in_group("uimanager")
