@@ -8,6 +8,7 @@ class_name Player
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
 
+
 @export var DEFAULT_GRAVITY = 600.0
 @export var PLANET_GRAVITY = 800.0
 @export var dampingFactor = 20
@@ -15,6 +16,7 @@ class_name Player
 @export var tractor_beam_range = 1000
 @export var tractor_beam_snap_range = 3500
 @export var energy_drain_rate = 1
+@export var tractor_beam_energy_gradient: Gradient
 var gravity_c = 600.0
 var gravityDirection = Vector2(0, 1)
 var gravityCenter: GravityCenter = null
@@ -76,9 +78,11 @@ func _process(delta) -> void:
 		hololine.add_point(Vector2(0, 0))
 		
 		var beam_alpha = 1-current_tractor_beam_length/tractor_beam_snap_range
+		var color = tractor_beam_energy_gradient.sample(energy/100)
+		hololine.modulate = color
 		hololine.modulate.a = hololine_default_alpha * beam_alpha
 		line.material.set_shader_parameter("alpha", beam_alpha*2)
-		line.material.set_shader_parameter("override_color", Vector3(1, energy/100, energy/100))
+		line.material.set_shader_parameter("override_color", Vector3(color.r, color.g, color.b))
 		if gravityCenter.name == "Erde":
 			earthTether.clear_points()
 			earthTether.add_point(gravityCenter.position - position)

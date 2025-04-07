@@ -1,12 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://x2uwdjhdtvmc"]
+[gd_scene load_steps=17 format=3 uid="uid://x2uwdjhdtvmc"]
 
 [ext_resource type="Script" uid="uid://dde47w8e1mr0d" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://pvcygqlrdjh0" path="res://assets/tractor_beam.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://cevdriwwobq84" path="res://assets/Rocket 1(1).svg" id="2_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://dnuabavtch3oy" path="res://assets/tractor_beam_energy.png" id="3_e80uo"]
+[ext_resource type="Texture2D" uid="uid://dc5rmn0s1wdpo" path="res://assets/tractorbeam.png" id="3_5ncpa"]
 [ext_resource type="Material" path="res://assets/energy_beam_mat.tres" id="3_tdg3f"]
+[ext_resource type="Texture2D" uid="uid://b6d02df0dc6lm" path="res://assets/verlauf2.png" id="5_5ncpa"]
 [ext_resource type="Texture2D" uid="uid://chnkms2xtspvg" path="res://assets/Blur.png" id="5_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://kg0tjdry2fa" path="res://assets/particlesprites/Element 10.svg" id="6_dtqjt"]
+
+[sub_resource type="Gradient" id="Gradient_wi0c6"]
+offsets = PackedFloat32Array(0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.858824, 0.113725, 0.411765, 1, 0.901961, 0.85098, 0.521569, 1, 0.341176, 0.721569, 0.870588, 1, 0.235294, 0.411765, 0.760784, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
 radius = 72.1734
@@ -67,6 +72,7 @@ script = ExtResource("1_kpjcp")
 initialBoost = 200
 dampingFactor = 80
 tractor_beam_range = 2500
+tractor_beam_energy_gradient = SubResource("Gradient_wi0c6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e80uo")
@@ -76,7 +82,7 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_e80uo")
 width = 46.0
 width_curve = SubResource("Curve_kne1u")
-texture = ExtResource("2_kne1u")
+texture = ExtResource("3_5ncpa")
 texture_mode = 1
 
 [node name="EarthTether" type="Line2D" parent="."]
@@ -88,9 +94,9 @@ texture = ExtResource("2_kne1u")
 texture_mode = 1
 
 [node name="HoloLine2D" type="Line2D" parent="."]
-modulate = Color(1, 1, 1, 0.67451)
+modulate = Color(0.0823529, 0.403922, 1, 0.478431)
 width = 45.61
-texture = ExtResource("3_e80uo")
+texture = ExtResource("5_5ncpa")
 texture_mode = 2
 
 [node name="Node2D" type="Node2D" parent="."]
