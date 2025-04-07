@@ -177,10 +177,10 @@ func _process(delta: float) -> void:
 		if dist < gravity_center.get_real_size() + 1000:
 			ship.energy = min(100, energy_load_rate * delta + ship.energy)
 			if is_goal_reached_ship():
-				print("goal_depositing")
+				#print("goal_depositing")
 				goal_depositing = true
 			if goal_depositing:
-				print("goal_depositing doing")
+				#print("goal_depositing doing")
 				var didStuff = false
 				for i in collectibles_on_ship.keys():
 					if collectibles_on_ship[i] > 0:
