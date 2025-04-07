@@ -114,6 +114,14 @@ z_index = 5
 texture = ExtResource("3_rpuu0")
 offset = Vector2(0, 139.675)
 
+[node name="PlanetSpawner" type="Node" parent="."]
+script = ExtResource("5_2nij2")
+extents = 20000.0
+numPlanets = 4000
+minDistPlanets = 2000.0
+minDistCollectibles = 800.0
+collectibleChance = 0.8
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Warp Fade" type="Control" parent="CanvasLayer"]
@@ -170,14 +178,6 @@ preprocess = 1.0
 emission_shape = 3
 emission_rect_extents = Vector2(3000, 2500)
 gravity = Vector2(0, 0)
-
-[node name="PlanetSpawner" type="Node" parent="."]
-script = ExtResource("5_2nij2")
-extents = 20000.0
-numPlanets = 4000
-minDistPlanets = 2000.0
-minDistCollectibles = 800.0
-collectibleChance = 0.8
 
 [node name="NebelSpawner" type="Node" parent="." node_paths=PackedStringArray("nebel_parent")]
 script = ExtResource("5_7cbxl")
