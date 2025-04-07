@@ -9,6 +9,7 @@ extends Node2D
 @export var path2d: Path2D
 @export var path2dFollower: PathFollow2D
 @export var compass_distance_to_ship: int = 200
+@export var warp_fade_animation_player: AnimationPlayer
 
 var earth: 
 	set(value):
@@ -38,7 +39,6 @@ func _process(delta: float) -> void:
 			if !earth: earth = GameManager.earth
 			path2d.curve.set_point_position(0, ship.position)
 			path2d.curve.set_point_position(1, earth.position)
-			
 			path2dFollower.progress = compass_distance_to_ship
 
 
@@ -69,36 +69,10 @@ func distance_to_screen_border():
 	
 	pass
 
-func calculateIntersection(target_position: Vector2) -> Vector2:
-	var player_position = ship.position
-	var direction = player_position - target_position
-	var rect = get_viewport_rect().size / 2.0
-	var camera_position = player_position - rect
-	var top_left = (player_position - rect - target_position).angle()
-	var top_right = (player_position + Vector2(rect.x, -rect.y) - target_position).angle()
-	var bottom_left = (player_position + Vector2(-rect.x, rect.y) - target_position).angle()
-	var bottom_right = (player_position + rect - target_position).angle()
-	var direction_n = (target_position - player_position).normalized()
-	var intersection: Vector2
-	
-	if (direction.angle() > top_left and direction.angle() < top_right) \
-		or (direction.angle() < bottom_left and direction.angle() > bottom_right):
-		#Target is behind top/bottom edge
-		if direction_n.y < 0:
-			var x_intersection = player_position.x + (camera_position.y - player_position.y) / direction_n.y * direction_n.x
-			intersection = Vector2(x_intersection, camera_position.y + 5)
-		elif direction_n.y > 0:
-			var x_intersection = player_position.x - (camera_position.y - player_position.y) / direction_n.y * direction_n.x
-			intersection = Vector2(x_intersection, player_position.y + rect.y - 5)
-	else:
-		if direction_n.x < 0:
-			var y_intersection = player_position.y + (camera_position.x - player_position.x) / direction_n.x * direction_n.y
-			intersection = Vector2(camera_position.x + 5, y_intersection)
-		elif direction_n.x > 0:
-			var y_intersection = player_position.y - (camera_position.x - player_position.x) / direction_n.x * direction_n.y
-			intersection = Vector2(player_position.x + rect.x - 5, y_intersection)
-	
-	intersection.x = clamp(intersection.x, camera_position.x + 5, player_position.x + rect.x - 5)
-	intersection.y = clamp(intersection.y, camera_position.y + 5, player_position.y + rect.y - 5)
-	
-	return intersection
+func warp_fade_in():
+	warp_fade_animation_player.play("fade_in")
+	pass
+
+func warp_fade_out():
+	warp_fade_animation_player.play("fade_out")
+	pass

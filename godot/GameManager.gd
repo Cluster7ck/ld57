@@ -63,7 +63,6 @@ func _ready() -> void:
 	if ui_manager: 
 		ui_manager.earth = earth
 		ui_manager.ship = ship
-	print("gamemanager _ready")
 	
 func _on_gravity_target(target: GravityCenter) -> void:
 	if target and target.name == "Erde":
@@ -113,7 +112,6 @@ func _physics_process(_delta: float) -> void:
 		
 func goal_reached() -> int:
 	if stage >= goals.size():
-		print("win")
 		current_state = GameState.win
 		ui_manager.win()
 		return stage
