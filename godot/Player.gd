@@ -42,7 +42,7 @@ func on_new_gravity_center(gravity_center: GravityCenter):
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
 		audio_stream_player_2d.pitch_scale = rng.randf_range(0.97, 1.03)
-		audio_stream_player_2d.play(0.00)
+		audio_stream_player_2d.play(0.53)
 		
 	else:
 		gravityCenter = null
