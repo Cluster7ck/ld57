@@ -39,6 +39,7 @@ func _ready() -> void:
 
 func on_new_gravity_center(gravity_center: GravityCenter):
 	if gravity_center:
+		GameManager.total_planets_visited += 1
 		gravityCenter = gravity_center
 		velocity += (gravityCenter.position - position).normalized() * initialBoost
 		audio_stream_player_2d.pitch_scale = rng.randf_range(0.97, 1.03)

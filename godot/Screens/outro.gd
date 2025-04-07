@@ -3,6 +3,7 @@ extends Control
 @onready var button: Button = $Panel/Button
 @onready var txt_timecont: Label = $Panel/txt_timecont
 @onready var txt_energy: Label = $Panel/timecont3
+@onready var txt_planets: Label = $Panel/timecont2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +31,7 @@ func set_values():
 	
 	txt_timecont.text = minutes_string + ":" + seconds_string
 	txt_energy.text = str(int(GameManager.total_energy_drained))
+	txt_planets.text = str(int(GameManager.total_planets_visited))
 	
 	pass
 
