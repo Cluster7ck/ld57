@@ -39,6 +39,13 @@ var goals = [
 	}
 ]
 var collectibles_on_earth = {}
+var total_collectibles_collected: Dictionary = {}
+var total_collectible_count: int = 0:
+	get:
+		var count = 0
+		for i in total_collectibles_collected.keys():
+			count += total_collectibles_collected[i]
+		return count
 var attached_to_earth = false
 var gravity_center: GravityCenter = null
 var drain_rate = 5
@@ -87,7 +94,8 @@ func _on_gravity_target(target: GravityCenter) -> void:
 		
 func restart_game():
 	get_tree().reload_current_scene()
-	reset_values()
+	
+	reset_values.call_deferred()
 	pass
 
 func set_ship(the_ship: Player) -> void:
@@ -104,6 +112,12 @@ func _on_collectible(chemicals: CollectibleResource) -> void:
 			collectibles_on_ship[i] += chemicals.chemicals[i]
 		else:
 			collectibles_on_ship[i] = chemicals.chemicals[i]
+			
+		if i in total_collectibles_collected:
+			total_collectibles_collected[i] += chemicals.chemicals[i]
+		else:
+			total_collectibles_collected[i] = chemicals.chemicals[i]
+		
 
 func _physics_process(_delta: float) -> void:
 	if attached_to_earth:
@@ -124,8 +138,12 @@ func goal_reached() -> int:
 func _process(delta: float) -> void:
 	if ship and ship.energy <= 0:
 		current_state = GameState.lose
-		ui_manager.gameOver()
-		print("dead as fuck")
+		if ui_manager:
+			ui_manager.gameOver()
+		else:
+			## turbo shitty, aber irgendwie fixt es das problem
+			ui_manager = get_tree().get_first_node_in_group("uimanager")
+			return
 		pass
 	if attached_to_earth:
 		var dist = (gravity_center.position - ship.position).length()
@@ -175,10 +193,17 @@ func _process(delta: float) -> void:
 
 func reset_values():
 	collectibles_on_ship = { }
-	stage = 0
 	collectibles_on_earth = {}
+	total_collectibles_collected = {}
+	total_collectible_count = 0
+	stage = 0
 	attached_to_earth = false
 	gravity_center = null
 	drain_rate = 5
 	current_state = GameState.pause
+	
+	ui_manager = get_tree().get_first_node_in_group("uimanager")
+	if ui_manager: 
+		ui_manager.earth = earth
+		ui_manager.ship = ship
 	pass

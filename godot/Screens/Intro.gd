@@ -34,10 +34,8 @@ func update_visible_panel():
 
 func next_intro_screen():
 	current_panel += 1
-	pass
 
-	
+
 func _on_btn4_up():
 	ui_manager.finish_intro()
 	GameManager.current_state = GameManagerClass.GameState.playing
-	
