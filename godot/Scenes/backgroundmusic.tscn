@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvwx53wa3ppc"]
+
+[ext_resource type="AudioStream" uid="uid://yh4vrsneoft5" path="res://assets/space.wav" id="1_dqlhq"]
+
+[node name="Backgroundmusic" type="Node"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_dqlhq")
+autoplay = true
+max_distance = 600000.0
+bus = &"Music"
