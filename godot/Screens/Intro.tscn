@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_jev7y"]
 [ext_resource type="Texture2D" uid="uid://dhlv63m0lmbkd" path="res://assets/ui/circle-active.png" id="2_8ytrl"]
-[ext_resource type="Script" path="res://Screens/Intro.gd" id="2_uma4e"]
+[ext_resource type="Script" uid="uid://dv46p6lqg4kym" path="res://Screens/Intro.gd" id="2_uma4e"]
 [ext_resource type="Texture2D" uid="uid://qxv22cynchqj" path="res://assets/ui/circle-empty.png" id="3_uma4e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uma4e"]

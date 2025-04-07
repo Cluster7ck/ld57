@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4i7h2gf0il38"]
+[gd_scene load_steps=5 format=3 uid="uid://cto23880j56as"]
 
 [ext_resource type="Theme" uid="uid://bklatd4htfqdq" path="res://assets/ui/game_ui.tres" id="1_da3ok"]
-[ext_resource type="Script" path="res://Screens/game_over_screen.gd" id="2_3uq6h"]
+[ext_resource type="Script" uid="uid://myi074n7c83u" path="res://Screens/game_over_screen.gd" id="2_3uq6h"]
 [ext_resource type="Texture2D" uid="uid://bndb03x82rs7t" path="res://assets/ui/batteryEmpty.png" id="2_bwps1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uq6h"]
 bg_color = Color(0.0255, 0.048325, 0.15, 0.901961)
 
-[node name="Game Over" type="Control"]
+[node name="Game Over" type="Control" node_paths=PackedStringArray("txt_collected_resources")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_da3ok")
 script = ExtResource("2_3uq6h")
+txt_collected_resources = NodePath("Panel/txt_collected_resources")
 metadata/_edit_vertical_guides_ = [959.0]
 
 [node name="Background" type="Panel" parent="."]
@@ -68,6 +69,7 @@ scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_bwps1")
 
 [node name="Label5" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 153.0
 offset_top = 511.0
 offset_right = 1199.0
@@ -93,6 +95,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 155.0
 offset_top = 394.0
 offset_right = 1201.0
@@ -102,7 +105,8 @@ text = "Ressources collected:"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label7" type="Label" parent="Panel"]
+[node name="txt_collected_resources" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 432.0
 offset_right = 1197.0
@@ -113,6 +117,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 152.0
 offset_top = 612.0
 offset_right = 1198.0

@@ -7,6 +7,7 @@ class_name Player
 @onready var earthDepositParticles: CPUParticles2D = $EarthDepositParticles2D
 @onready var sprite: Node2D = $Node2D
 @export var initialBoost = 600
+@onready var warp_fade_animation_player: AnimationPlayer = $"../CanvasLayer/Warp Fade/AnimationPlayer"
 
 
 @export var DEFAULT_GRAVITY = 600.0
@@ -31,7 +32,7 @@ func _ready() -> void:
 	velocity = Vector2(100, 0)
 	GameManager.set_ship(self)
 	
-	GameManager.ui_manager.warp_fade_animation_player.animation_finished.connect(_on_fade_finished)
+	warp_fade_animation_player.animation_finished.connect(_on_fade_finished)
 
 
 func on_new_gravity_center(gravity_center: GravityCenter):
