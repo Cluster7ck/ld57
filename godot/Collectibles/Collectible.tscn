@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cfscefbcfsevh" path="res://Collectibles/collectible.gd" id="1_ysl24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysl24"]
-radius = 91.1976
+radius = 125.256
 
 [node name="Collectible" type="Area2D"]
 script = ExtResource("1_ysl24")
